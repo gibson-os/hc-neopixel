@@ -1,0 +1,3233 @@
+
+Neopixel.elf:     file format elf32-avr
+
+Sections:
+Idx Name          Size      VMA       LMA       File off  Algn
+  0 .text         000019de  00000000  00000000  00000094  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+  1 .data         00000000  00800060  00800060  00001c72  2**0
+                  CONTENTS, ALLOC, LOAD, DATA
+  2 .bss          00000400  00800060  00800060  00001a72  2**0
+                  ALLOC
+  3 .eeprom       00000200  00810000  00810000  00001a72  2**0
+                  CONTENTS, ALLOC, LOAD, DATA
+  4 .comment      00000030  00000000  00000000  00001c72  2**0
+                  CONTENTS, READONLY
+  5 .note.gnu.avr.deviceinfo 0000003c  00000000  00000000  00001ca4  2**2
+                  CONTENTS, READONLY
+  6 .debug_aranges 00000060  00000000  00000000  00001ce0  2**3
+                  CONTENTS, READONLY, DEBUGGING
+  7 .debug_info   0000068b  00000000  00000000  00001d40  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  8 .debug_abbrev 0000048a  00000000  00000000  000023cb  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  9 .debug_line   000002cb  00000000  00000000  00002855  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 10 .debug_str    0000017a  00000000  00000000  00002b20  2**0
+                  CONTENTS, READONLY, DEBUGGING
+
+Disassembly of section .text:
+
+00000000 <__vectors>:
+       0:	ec c0       	rjmp	.+472    	; 0x1da <__ctors_end>
+       2:	fb c0       	rjmp	.+502    	; 0x1fa <__bad_interrupt>
+       4:	fa c0       	rjmp	.+500    	; 0x1fa <__bad_interrupt>
+       6:	f9 c0       	rjmp	.+498    	; 0x1fa <__bad_interrupt>
+       8:	f8 c0       	rjmp	.+496    	; 0x1fa <__bad_interrupt>
+       a:	f7 c0       	rjmp	.+494    	; 0x1fa <__bad_interrupt>
+       c:	06 c3       	rjmp	.+1548   	; 0x61a <__vector_6>
+       e:	f5 c0       	rjmp	.+490    	; 0x1fa <__bad_interrupt>
+      10:	f4 c0       	rjmp	.+488    	; 0x1fa <__bad_interrupt>
+      12:	f3 c0       	rjmp	.+486    	; 0x1fa <__bad_interrupt>
+      14:	f2 c0       	rjmp	.+484    	; 0x1fa <__bad_interrupt>
+      16:	f1 c0       	rjmp	.+482    	; 0x1fa <__bad_interrupt>
+      18:	f0 c0       	rjmp	.+480    	; 0x1fa <__bad_interrupt>
+      1a:	ef c0       	rjmp	.+478    	; 0x1fa <__bad_interrupt>
+      1c:	ee c0       	rjmp	.+476    	; 0x1fa <__bad_interrupt>
+      1e:	ed c0       	rjmp	.+474    	; 0x1fa <__bad_interrupt>
+      20:	ec c0       	rjmp	.+472    	; 0x1fa <__bad_interrupt>
+      22:	61 c2       	rjmp	.+1218   	; 0x4e6 <__vector_17>
+      24:	ea c0       	rjmp	.+468    	; 0x1fa <__bad_interrupt>
+      26:	5f c1       	rjmp	.+702    	; 0x2e6 <hcWriteToI2c+0x28>
+      28:	67 c1       	rjmp	.+718    	; 0x2f8 <hcWriteToI2c+0x3a>
+      2a:	a9 c1       	rjmp	.+850    	; 0x37e <hcWriteToI2c+0xc0>
+      2c:	a8 c1       	rjmp	.+848    	; 0x37e <hcWriteToI2c+0xc0>
+      2e:	a7 c1       	rjmp	.+846    	; 0x37e <hcWriteToI2c+0xc0>
+      30:	a6 c1       	rjmp	.+844    	; 0x37e <hcWriteToI2c+0xc0>
+      32:	a5 c1       	rjmp	.+842    	; 0x37e <hcWriteToI2c+0xc0>
+      34:	a4 c1       	rjmp	.+840    	; 0x37e <hcWriteToI2c+0xc0>
+      36:	a3 c1       	rjmp	.+838    	; 0x37e <hcWriteToI2c+0xc0>
+      38:	a2 c1       	rjmp	.+836    	; 0x37e <hcWriteToI2c+0xc0>
+      3a:	64 c1       	rjmp	.+712    	; 0x304 <hcWriteToI2c+0x46>
+      3c:	64 c1       	rjmp	.+712    	; 0x306 <hcWriteToI2c+0x48>
+      3e:	6f c1       	rjmp	.+734    	; 0x31e <hcWriteToI2c+0x60>
+      40:	73 c1       	rjmp	.+742    	; 0x328 <hcWriteToI2c+0x6a>
+      42:	7f c1       	rjmp	.+766    	; 0x342 <hcWriteToI2c+0x84>
+      44:	9c c1       	rjmp	.+824    	; 0x37e <hcWriteToI2c+0xc0>
+      46:	82 c1       	rjmp	.+772    	; 0x34c <hcWriteToI2c+0x8e>
+      48:	85 c1       	rjmp	.+778    	; 0x354 <hcWriteToI2c+0x96>
+      4a:	99 c1       	rjmp	.+818    	; 0x37e <hcWriteToI2c+0xc0>
+      4c:	98 c1       	rjmp	.+816    	; 0x37e <hcWriteToI2c+0xc0>
+      4e:	8c c1       	rjmp	.+792    	; 0x368 <hcWriteToI2c+0xaa>
+      50:	8b c1       	rjmp	.+790    	; 0x368 <hcWriteToI2c+0xaa>
+      52:	8a c1       	rjmp	.+788    	; 0x368 <hcWriteToI2c+0xaa>
+      54:	89 c1       	rjmp	.+786    	; 0x368 <hcWriteToI2c+0xaa>
+      56:	88 c1       	rjmp	.+784    	; 0x368 <hcWriteToI2c+0xaa>
+      58:	87 c1       	rjmp	.+782    	; 0x368 <hcWriteToI2c+0xaa>
+      5a:	86 c1       	rjmp	.+780    	; 0x368 <hcWriteToI2c+0xaa>
+      5c:	85 c1       	rjmp	.+778    	; 0x368 <hcWriteToI2c+0xaa>
+      5e:	8f c1       	rjmp	.+798    	; 0x37e <hcWriteToI2c+0xc0>
+      60:	83 c1       	rjmp	.+774    	; 0x368 <hcWriteToI2c+0xaa>
+      62:	8d c1       	rjmp	.+794    	; 0x37e <hcWriteToI2c+0xc0>
+      64:	8c c1       	rjmp	.+792    	; 0x37e <hcWriteToI2c+0xc0>
+      66:	8b c1       	rjmp	.+790    	; 0x37e <hcWriteToI2c+0xc0>
+      68:	8a c1       	rjmp	.+788    	; 0x37e <hcWriteToI2c+0xc0>
+      6a:	89 c1       	rjmp	.+786    	; 0x37e <hcWriteToI2c+0xc0>
+      6c:	88 c1       	rjmp	.+784    	; 0x37e <hcWriteToI2c+0xc0>
+      6e:	87 c1       	rjmp	.+782    	; 0x37e <hcWriteToI2c+0xc0>
+      70:	86 c1       	rjmp	.+780    	; 0x37e <hcWriteToI2c+0xc0>
+      72:	85 c1       	rjmp	.+778    	; 0x37e <hcWriteToI2c+0xc0>
+      74:	84 c1       	rjmp	.+776    	; 0x37e <hcWriteToI2c+0xc0>
+      76:	7c c1       	rjmp	.+760    	; 0x370 <hcWriteToI2c+0xb2>
+      78:	82 c1       	rjmp	.+772    	; 0x37e <hcWriteToI2c+0xc0>
+      7a:	81 c1       	rjmp	.+770    	; 0x37e <hcWriteToI2c+0xc0>
+      7c:	80 c1       	rjmp	.+768    	; 0x37e <hcWriteToI2c+0xc0>
+      7e:	7f c1       	rjmp	.+766    	; 0x37e <hcWriteToI2c+0xc0>
+      80:	7e c1       	rjmp	.+764    	; 0x37e <hcWriteToI2c+0xc0>
+      82:	7d c1       	rjmp	.+762    	; 0x37e <hcWriteToI2c+0xc0>
+      84:	7c c1       	rjmp	.+760    	; 0x37e <hcWriteToI2c+0xc0>
+      86:	7b c1       	rjmp	.+758    	; 0x37e <hcWriteToI2c+0xc0>
+      88:	7a c1       	rjmp	.+756    	; 0x37e <hcWriteToI2c+0xc0>
+      8a:	79 c1       	rjmp	.+754    	; 0x37e <hcWriteToI2c+0xc0>
+      8c:	29 c1       	rjmp	.+594    	; 0x2e0 <hcWriteToI2c+0x22>
+      8e:	b1 c1       	rjmp	.+866    	; 0x3f2 <hcReadFromI2c+0x46>
+      90:	be c1       	rjmp	.+892    	; 0x40e <__LOCK_REGION_LENGTH__+0xe>
+      92:	c6 c1       	rjmp	.+908    	; 0x420 <__LOCK_REGION_LENGTH__+0x20>
+      94:	23 c2       	rjmp	.+1094   	; 0x4dc <__stack+0x7d>
+      96:	22 c2       	rjmp	.+1092   	; 0x4dc <__stack+0x7d>
+      98:	21 c2       	rjmp	.+1090   	; 0x4dc <__stack+0x7d>
+      9a:	20 c2       	rjmp	.+1088   	; 0x4dc <__stack+0x7d>
+      9c:	1f c2       	rjmp	.+1086   	; 0x4dc <__stack+0x7d>
+      9e:	1e c2       	rjmp	.+1084   	; 0x4dc <__stack+0x7d>
+      a0:	cb c1       	rjmp	.+918    	; 0x438 <__LOCK_REGION_LENGTH__+0x38>
+      a2:	1c c2       	rjmp	.+1080   	; 0x4dc <__stack+0x7d>
+      a4:	1b c2       	rjmp	.+1078   	; 0x4dc <__stack+0x7d>
+      a6:	1a c2       	rjmp	.+1076   	; 0x4dc <__stack+0x7d>
+      a8:	19 c2       	rjmp	.+1074   	; 0x4dc <__stack+0x7d>
+      aa:	d3 c1       	rjmp	.+934    	; 0x452 <__LOCK_REGION_LENGTH__+0x52>
+      ac:	de c1       	rjmp	.+956    	; 0x46a <__stack+0xb>
+      ae:	16 c2       	rjmp	.+1068   	; 0x4dc <__stack+0x7d>
+      b0:	ef c1       	rjmp	.+990    	; 0x490 <__stack+0x31>
+      b2:	41 c7       	rjmp	.+3714   	; 0xf36 <hcNeopixelSetData+0x42>
+      b4:	39 c7       	rjmp	.+3698   	; 0xf28 <hcNeopixelSetData+0x34>
+      b6:	36 c7       	rjmp	.+3692   	; 0xf24 <hcNeopixelSetData+0x30>
+      b8:	6c c8       	rjmp	.-3880   	; 0xfffff192 <__eeprom_end+0xff7eef92>
+      ba:	af c7       	rjmp	.+3934   	; 0x101a <hcNeopixelSetData+0x126>
+      bc:	6a c8       	rjmp	.-3884   	; 0xfffff192 <__eeprom_end+0xff7eef92>
+      be:	69 c8       	rjmp	.-3886   	; 0xfffff192 <__eeprom_end+0xff7eef92>
+      c0:	68 c8       	rjmp	.-3888   	; 0xfffff192 <__eeprom_end+0xff7eef92>
+      c2:	67 c8       	rjmp	.-3890   	; 0xfffff192 <__eeprom_end+0xff7eef92>
+      c4:	66 c8       	rjmp	.-3892   	; 0xfffff192 <__eeprom_end+0xff7eef92>
+      c6:	b6 c7       	rjmp	.+3948   	; 0x1034 <hcNeopixelSetData+0x140>
+      c8:	e2 c7       	rjmp	.+4036   	; 0x108e <hcNeopixelSetData+0x19a>
+      ca:	d9 c7       	rjmp	.+4018   	; 0x107e <hcNeopixelSetData+0x18a>
+      cc:	e3 c7       	rjmp	.+4038   	; 0x1094 <hcNeopixelSetData+0x1a0>
+      ce:	f0 c7       	rjmp	.+4064   	; 0x10b0 <hcNeopixelSetData+0x1bc>
+      d0:	f6 c7       	rjmp	.+4076   	; 0x10be <hcNeopixelSetData+0x1ca>
+
+000000d2 <__trampolines_end>:
+      d2:	aa aa       	std	Y+50, r10	; 0x32
+      d4:	aa aa       	std	Y+50, r10	; 0x32
+      d6:	aa aa       	std	Y+50, r10	; 0x32
+      d8:	aa aa       	std	Y+50, r10	; 0x32
+      da:	aa aa       	std	Y+50, r10	; 0x32
+      dc:	aa aa       	std	Y+50, r10	; 0x32
+      de:	aa aa       	std	Y+50, r10	; 0x32
+      e0:	aa aa       	std	Y+50, r10	; 0x32
+      e2:	aa aa       	std	Y+50, r10	; 0x32
+      e4:	aa aa       	std	Y+50, r10	; 0x32
+      e6:	aa aa       	std	Y+50, r10	; 0x32
+      e8:	aa aa       	std	Y+50, r10	; 0x32
+      ea:	aa aa       	std	Y+50, r10	; 0x32
+      ec:	aa aa       	std	Y+50, r10	; 0x32
+      ee:	aa aa       	std	Y+50, r10	; 0x32
+      f0:	aa aa       	std	Y+50, r10	; 0x32
+      f2:	44 44       	sbci	r20, 0x44	; 68
+      f4:	44 44       	sbci	r20, 0x44	; 68
+      f6:	44 44       	sbci	r20, 0x44	; 68
+      f8:	44 44       	sbci	r20, 0x44	; 68
+      fa:	44 44       	sbci	r20, 0x44	; 68
+      fc:	44 44       	sbci	r20, 0x44	; 68
+      fe:	44 44       	sbci	r20, 0x44	; 68
+     100:	44 44       	sbci	r20, 0x44	; 68
+     102:	44 44       	sbci	r20, 0x44	; 68
+     104:	44 44       	sbci	r20, 0x44	; 68
+     106:	44 44       	sbci	r20, 0x44	; 68
+     108:	44 44       	sbci	r20, 0x44	; 68
+     10a:	44 44       	sbci	r20, 0x44	; 68
+     10c:	44 44       	sbci	r20, 0x44	; 68
+     10e:	44 44       	sbci	r20, 0x44	; 68
+     110:	44 44       	sbci	r20, 0x44	; 68
+     112:	10 10       	cpse	r1, r0
+     114:	10 10       	cpse	r1, r0
+     116:	10 10       	cpse	r1, r0
+     118:	10 10       	cpse	r1, r0
+     11a:	10 10       	cpse	r1, r0
+     11c:	10 10       	cpse	r1, r0
+     11e:	10 10       	cpse	r1, r0
+     120:	10 10       	cpse	r1, r0
+     122:	10 10       	cpse	r1, r0
+     124:	10 10       	cpse	r1, r0
+     126:	10 10       	cpse	r1, r0
+     128:	10 10       	cpse	r1, r0
+     12a:	10 10       	cpse	r1, r0
+     12c:	10 10       	cpse	r1, r0
+     12e:	10 10       	cpse	r1, r0
+     130:	10 10       	cpse	r1, r0
+     132:	00 01       	movw	r0, r0
+     134:	00 01       	movw	r0, r0
+     136:	00 01       	movw	r0, r0
+     138:	00 01       	movw	r0, r0
+     13a:	00 01       	movw	r0, r0
+     13c:	00 01       	movw	r0, r0
+     13e:	00 01       	movw	r0, r0
+     140:	00 01       	movw	r0, r0
+     142:	00 01       	movw	r0, r0
+     144:	00 01       	movw	r0, r0
+     146:	00 01       	movw	r0, r0
+     148:	00 01       	movw	r0, r0
+     14a:	00 01       	movw	r0, r0
+     14c:	00 01       	movw	r0, r0
+     14e:	00 01       	movw	r0, r0
+     150:	00 01       	movw	r0, r0
+     152:	00 00       	nop
+     154:	01 00       	.word	0x0001	; ????
+     156:	00 00       	nop
+     158:	01 00       	.word	0x0001	; ????
+     15a:	00 00       	nop
+     15c:	01 00       	.word	0x0001	; ????
+     15e:	00 00       	nop
+     160:	01 00       	.word	0x0001	; ????
+     162:	00 00       	nop
+     164:	01 00       	.word	0x0001	; ????
+     166:	00 00       	nop
+     168:	01 00       	.word	0x0001	; ????
+     16a:	00 00       	nop
+     16c:	01 00       	.word	0x0001	; ????
+     16e:	00 00       	nop
+     170:	01 00       	.word	0x0001	; ????
+     172:	00 00       	nop
+     174:	00 00       	nop
+     176:	01 00       	.word	0x0001	; ????
+     178:	00 00       	nop
+     17a:	00 00       	nop
+     17c:	00 00       	nop
+     17e:	01 00       	.word	0x0001	; ????
+     180:	00 00       	nop
+     182:	00 00       	nop
+     184:	00 00       	nop
+     186:	01 00       	.word	0x0001	; ????
+     188:	00 00       	nop
+     18a:	00 00       	nop
+     18c:	00 00       	nop
+     18e:	01 00       	.word	0x0001	; ????
+	...
+     198:	00 00       	nop
+     19a:	01 00       	.word	0x0001	; ????
+	...
+     1a8:	00 00       	nop
+     1aa:	01 00       	.word	0x0001	; ????
+	...
+     1c0:	00 00       	nop
+     1c2:	01 00       	.word	0x0001	; ????
+	...
+
+000001d2 <hcNeopixelEffectStepMinDiffs>:
+     1d2:	80 40 20 10 08 04 02 01                             .@ .....
+
+000001da <__ctors_end>:
+     1da:	11 24       	eor	r1, r1
+     1dc:	1f be       	out	0x3f, r1	; 63
+     1de:	cf e5       	ldi	r28, 0x5F	; 95
+     1e0:	d4 e0       	ldi	r29, 0x04	; 4
+     1e2:	de bf       	out	0x3e, r29	; 62
+     1e4:	cd bf       	out	0x3d, r28	; 61
+
+000001e6 <__do_clear_bss>:
+     1e6:	24 e0       	ldi	r18, 0x04	; 4
+     1e8:	a0 e6       	ldi	r26, 0x60	; 96
+     1ea:	b0 e0       	ldi	r27, 0x00	; 0
+     1ec:	01 c0       	rjmp	.+2      	; 0x1f0 <.do_clear_bss_start>
+
+000001ee <.do_clear_bss_loop>:
+     1ee:	1d 92       	st	X+, r1
+
+000001f0 <.do_clear_bss_start>:
+     1f0:	a0 36       	cpi	r26, 0x60	; 96
+     1f2:	b2 07       	cpc	r27, r18
+     1f4:	e1 f7       	brne	.-8      	; 0x1ee <.do_clear_bss_loop>
+     1f6:	68 da       	rcall	.-2864   	; 0xfffff6c8 <__eeprom_end+0xff7ef4c8>
+     1f8:	f0 cb       	rjmp	.-2080   	; 0xfffff9da <__eeprom_end+0xff7ef7da>
+
+000001fa <__bad_interrupt>:
+     1fa:	02 cf       	rjmp	.-508    	; 0x0 <__vectors>
+
+000001fc <hcInitI2C>:
+     1fc:	cf 93       	push	r28
+     1fe:	df 93       	push	r29
+     200:	16 b8       	out	0x06, r1	; 6
+     202:	0f b6       	in	r0, 0x3f	; 63
+     204:	f8 94       	cli
+     206:	a8 95       	wdr
+     208:	81 b5       	in	r24, 0x21	; 33
+     20a:	88 61       	ori	r24, 0x18	; 24
+     20c:	81 bd       	out	0x21, r24	; 33
+     20e:	11 bc       	out	0x21, r1	; 33
+     210:	0f be       	out	0x3f, r0	; 63
+     212:	80 e0       	ldi	r24, 0x00	; 0
+     214:	90 e0       	ldi	r25, 0x00	; 0
+     216:	bb db       	rcall	.-2186   	; 0xfffff98e <__eeprom_end+0xff7ef78e>
+     218:	c8 2f       	mov	r28, r24
+     21a:	d0 e0       	ldi	r29, 0x00	; 0
+     21c:	dc 2f       	mov	r29, r28
+     21e:	cc 27       	eor	r28, r28
+     220:	d0 93 6d 00 	sts	0x006D, r29	; 0x80006d <hcI2cPwmSpeedValue+0x1>
+     224:	c0 93 6c 00 	sts	0x006C, r28	; 0x80006c <hcI2cPwmSpeedValue>
+     228:	81 e0       	ldi	r24, 0x01	; 1
+     22a:	90 e0       	ldi	r25, 0x00	; 0
+     22c:	b0 db       	rcall	.-2208   	; 0xfffff98e <__eeprom_end+0xff7ef78e>
+     22e:	c8 2b       	or	r28, r24
+     230:	ce 01       	movw	r24, r28
+     232:	01 97       	sbiw	r24, 0x01	; 1
+     234:	8e 3f       	cpi	r24, 0xFE	; 254
+     236:	9f 4f       	sbci	r25, 0xFF	; 255
+     238:	28 f4       	brcc	.+10     	; 0x244 <hcInitI2C+0x48>
+     23a:	d0 93 6d 00 	sts	0x006D, r29	; 0x80006d <hcI2cPwmSpeedValue+0x1>
+     23e:	c0 93 6c 00 	sts	0x006C, r28	; 0x80006c <hcI2cPwmSpeedValue>
+     242:	0f c0       	rjmp	.+30     	; 0x262 <hcInitI2C+0x66>
+     244:	80 e0       	ldi	r24, 0x00	; 0
+     246:	94 e0       	ldi	r25, 0x04	; 4
+     248:	90 93 6d 00 	sts	0x006D, r25	; 0x80006d <hcI2cPwmSpeedValue+0x1>
+     24c:	80 93 6c 00 	sts	0x006C, r24	; 0x80006c <hcI2cPwmSpeedValue>
+     250:	64 e0       	ldi	r22, 0x04	; 4
+     252:	80 e0       	ldi	r24, 0x00	; 0
+     254:	90 e0       	ldi	r25, 0x00	; 0
+     256:	b4 db       	rcall	.-2200   	; 0xfffff9c0 <__eeprom_end+0xff7ef7c0>
+     258:	60 91 6c 00 	lds	r22, 0x006C	; 0x80006c <hcI2cPwmSpeedValue>
+     25c:	81 e0       	ldi	r24, 0x01	; 1
+     25e:	90 e0       	ldi	r25, 0x00	; 0
+     260:	af db       	rcall	.-2210   	; 0xfffff9c0 <__eeprom_end+0xff7ef7c0>
+     262:	20 91 6c 00 	lds	r18, 0x006C	; 0x80006c <hcI2cPwmSpeedValue>
+     266:	30 91 6d 00 	lds	r19, 0x006D	; 0x80006d <hcI2cPwmSpeedValue+0x1>
+     26a:	40 e0       	ldi	r20, 0x00	; 0
+     26c:	50 e0       	ldi	r21, 0x00	; 0
+     26e:	60 e0       	ldi	r22, 0x00	; 0
+     270:	7b e1       	ldi	r23, 0x1B	; 27
+     272:	87 eb       	ldi	r24, 0xB7	; 183
+     274:	90 e0       	ldi	r25, 0x00	; 0
+     276:	6f db       	rcall	.-2338   	; 0xfffff956 <__eeprom_end+0xff7ef756>
+     278:	30 93 66 00 	sts	0x0066, r19	; 0x800066 <hcI2cPwmBeat+0x1>
+     27c:	20 93 65 00 	sts	0x0065, r18	; 0x800065 <hcI2cPwmBeat>
+     280:	81 e0       	ldi	r24, 0x01	; 1
+     282:	8e bd       	out	0x2e, r24	; 46
+     284:	89 b7       	in	r24, 0x39	; 57
+     286:	80 61       	ori	r24, 0x10	; 16
+     288:	89 bf       	out	0x39, r24	; 57
+     28a:	82 e0       	ldi	r24, 0x02	; 2
+     28c:	90 e0       	ldi	r25, 0x00	; 0
+     28e:	7f db       	rcall	.-2306   	; 0xfffff98e <__eeprom_end+0xff7ef78e>
+     290:	9d ef       	ldi	r25, 0xFD	; 253
+     292:	98 0f       	add	r25, r24
+     294:	95 37       	cpi	r25, 0x75	; 117
+     296:	08 f0       	brcs	.+2      	; 0x29a <hcInitI2C+0x9e>
+     298:	81 e6       	ldi	r24, 0x61	; 97
+     29a:	88 0f       	add	r24, r24
+     29c:	82 b9       	out	0x02, r24	; 2
+     29e:	86 b7       	in	r24, 0x36	; 54
+     2a0:	8f 7d       	andi	r24, 0xDF	; 223
+     2a2:	86 bf       	out	0x36, r24	; 54
+     2a4:	86 b7       	in	r24, 0x36	; 54
+     2a6:	85 64       	ori	r24, 0x45	; 69
+     2a8:	86 bf       	out	0x36, r24	; 54
+     2aa:	78 94       	sei
+     2ac:	10 92 af 00 	sts	0x00AF, r1	; 0x8000af <hcI2cDataChangedLength>
+     2b0:	10 92 69 00 	sts	0x0069, r1	; 0x800069 <hcI2cEepromPosition+0x1>
+     2b4:	10 92 68 00 	sts	0x0068, r1	; 0x800068 <hcI2cEepromPosition>
+     2b8:	df 91       	pop	r29
+     2ba:	cf 91       	pop	r28
+     2bc:	08 95       	ret
+
+000002be <hcWriteToI2c>:
+     2be:	e0 91 6e 00 	lds	r30, 0x006E	; 0x80006e <hcI2cReadBuffer>
+     2c2:	e8 3c       	cpi	r30, 0xC8	; 200
+     2c4:	08 f4       	brcc	.+2      	; 0x2c8 <hcWriteToI2c+0xa>
+     2c6:	5a c0       	rjmp	.+180    	; 0x37c <hcWriteToI2c+0xbe>
+     2c8:	8e 2f       	mov	r24, r30
+     2ca:	90 e0       	ldi	r25, 0x00	; 0
+     2cc:	fc 01       	movw	r30, r24
+     2ce:	e8 5c       	subi	r30, 0xC8	; 200
+     2d0:	f1 09       	sbc	r31, r1
+     2d2:	e4 33       	cpi	r30, 0x34	; 52
+     2d4:	f1 05       	cpc	r31, r1
+     2d6:	08 f0       	brcs	.+2      	; 0x2da <hcWriteToI2c+0x1c>
+     2d8:	52 c0       	rjmp	.+164    	; 0x37e <hcWriteToI2c+0xc0>
+     2da:	ed 5e       	subi	r30, 0xED	; 237
+     2dc:	ff 4f       	sbci	r31, 0xFF	; 255
+     2de:	09 94       	ijmp
+     2e0:	80 91 af 00 	lds	r24, 0x00AF	; 0x8000af <hcI2cDataChangedLength>
+     2e4:	0c c0       	rjmp	.+24     	; 0x2fe <hcWriteToI2c+0x40>
+     2e6:	84 e0       	ldi	r24, 0x04	; 4
+     2e8:	90 e0       	ldi	r25, 0x00	; 0
+     2ea:	51 db       	rcall	.-2398   	; 0xfffff98e <__eeprom_end+0xff7ef78e>
+     2ec:	80 93 8f 00 	sts	0x008F, r24	; 0x80008f <hcI2cWriteBuffer>
+     2f0:	85 e0       	ldi	r24, 0x05	; 5
+     2f2:	90 e0       	ldi	r25, 0x00	; 0
+     2f4:	4c db       	rcall	.-2408   	; 0xfffff98e <__eeprom_end+0xff7ef78e>
+     2f6:	34 c0       	rjmp	.+104    	; 0x360 <hcWriteToI2c+0xa2>
+     2f8:	83 e0       	ldi	r24, 0x03	; 3
+     2fa:	90 e0       	ldi	r25, 0x00	; 0
+     2fc:	48 db       	rcall	.-2416   	; 0xfffff98e <__eeprom_end+0xff7ef78e>
+     2fe:	80 93 8f 00 	sts	0x008F, r24	; 0x80008f <hcI2cWriteBuffer>
+     302:	34 c0       	rjmp	.+104    	; 0x36c <hcWriteToI2c+0xae>
+     304:	e5 c9       	rjmp	.-3126   	; 0xfffff6d0 <__eeprom_end+0xff7ef4d0>
+     306:	10 92 8f 00 	sts	0x008F, r1	; 0x80008f <hcI2cWriteBuffer>
+     30a:	87 eb       	ldi	r24, 0xB7	; 183
+     30c:	80 93 90 00 	sts	0x0090, r24	; 0x800090 <hcI2cWriteBuffer+0x1>
+     310:	8b e1       	ldi	r24, 0x1B	; 27
+     312:	80 93 91 00 	sts	0x0091, r24	; 0x800091 <hcI2cWriteBuffer+0x2>
+     316:	10 92 92 00 	sts	0x0092, r1	; 0x800092 <hcI2cWriteBuffer+0x3>
+     31a:	84 e0       	ldi	r24, 0x04	; 4
+     31c:	08 95       	ret
+     31e:	81 e0       	ldi	r24, 0x01	; 1
+     320:	80 93 8f 00 	sts	0x008F, r24	; 0x80008f <hcI2cWriteBuffer>
+     324:	8a ef       	ldi	r24, 0xFA	; 250
+     326:	1c c0       	rjmp	.+56     	; 0x360 <hcWriteToI2c+0xa2>
+     328:	20 91 68 00 	lds	r18, 0x0068	; 0x800068 <hcI2cEepromPosition>
+     32c:	30 91 69 00 	lds	r19, 0x0069	; 0x800069 <hcI2cEepromPosition+0x1>
+     330:	8a ef       	ldi	r24, 0xFA	; 250
+     332:	91 e0       	ldi	r25, 0x01	; 1
+     334:	82 1b       	sub	r24, r18
+     336:	93 0b       	sbc	r25, r19
+     338:	90 93 8f 00 	sts	0x008F, r25	; 0x80008f <hcI2cWriteBuffer>
+     33c:	8a ef       	ldi	r24, 0xFA	; 250
+     33e:	82 1b       	sub	r24, r18
+     340:	0f c0       	rjmp	.+30     	; 0x360 <hcWriteToI2c+0xa2>
+     342:	80 91 68 00 	lds	r24, 0x0068	; 0x800068 <hcI2cEepromPosition>
+     346:	90 91 69 00 	lds	r25, 0x0069	; 0x800069 <hcI2cEepromPosition+0x1>
+     34a:	08 c0       	rjmp	.+16     	; 0x35c <hcWriteToI2c+0x9e>
+     34c:	10 92 8f 00 	sts	0x008F, r1	; 0x80008f <hcI2cWriteBuffer>
+     350:	80 e2       	ldi	r24, 0x20	; 32
+     352:	06 c0       	rjmp	.+12     	; 0x360 <hcWriteToI2c+0xa2>
+     354:	80 91 6c 00 	lds	r24, 0x006C	; 0x80006c <hcI2cPwmSpeedValue>
+     358:	90 91 6d 00 	lds	r25, 0x006D	; 0x80006d <hcI2cPwmSpeedValue+0x1>
+     35c:	90 93 8f 00 	sts	0x008F, r25	; 0x80008f <hcI2cWriteBuffer>
+     360:	80 93 90 00 	sts	0x0090, r24	; 0x800090 <hcI2cWriteBuffer+0x1>
+     364:	82 e0       	ldi	r24, 0x02	; 2
+     366:	08 95       	ret
+     368:	10 92 8f 00 	sts	0x008F, r1	; 0x80008f <hcI2cWriteBuffer>
+     36c:	81 e0       	ldi	r24, 0x01	; 1
+     36e:	08 95       	ret
+     370:	81 e0       	ldi	r24, 0x01	; 1
+     372:	80 93 8f 00 	sts	0x008F, r24	; 0x80008f <hcI2cWriteBuffer>
+     376:	80 93 90 00 	sts	0x0090, r24	; 0x800090 <hcI2cWriteBuffer+0x1>
+     37a:	01 c0       	rjmp	.+2      	; 0x37e <hcWriteToI2c+0xc0>
+     37c:	aa c9       	rjmp	.-3244   	; 0xfffff6d2 <__eeprom_end+0xff7ef4d2>
+     37e:	80 e0       	ldi	r24, 0x00	; 0
+     380:	08 95       	ret
+
+00000382 <hcI2cCheckDeviceId>:
+     382:	cf 93       	push	r28
+     384:	c0 91 70 00 	lds	r28, 0x0070	; 0x800070 <hcI2cReadBuffer+0x2>
+     388:	84 e0       	ldi	r24, 0x04	; 4
+     38a:	90 e0       	ldi	r25, 0x00	; 0
+     38c:	00 db       	rcall	.-2560   	; 0xfffff98e <__eeprom_end+0xff7ef78e>
+     38e:	c8 13       	cpse	r28, r24
+     390:	0a c0       	rjmp	.+20     	; 0x3a6 <hcI2cCheckDeviceId+0x24>
+     392:	c0 91 71 00 	lds	r28, 0x0071	; 0x800071 <hcI2cReadBuffer+0x3>
+     396:	85 e0       	ldi	r24, 0x05	; 5
+     398:	90 e0       	ldi	r25, 0x00	; 0
+     39a:	f9 da       	rcall	.-2574   	; 0xfffff98e <__eeprom_end+0xff7ef78e>
+     39c:	91 e0       	ldi	r25, 0x01	; 1
+     39e:	c8 13       	cpse	r28, r24
+     3a0:	90 e0       	ldi	r25, 0x00	; 0
+     3a2:	89 2f       	mov	r24, r25
+     3a4:	01 c0       	rjmp	.+2      	; 0x3a8 <hcI2cCheckDeviceId+0x26>
+     3a6:	80 e0       	ldi	r24, 0x00	; 0
+     3a8:	cf 91       	pop	r28
+     3aa:	08 95       	ret
+
+000003ac <hcReadFromI2c>:
+     3ac:	0f 93       	push	r16
+     3ae:	1f 93       	push	r17
+     3b0:	cf 93       	push	r28
+     3b2:	df 93       	push	r29
+     3b4:	80 91 6a 00 	lds	r24, 0x006A	; 0x80006a <hcI2cReadBufferPosition>
+     3b8:	88 23       	and	r24, r24
+     3ba:	09 f4       	brne	.+2      	; 0x3be <hcReadFromI2c+0x12>
+     3bc:	8f c0       	rjmp	.+286    	; 0x4dc <__stack+0x7d>
+     3be:	20 91 6f 00 	lds	r18, 0x006F	; 0x80006f <hcI2cReadBuffer+0x1>
+     3c2:	30 e0       	ldi	r19, 0x00	; 0
+     3c4:	90 e0       	ldi	r25, 0x00	; 0
+     3c6:	02 97       	sbiw	r24, 0x02	; 2
+     3c8:	28 17       	cp	r18, r24
+     3ca:	39 07       	cpc	r19, r25
+     3cc:	09 f0       	breq	.+2      	; 0x3d0 <hcReadFromI2c+0x24>
+     3ce:	86 c0       	rjmp	.+268    	; 0x4dc <__stack+0x7d>
+     3d0:	e0 91 6e 00 	lds	r30, 0x006E	; 0x80006e <hcI2cReadBuffer>
+     3d4:	e8 3c       	cpi	r30, 0xC8	; 200
+     3d6:	08 f4       	brcc	.+2      	; 0x3da <hcReadFromI2c+0x2e>
+     3d8:	7c c0       	rjmp	.+248    	; 0x4d2 <__stack+0x73>
+     3da:	8e 2f       	mov	r24, r30
+     3dc:	90 e0       	ldi	r25, 0x00	; 0
+     3de:	fc 01       	movw	r30, r24
+     3e0:	e8 5c       	subi	r30, 0xC8	; 200
+     3e2:	f1 09       	sbc	r31, r1
+     3e4:	e2 31       	cpi	r30, 0x12	; 18
+     3e6:	f1 05       	cpc	r31, r1
+     3e8:	08 f0       	brcs	.+2      	; 0x3ec <hcReadFromI2c+0x40>
+     3ea:	78 c0       	rjmp	.+240    	; 0x4dc <__stack+0x7d>
+     3ec:	e9 5b       	subi	r30, 0xB9	; 185
+     3ee:	ff 4f       	sbci	r31, 0xFF	; 255
+     3f0:	09 94       	ijmp
+     3f2:	c7 df       	rcall	.-114    	; 0x382 <hcI2cCheckDeviceId>
+     3f4:	88 23       	and	r24, r24
+     3f6:	09 f4       	brne	.+2      	; 0x3fa <hcReadFromI2c+0x4e>
+     3f8:	71 c0       	rjmp	.+226    	; 0x4dc <__stack+0x7d>
+     3fa:	60 91 72 00 	lds	r22, 0x0072	; 0x800072 <hcI2cReadBuffer+0x4>
+     3fe:	84 e0       	ldi	r24, 0x04	; 4
+     400:	90 e0       	ldi	r25, 0x00	; 0
+     402:	de da       	rcall	.-2628   	; 0xfffff9c0 <__eeprom_end+0xff7ef7c0>
+     404:	60 91 73 00 	lds	r22, 0x0073	; 0x800073 <hcI2cReadBuffer+0x5>
+     408:	85 e0       	ldi	r24, 0x05	; 5
+     40a:	90 e0       	ldi	r25, 0x00	; 0
+     40c:	04 c0       	rjmp	.+8      	; 0x416 <__LOCK_REGION_LENGTH__+0x16>
+     40e:	60 91 70 00 	lds	r22, 0x0070	; 0x800070 <hcI2cReadBuffer+0x2>
+     412:	83 e0       	ldi	r24, 0x03	; 3
+     414:	90 e0       	ldi	r25, 0x00	; 0
+     416:	df 91       	pop	r29
+     418:	cf 91       	pop	r28
+     41a:	1f 91       	pop	r17
+     41c:	0f 91       	pop	r16
+     41e:	d0 ca       	rjmp	.-2656   	; 0xfffff9c0 <__eeprom_end+0xff7ef7c0>
+     420:	b0 df       	rcall	.-160    	; 0x382 <hcI2cCheckDeviceId>
+     422:	88 23       	and	r24, r24
+     424:	09 f4       	brne	.+2      	; 0x428 <__LOCK_REGION_LENGTH__+0x28>
+     426:	5a c0       	rjmp	.+180    	; 0x4dc <__stack+0x7d>
+     428:	60 91 72 00 	lds	r22, 0x0072	; 0x800072 <hcI2cReadBuffer+0x4>
+     42c:	86 2f       	mov	r24, r22
+     42e:	88 0f       	add	r24, r24
+     430:	82 b9       	out	0x02, r24	; 2
+     432:	82 e0       	ldi	r24, 0x02	; 2
+     434:	90 e0       	ldi	r25, 0x00	; 0
+     436:	ef cf       	rjmp	.-34     	; 0x416 <__LOCK_REGION_LENGTH__+0x16>
+     438:	a4 df       	rcall	.-184    	; 0x382 <hcI2cCheckDeviceId>
+     43a:	88 23       	and	r24, r24
+     43c:	09 f4       	brne	.+2      	; 0x440 <__LOCK_REGION_LENGTH__+0x40>
+     43e:	4e c0       	rjmp	.+156    	; 0x4dc <__stack+0x7d>
+     440:	98 e0       	ldi	r25, 0x08	; 8
+     442:	88 e1       	ldi	r24, 0x18	; 24
+     444:	0f b6       	in	r0, 0x3f	; 63
+     446:	f8 94       	cli
+     448:	a8 95       	wdr
+     44a:	81 bd       	out	0x21, r24	; 33
+     44c:	0f be       	out	0x3f, r0	; 63
+     44e:	91 bd       	out	0x21, r25	; 33
+     450:	ff cf       	rjmp	.-2      	; 0x450 <__LOCK_REGION_LENGTH__+0x50>
+     452:	80 91 70 00 	lds	r24, 0x0070	; 0x800070 <hcI2cReadBuffer+0x2>
+     456:	90 91 71 00 	lds	r25, 0x0071	; 0x800071 <hcI2cReadBuffer+0x3>
+     45a:	98 27       	eor	r25, r24
+     45c:	89 27       	eor	r24, r25
+     45e:	98 27       	eor	r25, r24
+     460:	90 93 69 00 	sts	0x0069, r25	; 0x800069 <hcI2cEepromPosition+0x1>
+     464:	80 93 68 00 	sts	0x0068, r24	; 0x800068 <hcI2cEepromPosition>
+     468:	39 c0       	rjmp	.+114    	; 0x4dc <__stack+0x7d>
+     46a:	8b df       	rcall	.-234    	; 0x382 <hcI2cCheckDeviceId>
+     46c:	88 23       	and	r24, r24
+     46e:	b1 f1       	breq	.+108    	; 0x4dc <__stack+0x7d>
+     470:	c6 e0       	ldi	r28, 0x06	; 6
+     472:	d0 e0       	ldi	r29, 0x00	; 0
+     474:	00 e0       	ldi	r16, 0x00	; 0
+     476:	12 e0       	ldi	r17, 0x02	; 2
+     478:	6f ef       	ldi	r22, 0xFF	; 255
+     47a:	ce 01       	movw	r24, r28
+     47c:	90 da       	rcall	.-2784   	; 0xfffff99e <__eeprom_end+0xff7ef79e>
+     47e:	21 96       	adiw	r28, 0x01	; 1
+     480:	0c 17       	cp	r16, r28
+     482:	1d 07       	cpc	r17, r29
+     484:	c9 f7       	brne	.-14     	; 0x478 <__stack+0x19>
+     486:	10 92 69 00 	sts	0x0069, r1	; 0x800069 <hcI2cEepromPosition+0x1>
+     48a:	10 92 68 00 	sts	0x0068, r1	; 0x800068 <hcI2cEepromPosition>
+     48e:	26 c0       	rjmp	.+76     	; 0x4dc <__stack+0x7d>
+     490:	20 91 70 00 	lds	r18, 0x0070	; 0x800070 <hcI2cReadBuffer+0x2>
+     494:	30 91 71 00 	lds	r19, 0x0071	; 0x800071 <hcI2cReadBuffer+0x3>
+     498:	32 27       	eor	r19, r18
+     49a:	23 27       	eor	r18, r19
+     49c:	32 27       	eor	r19, r18
+     49e:	c0 91 70 00 	lds	r28, 0x0070	; 0x800070 <hcI2cReadBuffer+0x2>
+     4a2:	30 93 6d 00 	sts	0x006D, r19	; 0x80006d <hcI2cPwmSpeedValue+0x1>
+     4a6:	20 93 6c 00 	sts	0x006C, r18	; 0x80006c <hcI2cPwmSpeedValue>
+     4aa:	40 e0       	ldi	r20, 0x00	; 0
+     4ac:	50 e0       	ldi	r21, 0x00	; 0
+     4ae:	60 e0       	ldi	r22, 0x00	; 0
+     4b0:	7b e1       	ldi	r23, 0x1B	; 27
+     4b2:	87 eb       	ldi	r24, 0xB7	; 183
+     4b4:	90 e0       	ldi	r25, 0x00	; 0
+     4b6:	4f da       	rcall	.-2914   	; 0xfffff956 <__eeprom_end+0xff7ef756>
+     4b8:	30 93 66 00 	sts	0x0066, r19	; 0x800066 <hcI2cPwmBeat+0x1>
+     4bc:	20 93 65 00 	sts	0x0065, r18	; 0x800065 <hcI2cPwmBeat>
+     4c0:	6c 2f       	mov	r22, r28
+     4c2:	80 e0       	ldi	r24, 0x00	; 0
+     4c4:	90 e0       	ldi	r25, 0x00	; 0
+     4c6:	7c da       	rcall	.-2824   	; 0xfffff9c0 <__eeprom_end+0xff7ef7c0>
+     4c8:	60 91 71 00 	lds	r22, 0x0071	; 0x800071 <hcI2cReadBuffer+0x3>
+     4cc:	81 e0       	ldi	r24, 0x01	; 1
+     4ce:	90 e0       	ldi	r25, 0x00	; 0
+     4d0:	a2 cf       	rjmp	.-188    	; 0x416 <__LOCK_REGION_LENGTH__+0x16>
+     4d2:	df 91       	pop	r29
+     4d4:	cf 91       	pop	r28
+     4d6:	1f 91       	pop	r17
+     4d8:	0f 91       	pop	r16
+     4da:	fc c8       	rjmp	.-3592   	; 0xfffff6d4 <__eeprom_end+0xff7ef4d4>
+     4dc:	df 91       	pop	r29
+     4de:	cf 91       	pop	r28
+     4e0:	1f 91       	pop	r17
+     4e2:	0f 91       	pop	r16
+     4e4:	08 95       	ret
+
+000004e6 <__vector_17>:
+     4e6:	1f 92       	push	r1
+     4e8:	0f 92       	push	r0
+     4ea:	0f b6       	in	r0, 0x3f	; 63
+     4ec:	0f 92       	push	r0
+     4ee:	11 24       	eor	r1, r1
+     4f0:	2f 93       	push	r18
+     4f2:	3f 93       	push	r19
+     4f4:	4f 93       	push	r20
+     4f6:	5f 93       	push	r21
+     4f8:	6f 93       	push	r22
+     4fa:	7f 93       	push	r23
+     4fc:	8f 93       	push	r24
+     4fe:	9f 93       	push	r25
+     500:	af 93       	push	r26
+     502:	bf 93       	push	r27
+     504:	ef 93       	push	r30
+     506:	ff 93       	push	r31
+     508:	81 b1       	in	r24, 0x01	; 1
+     50a:	88 7f       	andi	r24, 0xF8	; 248
+     50c:	80 3a       	cpi	r24, 0xA0	; 160
+     50e:	e1 f1       	breq	.+120    	; 0x588 <__vector_17+0xa2>
+     510:	28 f4       	brcc	.+10     	; 0x51c <__vector_17+0x36>
+     512:	80 36       	cpi	r24, 0x60	; 96
+     514:	41 f0       	breq	.+16     	; 0x526 <__vector_17+0x40>
+     516:	80 38       	cpi	r24, 0x80	; 128
+     518:	59 f0       	breq	.+22     	; 0x530 <__vector_17+0x4a>
+     51a:	3a c0       	rjmp	.+116    	; 0x590 <__vector_17+0xaa>
+     51c:	88 3a       	cpi	r24, 0xA8	; 168
+     51e:	b1 f0       	breq	.+44     	; 0x54c <__vector_17+0x66>
+     520:	88 3b       	cpi	r24, 0xB8	; 184
+     522:	c9 f0       	breq	.+50     	; 0x556 <__vector_17+0x70>
+     524:	35 c0       	rjmp	.+106    	; 0x590 <__vector_17+0xaa>
+     526:	85 ec       	ldi	r24, 0xC5	; 197
+     528:	86 bf       	out	0x36, r24	; 54
+     52a:	10 92 6a 00 	sts	0x006A, r1	; 0x80006a <hcI2cReadBufferPosition>
+     52e:	32 c0       	rjmp	.+100    	; 0x594 <__vector_17+0xae>
+     530:	e0 91 6a 00 	lds	r30, 0x006A	; 0x80006a <hcI2cReadBufferPosition>
+     534:	81 e0       	ldi	r24, 0x01	; 1
+     536:	8e 0f       	add	r24, r30
+     538:	80 93 6a 00 	sts	0x006A, r24	; 0x80006a <hcI2cReadBufferPosition>
+     53c:	93 b1       	in	r25, 0x03	; 3
+     53e:	f0 e0       	ldi	r31, 0x00	; 0
+     540:	e2 59       	subi	r30, 0x92	; 146
+     542:	ff 4f       	sbci	r31, 0xFF	; 255
+     544:	90 83       	st	Z, r25
+     546:	80 32       	cpi	r24, 0x20	; 32
+     548:	e8 f4       	brcc	.+58     	; 0x584 <__vector_17+0x9e>
+     54a:	22 c0       	rjmp	.+68     	; 0x590 <__vector_17+0xaa>
+     54c:	10 92 8e 00 	sts	0x008E, r1	; 0x80008e <hcI2cWriteBufferPosition>
+     550:	b6 de       	rcall	.-660    	; 0x2be <hcWriteToI2c>
+     552:	80 93 64 00 	sts	0x0064, r24	; 0x800064 <hcI2cSendDataLength>
+     556:	80 91 64 00 	lds	r24, 0x0064	; 0x800064 <hcI2cSendDataLength>
+     55a:	81 11       	cpse	r24, r1
+     55c:	02 c0       	rjmp	.+4      	; 0x562 <__vector_17+0x7c>
+     55e:	13 b8       	out	0x03, r1	; 3
+     560:	11 c0       	rjmp	.+34     	; 0x584 <__vector_17+0x9e>
+     562:	e0 91 8e 00 	lds	r30, 0x008E	; 0x80008e <hcI2cWriteBufferPosition>
+     566:	81 e0       	ldi	r24, 0x01	; 1
+     568:	8e 0f       	add	r24, r30
+     56a:	80 93 8e 00 	sts	0x008E, r24	; 0x80008e <hcI2cWriteBufferPosition>
+     56e:	f0 e0       	ldi	r31, 0x00	; 0
+     570:	e1 57       	subi	r30, 0x71	; 113
+     572:	ff 4f       	sbci	r31, 0xFF	; 255
+     574:	80 81       	ld	r24, Z
+     576:	83 b9       	out	0x03, r24	; 3
+     578:	90 91 8e 00 	lds	r25, 0x008E	; 0x80008e <hcI2cWriteBufferPosition>
+     57c:	80 91 64 00 	lds	r24, 0x0064	; 0x800064 <hcI2cSendDataLength>
+     580:	98 17       	cp	r25, r24
+     582:	30 f0       	brcs	.+12     	; 0x590 <__vector_17+0xaa>
+     584:	85 e8       	ldi	r24, 0x85	; 133
+     586:	05 c0       	rjmp	.+10     	; 0x592 <__vector_17+0xac>
+     588:	85 ec       	ldi	r24, 0xC5	; 197
+     58a:	86 bf       	out	0x36, r24	; 54
+     58c:	0f df       	rcall	.-482    	; 0x3ac <hcReadFromI2c>
+     58e:	02 c0       	rjmp	.+4      	; 0x594 <__vector_17+0xae>
+     590:	85 ec       	ldi	r24, 0xC5	; 197
+     592:	86 bf       	out	0x36, r24	; 54
+     594:	ff 91       	pop	r31
+     596:	ef 91       	pop	r30
+     598:	bf 91       	pop	r27
+     59a:	af 91       	pop	r26
+     59c:	9f 91       	pop	r25
+     59e:	8f 91       	pop	r24
+     5a0:	7f 91       	pop	r23
+     5a2:	6f 91       	pop	r22
+     5a4:	5f 91       	pop	r21
+     5a6:	4f 91       	pop	r20
+     5a8:	3f 91       	pop	r19
+     5aa:	2f 91       	pop	r18
+     5ac:	0f 90       	pop	r0
+     5ae:	0f be       	out	0x3f, r0	; 63
+     5b0:	0f 90       	pop	r0
+     5b2:	1f 90       	pop	r1
+     5b4:	18 95       	reti
+
+000005b6 <hcI2cReadByteFromEeprom>:
+     5b6:	8a 5f       	subi	r24, 0xFA	; 250
+     5b8:	9f 4f       	sbci	r25, 0xFF	; 255
+     5ba:	e9 c9       	rjmp	.-3118   	; 0xfffff98e <__eeprom_end+0xff7ef78e>
+
+000005bc <hcI2cUpdateByteInEeprom>:
+     5bc:	8a 5f       	subi	r24, 0xFA	; 250
+     5be:	9f 4f       	sbci	r25, 0xFF	; 255
+     5c0:	ee c9       	rjmp	.-3108   	; 0xfffff99e <__eeprom_end+0xff7ef79e>
+
+000005c2 <hcI2cInterruptCheck>:
+     5c2:	cf 93       	push	r28
+     5c4:	c0 91 67 00 	lds	r28, 0x0067	; 0x800067 <hcI2cInterruptCount>
+     5c8:	cc 23       	and	r28, r28
+     5ca:	29 f1       	breq	.+74     	; 0x616 <hcI2cInterruptCheck+0x54>
+     5cc:	84 d8       	rcall	.-3832   	; 0xfffff6d6 <__eeprom_end+0xff7ef4d6>
+     5ce:	80 91 b8 00 	lds	r24, 0x00B8	; 0x8000b8 <hcIsrCount+0x2>
+     5d2:	90 91 b9 00 	lds	r25, 0x00B9	; 0x8000b9 <hcIsrCount+0x3>
+     5d6:	8c 0f       	add	r24, r28
+     5d8:	91 1d       	adc	r25, r1
+     5da:	90 93 b9 00 	sts	0x00B9, r25	; 0x8000b9 <hcIsrCount+0x3>
+     5de:	80 93 b8 00 	sts	0x00B8, r24	; 0x8000b8 <hcIsrCount+0x2>
+     5e2:	80 91 67 00 	lds	r24, 0x0067	; 0x800067 <hcI2cInterruptCount>
+     5e6:	8c 1b       	sub	r24, r28
+     5e8:	80 93 67 00 	sts	0x0067, r24	; 0x800067 <hcI2cInterruptCount>
+     5ec:	80 91 b6 00 	lds	r24, 0x00B6	; 0x8000b6 <hcIsrCount>
+     5f0:	90 91 b7 00 	lds	r25, 0x00B7	; 0x8000b7 <hcIsrCount+0x1>
+     5f4:	20 91 6c 00 	lds	r18, 0x006C	; 0x80006c <hcI2cPwmSpeedValue>
+     5f8:	30 91 6d 00 	lds	r19, 0x006D	; 0x80006d <hcI2cPwmSpeedValue+0x1>
+     5fc:	28 17       	cp	r18, r24
+     5fe:	39 07       	cpc	r19, r25
+     600:	30 f0       	brcs	.+12     	; 0x60e <hcI2cInterruptCheck+0x4c>
+     602:	01 96       	adiw	r24, 0x01	; 1
+     604:	90 93 b7 00 	sts	0x00B7, r25	; 0x8000b7 <hcIsrCount+0x1>
+     608:	80 93 b6 00 	sts	0x00B6, r24	; 0x8000b6 <hcIsrCount>
+     60c:	04 c0       	rjmp	.+8      	; 0x616 <hcI2cInterruptCheck+0x54>
+     60e:	10 92 b7 00 	sts	0x00B7, r1	; 0x8000b7 <hcIsrCount+0x1>
+     612:	10 92 b6 00 	sts	0x00B6, r1	; 0x8000b6 <hcIsrCount>
+     616:	cf 91       	pop	r28
+     618:	08 95       	ret
+
+0000061a <__vector_6>:
+     61a:	1f 92       	push	r1
+     61c:	0f 92       	push	r0
+     61e:	0f b6       	in	r0, 0x3f	; 63
+     620:	0f 92       	push	r0
+     622:	11 24       	eor	r1, r1
+     624:	2f 93       	push	r18
+     626:	3f 93       	push	r19
+     628:	8f 93       	push	r24
+     62a:	9f 93       	push	r25
+     62c:	f8 94       	cli
+     62e:	2a b5       	in	r18, 0x2a	; 42
+     630:	3b b5       	in	r19, 0x2b	; 43
+     632:	80 91 65 00 	lds	r24, 0x0065	; 0x800065 <hcI2cPwmBeat>
+     636:	90 91 66 00 	lds	r25, 0x0066	; 0x800066 <hcI2cPwmBeat+0x1>
+     63a:	82 0f       	add	r24, r18
+     63c:	93 1f       	adc	r25, r19
+     63e:	9b bd       	out	0x2b, r25	; 43
+     640:	8a bd       	out	0x2a, r24	; 42
+     642:	80 91 67 00 	lds	r24, 0x0067	; 0x800067 <hcI2cInterruptCount>
+     646:	8f 5f       	subi	r24, 0xFF	; 255
+     648:	80 93 67 00 	sts	0x0067, r24	; 0x800067 <hcI2cInterruptCount>
+     64c:	78 94       	sei
+     64e:	9f 91       	pop	r25
+     650:	8f 91       	pop	r24
+     652:	3f 91       	pop	r19
+     654:	2f 91       	pop	r18
+     656:	0f 90       	pop	r0
+     658:	0f be       	out	0x3f, r0	; 63
+     65a:	0f 90       	pop	r0
+     65c:	1f 90       	pop	r1
+     65e:	18 95       	reti
+
+00000660 <hcNeopixelSendLedsMask>:
+     660:	cf 92       	push	r12
+     662:	df 92       	push	r13
+     664:	ef 92       	push	r14
+     666:	ff 92       	push	r15
+     668:	cf 93       	push	r28
+     66a:	df 93       	push	r29
+     66c:	9c 01       	movw	r18, r24
+     66e:	db 01       	movw	r26, r22
+     670:	81 b3       	in	r24, 0x11	; 17
+     672:	84 2b       	or	r24, r20
+     674:	81 bb       	out	0x11, r24	; 17
+     676:	82 b3       	in	r24, 0x12	; 18
+     678:	54 2f       	mov	r21, r20
+     67a:	50 95       	com	r21
+     67c:	58 23       	and	r21, r24
+     67e:	82 b3       	in	r24, 0x12	; 18
+     680:	48 2b       	or	r20, r24
+     682:	cf b7       	in	r28, 0x3f	; 63
+     684:	f8 94       	cli
+     686:	e0 90 31 03 	lds	r14, 0x0331	; 0x800331 <hcNeopixelBlinkColor>
+     68a:	60 e0       	ldi	r22, 0x00	; 0
+     68c:	70 e0       	ldi	r23, 0x00	; 0
+     68e:	6a 17       	cp	r22, r26
+     690:	7b 07       	cpc	r23, r27
+     692:	41 f1       	breq	.+80     	; 0x6e4 <loop54+0x26>
+     694:	fb 01       	movw	r30, r22
+     696:	ee 0f       	add	r30, r30
+     698:	ff 1f       	adc	r31, r31
+     69a:	e6 0f       	add	r30, r22
+     69c:	f7 1f       	adc	r31, r23
+     69e:	e3 54       	subi	r30, 0x43	; 67
+     6a0:	ff 4f       	sbci	r31, 0xFF	; 255
+     6a2:	80 81       	ld	r24, Z
+     6a4:	85 fb       	bst	r24, 5
+     6a6:	88 27       	eor	r24, r24
+     6a8:	80 f9       	bld	r24, 0
+     6aa:	f9 01       	movw	r30, r18
+     6ac:	90 e0       	ldi	r25, 0x00	; 0
+     6ae:	88 23       	and	r24, r24
+     6b0:	19 f0       	breq	.+6      	; 0x6b8 <hcNeopixelSendLedsMask+0x58>
+     6b2:	fe 2c       	mov	r15, r14
+     6b4:	f9 0e       	add	r15, r25
+     6b6:	01 c0       	rjmp	.+2      	; 0x6ba <hcNeopixelSendLedsMask+0x5a>
+     6b8:	f0 80       	ld	r15, Z
+     6ba:	31 96       	adiw	r30, 0x01	; 1
+     6bc:	d8 e0       	ldi	r29, 0x08	; 8
+
+000006be <loop54>:
+     6be:	42 bb       	out	0x12, r20	; 18
+     6c0:	00 c0       	rjmp	.+0      	; 0x6c2 <loop54+0x4>
+     6c2:	f7 fe       	sbrs	r15, 7
+     6c4:	52 bb       	out	0x12, r21	; 18
+     6c6:	ff 0c       	add	r15, r15
+     6c8:	00 00       	nop
+     6ca:	00 c0       	rjmp	.+0      	; 0x6cc <loop54+0xe>
+     6cc:	00 c0       	rjmp	.+0      	; 0x6ce <loop54+0x10>
+     6ce:	52 bb       	out	0x12, r21	; 18
+     6d0:	da 95       	dec	r29
+     6d2:	a9 f7       	brne	.-22     	; 0x6be <loop54>
+     6d4:	9f 5f       	subi	r25, 0xFF	; 255
+     6d6:	93 30       	cpi	r25, 0x03	; 3
+     6d8:	51 f7       	brne	.-44     	; 0x6ae <hcNeopixelSendLedsMask+0x4e>
+     6da:	2d 5f       	subi	r18, 0xFD	; 253
+     6dc:	3f 4f       	sbci	r19, 0xFF	; 255
+     6de:	6f 5f       	subi	r22, 0xFF	; 255
+     6e0:	7f 4f       	sbci	r23, 0xFF	; 255
+     6e2:	d5 cf       	rjmp	.-86     	; 0x68e <hcNeopixelSendLedsMask+0x2e>
+     6e4:	80 e0       	ldi	r24, 0x00	; 0
+     6e6:	90 e0       	ldi	r25, 0x00	; 0
+     6e8:	23 d8       	rcall	.-4026   	; 0xfffff730 <__eeprom_end+0xff7ef530>
+     6ea:	20 e0       	ldi	r18, 0x00	; 0
+     6ec:	30 e0       	ldi	r19, 0x00	; 0
+     6ee:	44 eb       	ldi	r20, 0xB4	; 180
+     6f0:	53 e4       	ldi	r21, 0x43	; 67
+     6f2:	84 d8       	rcall	.-3832   	; 0xfffff7fc <__eeprom_end+0xff7ef5fc>
+     6f4:	f1 d7       	rcall	.+4066   	; 0x16d8 <__fixunssfsi>
+     6f6:	6b 01       	movw	r12, r22
+     6f8:	7c 01       	movw	r14, r24
+     6fa:	20 91 65 00 	lds	r18, 0x0065	; 0x800065 <hcI2cPwmBeat>
+     6fe:	30 91 66 00 	lds	r19, 0x0066	; 0x800066 <hcI2cPwmBeat+0x1>
+     702:	40 e0       	ldi	r20, 0x00	; 0
+     704:	50 e0       	ldi	r21, 0x00	; 0
+     706:	05 d9       	rcall	.-3574   	; 0xfffff912 <__eeprom_end+0xff7ef712>
+     708:	80 91 67 00 	lds	r24, 0x0067	; 0x800067 <hcI2cInterruptCount>
+     70c:	28 0f       	add	r18, r24
+     70e:	20 93 67 00 	sts	0x0067, r18	; 0x800067 <hcI2cInterruptCount>
+     712:	8a b5       	in	r24, 0x2a	; 42
+     714:	9b b5       	in	r25, 0x2b	; 43
+     716:	c8 0e       	add	r12, r24
+     718:	d9 1e       	adc	r13, r25
+     71a:	db bc       	out	0x2b, r13	; 43
+     71c:	ca bc       	out	0x2a, r12	; 42
+     71e:	cf bf       	out	0x3f, r28	; 63
+     720:	df 91       	pop	r29
+     722:	cf 91       	pop	r28
+     724:	ff 90       	pop	r15
+     726:	ef 90       	pop	r14
+     728:	df 90       	pop	r13
+     72a:	cf 90       	pop	r12
+     72c:	08 95       	ret
+
+0000072e <hcNeopixelSetLedsPin>:
+     72e:	98 df       	rcall	.-208    	; 0x660 <hcNeopixelSendLedsMask>
+     730:	88 ec       	ldi	r24, 0xC8	; 200
+     732:	8a 95       	dec	r24
+     734:	f1 f7       	brne	.-4      	; 0x732 <hcNeopixelSetLedsPin+0x4>
+     736:	08 95       	ret
+
+00000738 <hcNeopixelInit>:
+     738:	5f 92       	push	r5
+     73a:	6f 92       	push	r6
+     73c:	7f 92       	push	r7
+     73e:	8f 92       	push	r8
+     740:	9f 92       	push	r9
+     742:	af 92       	push	r10
+     744:	bf 92       	push	r11
+     746:	cf 92       	push	r12
+     748:	df 92       	push	r13
+     74a:	ef 92       	push	r14
+     74c:	ff 92       	push	r15
+     74e:	0f 93       	push	r16
+     750:	1f 93       	push	r17
+     752:	cf 93       	push	r28
+     754:	df 93       	push	r29
+     756:	10 92 fb 01 	sts	0x01FB, r1	; 0x8001fb <hcNeopixelSequenceActive>
+     75a:	10 92 ba 00 	sts	0x00BA, r1	; 0x8000ba <hcNeopixelSequenceRepeat>
+     75e:	10 92 28 03 	sts	0x0328, r1	; 0x800328 <hcNeopixelSequenceRepeatCount>
+     762:	88 e0       	ldi	r24, 0x08	; 8
+     764:	90 e0       	ldi	r25, 0x00	; 0
+     766:	90 93 e8 01 	sts	0x01E8, r25	; 0x8001e8 <hcNeopixelSequenceEepromAddress+0x1>
+     76a:	80 93 e7 01 	sts	0x01E7, r24	; 0x8001e7 <hcNeopixelSequenceEepromAddress>
+     76e:	90 93 69 00 	sts	0x0069, r25	; 0x800069 <hcI2cEepromPosition+0x1>
+     772:	80 93 68 00 	sts	0x0068, r24	; 0x800068 <hcI2cEepromPosition>
+     776:	10 92 32 03 	sts	0x0332, r1	; 0x800332 <hcNeopixelBlinkColor+0x1>
+     77a:	10 92 31 03 	sts	0x0331, r1	; 0x800331 <hcNeopixelBlinkColor>
+     77e:	10 92 33 03 	sts	0x0333, r1	; 0x800333 <hcNeopixelBlinkColor+0x2>
+     782:	39 e2       	ldi	r19, 0x29	; 41
+     784:	c3 2e       	mov	r12, r19
+     786:	33 e0       	ldi	r19, 0x03	; 3
+     788:	d3 2e       	mov	r13, r19
+     78a:	43 ef       	ldi	r20, 0xF3	; 243
+     78c:	84 2e       	mov	r8, r20
+     78e:	41 e0       	ldi	r20, 0x01	; 1
+     790:	94 2e       	mov	r9, r20
+     792:	e1 2c       	mov	r14, r1
+     794:	f1 2c       	mov	r15, r1
+     796:	00 e0       	ldi	r16, 0x00	; 0
+     798:	10 e0       	ldi	r17, 0x00	; 0
+     79a:	c0 e0       	ldi	r28, 0x00	; 0
+     79c:	d0 e0       	ldi	r29, 0x00	; 0
+     79e:	66 24       	eor	r6, r6
+     7a0:	63 94       	inc	r6
+     7a2:	71 2c       	mov	r7, r1
+     7a4:	5e 2c       	mov	r5, r14
+     7a6:	c8 01       	movw	r24, r16
+     7a8:	06 df       	rcall	.-500    	; 0x5b6 <hcI2cReadByteFromEeprom>
+     7aa:	f4 01       	movw	r30, r8
+     7ac:	10 82       	st	Z, r1
+     7ae:	81 83       	std	Z+1, r24	; 0x01
+     7b0:	c8 01       	movw	r24, r16
+     7b2:	01 96       	adiw	r24, 0x01	; 1
+     7b4:	0e 5f       	subi	r16, 0xFE	; 254
+     7b6:	1f 4f       	sbci	r17, 0xFF	; 255
+     7b8:	fe de       	rcall	.-516    	; 0x5b6 <hcI2cReadByteFromEeprom>
+     7ba:	f4 01       	movw	r30, r8
+     7bc:	20 81       	ld	r18, Z
+     7be:	31 81       	ldd	r19, Z+1	; 0x01
+     7c0:	a9 01       	movw	r20, r18
+     7c2:	48 2b       	or	r20, r24
+     7c4:	ca 01       	movw	r24, r20
+     7c6:	85 36       	cpi	r24, 0x65	; 101
+     7c8:	91 05       	cpc	r25, r1
+     7ca:	18 f4       	brcc	.+6      	; 0x7d2 <hcNeopixelInit+0x9a>
+     7cc:	91 83       	std	Z+1, r25	; 0x01
+     7ce:	80 83       	st	Z, r24
+     7d0:	03 c0       	rjmp	.+6      	; 0x7d8 <hcNeopixelInit+0xa0>
+     7d2:	f4 01       	movw	r30, r8
+     7d4:	11 82       	std	Z+1, r1	; 0x01
+     7d6:	10 82       	st	Z, r1
+     7d8:	f6 01       	movw	r30, r12
+     7da:	c1 93       	st	Z+, r28
+     7dc:	d1 93       	st	Z+, r29
+     7de:	6f 01       	movw	r12, r30
+     7e0:	f4 01       	movw	r30, r8
+     7e2:	61 91       	ld	r22, Z+
+     7e4:	71 91       	ld	r23, Z+
+     7e6:	4f 01       	movw	r8, r30
+     7e8:	5b 01       	movw	r10, r22
+     7ea:	ac 0e       	add	r10, r28
+     7ec:	bd 1e       	adc	r11, r29
+     7ee:	a3 01       	movw	r20, r6
+     7f0:	01 c0       	rjmp	.+2      	; 0x7f4 <hcNeopixelInit+0xbc>
+     7f2:	44 0f       	add	r20, r20
+     7f4:	5a 94       	dec	r5
+     7f6:	ea f7       	brpl	.-6      	; 0x7f2 <hcNeopixelInit+0xba>
+     7f8:	ce 01       	movw	r24, r28
+     7fa:	88 0f       	add	r24, r24
+     7fc:	99 1f       	adc	r25, r25
+     7fe:	8c 0f       	add	r24, r28
+     800:	9d 1f       	adc	r25, r29
+     802:	84 50       	subi	r24, 0x04	; 4
+     804:	9e 4f       	sbci	r25, 0xFE	; 254
+     806:	93 df       	rcall	.-218    	; 0x72e <hcNeopixelSetLedsPin>
+     808:	ff ef       	ldi	r31, 0xFF	; 255
+     80a:	ef 1a       	sub	r14, r31
+     80c:	ff 0a       	sbc	r15, r31
+     80e:	08 30       	cpi	r16, 0x08	; 8
+     810:	11 05       	cpc	r17, r1
+     812:	11 f0       	breq	.+4      	; 0x818 <hcNeopixelInit+0xe0>
+     814:	e5 01       	movw	r28, r10
+     816:	c6 cf       	rjmp	.-116    	; 0x7a4 <hcNeopixelInit+0x6c>
+     818:	df 91       	pop	r29
+     81a:	cf 91       	pop	r28
+     81c:	1f 91       	pop	r17
+     81e:	0f 91       	pop	r16
+     820:	ff 90       	pop	r15
+     822:	ef 90       	pop	r14
+     824:	df 90       	pop	r13
+     826:	cf 90       	pop	r12
+     828:	bf 90       	pop	r11
+     82a:	af 90       	pop	r10
+     82c:	9f 90       	pop	r9
+     82e:	8f 90       	pop	r8
+     830:	7f 90       	pop	r7
+     832:	6f 90       	pop	r6
+     834:	5f 90       	pop	r5
+     836:	08 95       	ret
+
+00000838 <hcNeopixelSetLedData>:
+     838:	cf 92       	push	r12
+     83a:	df 92       	push	r13
+     83c:	ef 92       	push	r14
+     83e:	ff 92       	push	r15
+     840:	0f 93       	push	r16
+     842:	1f 93       	push	r17
+     844:	cf 93       	push	r28
+     846:	df 93       	push	r29
+     848:	fc 01       	movw	r30, r24
+     84a:	e9 01       	movw	r28, r18
+     84c:	a0 81       	ld	r26, Z
+     84e:	b1 81       	ldd	r27, Z+1	; 0x01
+     850:	cd 01       	movw	r24, r26
+     852:	88 0f       	add	r24, r24
+     854:	99 1f       	adc	r25, r25
+     856:	a8 0f       	add	r26, r24
+     858:	b9 1f       	adc	r27, r25
+     85a:	a3 54       	subi	r26, 0x43	; 67
+     85c:	bf 4f       	sbci	r27, 0xFF	; 255
+     85e:	8c 91       	ld	r24, X
+     860:	87 7f       	andi	r24, 0xF7	; 247
+     862:	8c 93       	st	X, r24
+     864:	d8 01       	movw	r26, r16
+     866:	2c 91       	ld	r18, X
+     868:	80 81       	ld	r24, Z
+     86a:	91 81       	ldd	r25, Z+1	; 0x01
+     86c:	22 23       	and	r18, r18
+     86e:	09 f4       	brne	.+2      	; 0x872 <hcNeopixelSetLedData+0x3a>
+     870:	df c0       	rjmp	.+446    	; 0xa30 <hcNeopixelSetLedData+0x1f8>
+     872:	dc 01       	movw	r26, r24
+     874:	aa 0f       	add	r26, r26
+     876:	bb 1f       	adc	r27, r27
+     878:	8a 0f       	add	r24, r26
+     87a:	9b 1f       	adc	r25, r27
+     87c:	dc 01       	movw	r26, r24
+     87e:	a5 54       	subi	r26, 0x45	; 69
+     880:	bf 4f       	sbci	r27, 0xFF	; 255
+     882:	11 96       	adiw	r26, 0x01	; 1
+     884:	1c 92       	st	X, r1
+     886:	80 81       	ld	r24, Z
+     888:	91 81       	ldd	r25, Z+1	; 0x01
+     88a:	dc 01       	movw	r26, r24
+     88c:	aa 0f       	add	r26, r26
+     88e:	bb 1f       	adc	r27, r27
+     890:	9d 01       	movw	r18, r26
+     892:	28 0f       	add	r18, r24
+     894:	39 1f       	adc	r19, r25
+     896:	c9 01       	movw	r24, r18
+     898:	84 50       	subi	r24, 0x04	; 4
+     89a:	9e 4f       	sbci	r25, 0xFE	; 254
+     89c:	dc 01       	movw	r26, r24
+     89e:	11 96       	adiw	r26, 0x01	; 1
+     8a0:	9c 91       	ld	r25, X
+     8a2:	db 01       	movw	r26, r22
+     8a4:	8c 91       	ld	r24, X
+     8a6:	d9 01       	movw	r26, r18
+     8a8:	a3 54       	subi	r26, 0x43	; 67
+     8aa:	bf 4f       	sbci	r27, 0xFF	; 255
+     8ac:	89 17       	cp	r24, r25
+     8ae:	b8 f4       	brcc	.+46     	; 0x8de <hcNeopixelSetLedData+0xa6>
+     8b0:	8c 91       	ld	r24, X
+     8b2:	8e 7f       	andi	r24, 0xFE	; 254
+     8b4:	8c 93       	st	X, r24
+     8b6:	80 81       	ld	r24, Z
+     8b8:	91 81       	ldd	r25, Z+1	; 0x01
+     8ba:	9c 01       	movw	r18, r24
+     8bc:	22 0f       	add	r18, r18
+     8be:	33 1f       	adc	r19, r19
+     8c0:	82 0f       	add	r24, r18
+     8c2:	93 1f       	adc	r25, r19
+     8c4:	9c 01       	movw	r18, r24
+     8c6:	2c 5c       	subi	r18, 0xCC	; 204
+     8c8:	3c 4f       	sbci	r19, 0xFC	; 252
+     8ca:	84 50       	subi	r24, 0x04	; 4
+     8cc:	9e 4f       	sbci	r25, 0xFE	; 254
+     8ce:	dc 01       	movw	r26, r24
+     8d0:	11 96       	adiw	r26, 0x01	; 1
+     8d2:	8c 91       	ld	r24, X
+     8d4:	db 01       	movw	r26, r22
+     8d6:	9c 91       	ld	r25, X
+     8d8:	89 1b       	sub	r24, r25
+     8da:	d9 01       	movw	r26, r18
+     8dc:	18 c0       	rjmp	.+48     	; 0x90e <hcNeopixelSetLedData+0xd6>
+     8de:	8c 91       	ld	r24, X
+     8e0:	81 60       	ori	r24, 0x01	; 1
+     8e2:	8c 93       	st	X, r24
+     8e4:	80 81       	ld	r24, Z
+     8e6:	91 81       	ldd	r25, Z+1	; 0x01
+     8e8:	9c 01       	movw	r18, r24
+     8ea:	22 0f       	add	r18, r18
+     8ec:	33 1f       	adc	r19, r19
+     8ee:	82 0f       	add	r24, r18
+     8f0:	93 1f       	adc	r25, r19
+     8f2:	9c 01       	movw	r18, r24
+     8f4:	2c 5c       	subi	r18, 0xCC	; 204
+     8f6:	3c 4f       	sbci	r19, 0xFC	; 252
+     8f8:	69 01       	movw	r12, r18
+     8fa:	84 50       	subi	r24, 0x04	; 4
+     8fc:	9e 4f       	sbci	r25, 0xFE	; 254
+     8fe:	db 01       	movw	r26, r22
+     900:	2c 91       	ld	r18, X
+     902:	dc 01       	movw	r26, r24
+     904:	11 96       	adiw	r26, 0x01	; 1
+     906:	8c 91       	ld	r24, X
+     908:	28 1b       	sub	r18, r24
+     90a:	82 2f       	mov	r24, r18
+     90c:	d6 01       	movw	r26, r12
+     90e:	11 96       	adiw	r26, 0x01	; 1
+     910:	8c 93       	st	X, r24
+     912:	80 81       	ld	r24, Z
+     914:	91 81       	ldd	r25, Z+1	; 0x01
+     916:	dc 01       	movw	r26, r24
+     918:	aa 0f       	add	r26, r26
+     91a:	bb 1f       	adc	r27, r27
+     91c:	9d 01       	movw	r18, r26
+     91e:	28 0f       	add	r18, r24
+     920:	39 1f       	adc	r19, r25
+     922:	c9 01       	movw	r24, r18
+     924:	84 50       	subi	r24, 0x04	; 4
+     926:	9e 4f       	sbci	r25, 0xFE	; 254
+     928:	dc 01       	movw	r26, r24
+     92a:	9c 91       	ld	r25, X
+     92c:	da 01       	movw	r26, r20
+     92e:	8c 91       	ld	r24, X
+     930:	d9 01       	movw	r26, r18
+     932:	a3 54       	subi	r26, 0x43	; 67
+     934:	bf 4f       	sbci	r27, 0xFF	; 255
+     936:	89 17       	cp	r24, r25
+     938:	b0 f4       	brcc	.+44     	; 0x966 <hcNeopixelSetLedData+0x12e>
+     93a:	8c 91       	ld	r24, X
+     93c:	8d 7f       	andi	r24, 0xFD	; 253
+     93e:	8c 93       	st	X, r24
+     940:	80 81       	ld	r24, Z
+     942:	91 81       	ldd	r25, Z+1	; 0x01
+     944:	9c 01       	movw	r18, r24
+     946:	22 0f       	add	r18, r18
+     948:	33 1f       	adc	r19, r19
+     94a:	82 0f       	add	r24, r18
+     94c:	93 1f       	adc	r25, r19
+     94e:	9c 01       	movw	r18, r24
+     950:	2c 5c       	subi	r18, 0xCC	; 204
+     952:	3c 4f       	sbci	r19, 0xFC	; 252
+     954:	84 50       	subi	r24, 0x04	; 4
+     956:	9e 4f       	sbci	r25, 0xFE	; 254
+     958:	dc 01       	movw	r26, r24
+     95a:	8c 91       	ld	r24, X
+     95c:	da 01       	movw	r26, r20
+     95e:	9c 91       	ld	r25, X
+     960:	89 1b       	sub	r24, r25
+     962:	d9 01       	movw	r26, r18
+     964:	16 c0       	rjmp	.+44     	; 0x992 <hcNeopixelSetLedData+0x15a>
+     966:	8c 91       	ld	r24, X
+     968:	82 60       	ori	r24, 0x02	; 2
+     96a:	8c 93       	st	X, r24
+     96c:	80 81       	ld	r24, Z
+     96e:	91 81       	ldd	r25, Z+1	; 0x01
+     970:	9c 01       	movw	r18, r24
+     972:	22 0f       	add	r18, r18
+     974:	33 1f       	adc	r19, r19
+     976:	82 0f       	add	r24, r18
+     978:	93 1f       	adc	r25, r19
+     97a:	bc 01       	movw	r22, r24
+     97c:	6c 5c       	subi	r22, 0xCC	; 204
+     97e:	7c 4f       	sbci	r23, 0xFC	; 252
+     980:	84 50       	subi	r24, 0x04	; 4
+     982:	9e 4f       	sbci	r25, 0xFE	; 254
+     984:	da 01       	movw	r26, r20
+     986:	2c 91       	ld	r18, X
+     988:	dc 01       	movw	r26, r24
+     98a:	8c 91       	ld	r24, X
+     98c:	28 1b       	sub	r18, r24
+     98e:	82 2f       	mov	r24, r18
+     990:	db 01       	movw	r26, r22
+     992:	8c 93       	st	X, r24
+     994:	80 81       	ld	r24, Z
+     996:	91 81       	ldd	r25, Z+1	; 0x01
+     998:	dc 01       	movw	r26, r24
+     99a:	aa 0f       	add	r26, r26
+     99c:	bb 1f       	adc	r27, r27
+     99e:	9d 01       	movw	r18, r26
+     9a0:	28 0f       	add	r18, r24
+     9a2:	39 1f       	adc	r19, r25
+     9a4:	c9 01       	movw	r24, r18
+     9a6:	84 50       	subi	r24, 0x04	; 4
+     9a8:	9e 4f       	sbci	r25, 0xFE	; 254
+     9aa:	dc 01       	movw	r26, r24
+     9ac:	12 96       	adiw	r26, 0x02	; 2
+     9ae:	9c 91       	ld	r25, X
+     9b0:	88 81       	ld	r24, Y
+     9b2:	d9 01       	movw	r26, r18
+     9b4:	a3 54       	subi	r26, 0x43	; 67
+     9b6:	bf 4f       	sbci	r27, 0xFF	; 255
+     9b8:	89 17       	cp	r24, r25
+     9ba:	b8 f4       	brcc	.+46     	; 0x9ea <hcNeopixelSetLedData+0x1b2>
+     9bc:	8c 91       	ld	r24, X
+     9be:	8b 7f       	andi	r24, 0xFB	; 251
+     9c0:	8c 93       	st	X, r24
+     9c2:	80 81       	ld	r24, Z
+     9c4:	91 81       	ldd	r25, Z+1	; 0x01
+     9c6:	9c 01       	movw	r18, r24
+     9c8:	22 0f       	add	r18, r18
+     9ca:	33 1f       	adc	r19, r19
+     9cc:	82 0f       	add	r24, r18
+     9ce:	93 1f       	adc	r25, r19
+     9d0:	9c 01       	movw	r18, r24
+     9d2:	2c 5c       	subi	r18, 0xCC	; 204
+     9d4:	3c 4f       	sbci	r19, 0xFC	; 252
+     9d6:	84 50       	subi	r24, 0x04	; 4
+     9d8:	9e 4f       	sbci	r25, 0xFE	; 254
+     9da:	dc 01       	movw	r26, r24
+     9dc:	12 96       	adiw	r26, 0x02	; 2
+     9de:	8c 91       	ld	r24, X
+     9e0:	98 81       	ld	r25, Y
+     9e2:	89 1b       	sub	r24, r25
+     9e4:	e9 01       	movw	r28, r18
+     9e6:	8a 83       	std	Y+2, r24	; 0x02
+     9e8:	15 c0       	rjmp	.+42     	; 0xa14 <hcNeopixelSetLedData+0x1dc>
+     9ea:	8c 91       	ld	r24, X
+     9ec:	84 60       	ori	r24, 0x04	; 4
+     9ee:	8c 93       	st	X, r24
+     9f0:	80 81       	ld	r24, Z
+     9f2:	91 81       	ldd	r25, Z+1	; 0x01
+     9f4:	9c 01       	movw	r18, r24
+     9f6:	22 0f       	add	r18, r18
+     9f8:	33 1f       	adc	r19, r19
+     9fa:	82 0f       	add	r24, r18
+     9fc:	93 1f       	adc	r25, r19
+     9fe:	dc 01       	movw	r26, r24
+     a00:	ac 5c       	subi	r26, 0xCC	; 204
+     a02:	bc 4f       	sbci	r27, 0xFC	; 252
+     a04:	84 50       	subi	r24, 0x04	; 4
+     a06:	9e 4f       	sbci	r25, 0xFE	; 254
+     a08:	28 81       	ld	r18, Y
+     a0a:	ec 01       	movw	r28, r24
+     a0c:	8a 81       	ldd	r24, Y+2	; 0x02
+     a0e:	28 1b       	sub	r18, r24
+     a10:	12 96       	adiw	r26, 0x02	; 2
+     a12:	2c 93       	st	X, r18
+     a14:	80 81       	ld	r24, Z
+     a16:	91 81       	ldd	r25, Z+1	; 0x01
+     a18:	dc 01       	movw	r26, r24
+     a1a:	aa 0f       	add	r26, r26
+     a1c:	bb 1f       	adc	r27, r27
+     a1e:	8a 0f       	add	r24, r26
+     a20:	9b 1f       	adc	r25, r27
+     a22:	dc 01       	movw	r26, r24
+     a24:	a5 54       	subi	r26, 0x45	; 69
+     a26:	bf 4f       	sbci	r27, 0xFF	; 255
+     a28:	81 e0       	ldi	r24, 0x01	; 1
+     a2a:	11 96       	adiw	r26, 0x01	; 1
+     a2c:	8c 93       	st	X, r24
+     a2e:	26 c0       	rjmp	.+76     	; 0xa7c <hcNeopixelSetLedData+0x244>
+     a30:	db 01       	movw	r26, r22
+     a32:	2c 91       	ld	r18, X
+     a34:	dc 01       	movw	r26, r24
+     a36:	aa 0f       	add	r26, r26
+     a38:	bb 1f       	adc	r27, r27
+     a3a:	8a 0f       	add	r24, r26
+     a3c:	9b 1f       	adc	r25, r27
+     a3e:	dc 01       	movw	r26, r24
+     a40:	a4 50       	subi	r26, 0x04	; 4
+     a42:	be 4f       	sbci	r27, 0xFE	; 254
+     a44:	11 96       	adiw	r26, 0x01	; 1
+     a46:	2c 93       	st	X, r18
+     a48:	80 81       	ld	r24, Z
+     a4a:	91 81       	ldd	r25, Z+1	; 0x01
+     a4c:	da 01       	movw	r26, r20
+     a4e:	2c 91       	ld	r18, X
+     a50:	dc 01       	movw	r26, r24
+     a52:	aa 0f       	add	r26, r26
+     a54:	bb 1f       	adc	r27, r27
+     a56:	8a 0f       	add	r24, r26
+     a58:	9b 1f       	adc	r25, r27
+     a5a:	dc 01       	movw	r26, r24
+     a5c:	a4 50       	subi	r26, 0x04	; 4
+     a5e:	be 4f       	sbci	r27, 0xFE	; 254
+     a60:	2c 93       	st	X, r18
+     a62:	80 81       	ld	r24, Z
+     a64:	91 81       	ldd	r25, Z+1	; 0x01
+     a66:	28 81       	ld	r18, Y
+     a68:	dc 01       	movw	r26, r24
+     a6a:	aa 0f       	add	r26, r26
+     a6c:	bb 1f       	adc	r27, r27
+     a6e:	8a 0f       	add	r24, r26
+     a70:	9b 1f       	adc	r25, r27
+     a72:	dc 01       	movw	r26, r24
+     a74:	a4 50       	subi	r26, 0x04	; 4
+     a76:	be 4f       	sbci	r27, 0xFE	; 254
+     a78:	12 96       	adiw	r26, 0x02	; 2
+     a7a:	2c 93       	st	X, r18
+     a7c:	a0 81       	ld	r26, Z
+     a7e:	b1 81       	ldd	r27, Z+1	; 0x01
+     a80:	cd 01       	movw	r24, r26
+     a82:	88 0f       	add	r24, r24
+     a84:	99 1f       	adc	r25, r25
+     a86:	a8 0f       	add	r26, r24
+     a88:	b9 1f       	adc	r27, r25
+     a8a:	a3 54       	subi	r26, 0x43	; 67
+     a8c:	bf 4f       	sbci	r27, 0xFF	; 255
+     a8e:	8c 91       	ld	r24, X
+     a90:	8f 7e       	andi	r24, 0xEF	; 239
+     a92:	8c 93       	st	X, r24
+     a94:	e7 01       	movw	r28, r14
+     a96:	88 81       	ld	r24, Y
+     a98:	81 11       	cpse	r24, r1
+     a9a:	0c c0       	rjmp	.+24     	; 0xab4 <hcNeopixelSetLedData+0x27c>
+     a9c:	a0 81       	ld	r26, Z
+     a9e:	b1 81       	ldd	r27, Z+1	; 0x01
+     aa0:	cd 01       	movw	r24, r26
+     aa2:	88 0f       	add	r24, r24
+     aa4:	99 1f       	adc	r25, r25
+     aa6:	a8 0f       	add	r26, r24
+     aa8:	b9 1f       	adc	r27, r25
+     aaa:	a3 54       	subi	r26, 0x43	; 67
+     aac:	bf 4f       	sbci	r27, 0xFF	; 255
+     aae:	8c 91       	ld	r24, X
+     ab0:	8f 7d       	andi	r24, 0xDF	; 223
+     ab2:	8c 93       	st	X, r24
+     ab4:	a0 81       	ld	r26, Z
+     ab6:	b1 81       	ldd	r27, Z+1	; 0x01
+     ab8:	cd 01       	movw	r24, r26
+     aba:	88 0f       	add	r24, r24
+     abc:	99 1f       	adc	r25, r25
+     abe:	a8 0f       	add	r26, r24
+     ac0:	b9 1f       	adc	r27, r25
+     ac2:	a5 54       	subi	r26, 0x45	; 69
+     ac4:	bf 4f       	sbci	r27, 0xFF	; 255
+     ac6:	e8 01       	movw	r28, r16
+     ac8:	88 81       	ld	r24, Y
+     aca:	98 2f       	mov	r25, r24
+     acc:	9f 70       	andi	r25, 0x0F	; 15
+     ace:	8c 91       	ld	r24, X
+     ad0:	80 7f       	andi	r24, 0xF0	; 240
+     ad2:	89 2b       	or	r24, r25
+     ad4:	8c 93       	st	X, r24
+     ad6:	a0 81       	ld	r26, Z
+     ad8:	b1 81       	ldd	r27, Z+1	; 0x01
+     ada:	cd 01       	movw	r24, r26
+     adc:	88 0f       	add	r24, r24
+     ade:	99 1f       	adc	r25, r25
+     ae0:	a8 0f       	add	r26, r24
+     ae2:	b9 1f       	adc	r27, r25
+     ae4:	a5 54       	subi	r26, 0x45	; 69
+     ae6:	bf 4f       	sbci	r27, 0xFF	; 255
+     ae8:	e7 01       	movw	r28, r14
+     aea:	88 81       	ld	r24, Y
+     aec:	98 2f       	mov	r25, r24
+     aee:	92 95       	swap	r25
+     af0:	90 7f       	andi	r25, 0xF0	; 240
+     af2:	8c 91       	ld	r24, X
+     af4:	8f 70       	andi	r24, 0x0F	; 15
+     af6:	89 2b       	or	r24, r25
+     af8:	8c 93       	st	X, r24
+     afa:	20 81       	ld	r18, Z
+     afc:	31 81       	ldd	r19, Z+1	; 0x01
+     afe:	a9 e2       	ldi	r26, 0x29	; 41
+     b00:	b3 e0       	ldi	r27, 0x03	; 3
+     b02:	e3 ef       	ldi	r30, 0xF3	; 243
+     b04:	f1 e0       	ldi	r31, 0x01	; 1
+     b06:	80 e0       	ldi	r24, 0x00	; 0
+     b08:	90 e0       	ldi	r25, 0x00	; 0
+     b0a:	6d 91       	ld	r22, X+
+     b0c:	7d 91       	ld	r23, X+
+     b0e:	26 17       	cp	r18, r22
+     b10:	37 07       	cpc	r19, r23
+     b12:	b0 f0       	brcs	.+44     	; 0xb40 <hcNeopixelSetLedData+0x308>
+     b14:	40 81       	ld	r20, Z
+     b16:	51 81       	ldd	r21, Z+1	; 0x01
+     b18:	46 0f       	add	r20, r22
+     b1a:	57 1f       	adc	r21, r23
+     b1c:	24 17       	cp	r18, r20
+     b1e:	35 07       	cpc	r19, r21
+     b20:	78 f4       	brcc	.+30     	; 0xb40 <hcNeopixelSetLedData+0x308>
+     b22:	2f 5f       	subi	r18, 0xFF	; 255
+     b24:	3f 4f       	sbci	r19, 0xFF	; 255
+     b26:	88 0f       	add	r24, r24
+     b28:	99 1f       	adc	r25, r25
+     b2a:	fc 01       	movw	r30, r24
+     b2c:	e7 51       	subi	r30, 0x17	; 23
+     b2e:	fe 4f       	sbci	r31, 0xFE	; 254
+     b30:	80 81       	ld	r24, Z
+     b32:	91 81       	ldd	r25, Z+1	; 0x01
+     b34:	82 17       	cp	r24, r18
+     b36:	93 07       	cpc	r25, r19
+     b38:	40 f4       	brcc	.+16     	; 0xb4a <hcNeopixelSetLedData+0x312>
+     b3a:	31 83       	std	Z+1, r19	; 0x01
+     b3c:	20 83       	st	Z, r18
+     b3e:	05 c0       	rjmp	.+10     	; 0xb4a <hcNeopixelSetLedData+0x312>
+     b40:	01 96       	adiw	r24, 0x01	; 1
+     b42:	32 96       	adiw	r30, 0x02	; 2
+     b44:	84 30       	cpi	r24, 0x04	; 4
+     b46:	91 05       	cpc	r25, r1
+     b48:	01 f7       	brne	.-64     	; 0xb0a <hcNeopixelSetLedData+0x2d2>
+     b4a:	df 91       	pop	r29
+     b4c:	cf 91       	pop	r28
+     b4e:	1f 91       	pop	r17
+     b50:	0f 91       	pop	r16
+     b52:	ff 90       	pop	r15
+     b54:	ef 90       	pop	r14
+     b56:	df 90       	pop	r13
+     b58:	cf 90       	pop	r12
+     b5a:	08 95       	ret
+
+00000b5c <hcNeopixelSetLedsData>:
+     b5c:	8f 92       	push	r8
+     b5e:	9f 92       	push	r9
+     b60:	af 92       	push	r10
+     b62:	bf 92       	push	r11
+     b64:	cf 92       	push	r12
+     b66:	df 92       	push	r13
+     b68:	ef 92       	push	r14
+     b6a:	ff 92       	push	r15
+     b6c:	0f 93       	push	r16
+     b6e:	1f 93       	push	r17
+     b70:	cf 93       	push	r28
+     b72:	df 93       	push	r29
+     b74:	cd b7       	in	r28, 0x3d	; 61
+     b76:	de b7       	in	r29, 0x3e	; 62
+     b78:	29 97       	sbiw	r28, 0x09	; 9
+     b7a:	0f b6       	in	r0, 0x3f	; 63
+     b7c:	f8 94       	cli
+     b7e:	de bf       	out	0x3e, r29	; 62
+     b80:	0f be       	out	0x3f, r0	; 63
+     b82:	cd bf       	out	0x3d, r28	; 61
+     b84:	5c 01       	movw	r10, r24
+     b86:	c6 2e       	mov	r12, r22
+     b88:	d1 2c       	mov	r13, r1
+     b8a:	dc 14       	cp	r13, r12
+     b8c:	08 f0       	brcs	.+2      	; 0xb90 <hcNeopixelSetLedsData+0x34>
+     b8e:	fe c0       	rjmp	.+508    	; 0xd8c <hcNeopixelSetLedsData+0x230>
+     b90:	42 e0       	ldi	r20, 0x02	; 2
+     b92:	4d 0d       	add	r20, r13
+     b94:	f5 01       	movw	r30, r10
+     b96:	ed 0d       	add	r30, r13
+     b98:	f1 1d       	adc	r31, r1
+     b9a:	80 81       	ld	r24, Z
+     b9c:	90 e0       	ldi	r25, 0x00	; 0
+     b9e:	98 2f       	mov	r25, r24
+     ba0:	88 27       	eor	r24, r24
+     ba2:	21 e0       	ldi	r18, 0x01	; 1
+     ba4:	2d 0d       	add	r18, r13
+     ba6:	f5 01       	movw	r30, r10
+     ba8:	e2 0f       	add	r30, r18
+     baa:	f1 1d       	adc	r31, r1
+     bac:	20 81       	ld	r18, Z
+     bae:	82 2b       	or	r24, r18
+     bb0:	9c 83       	std	Y+4, r25	; 0x04
+     bb2:	8b 83       	std	Y+3, r24	; 0x03
+     bb4:	24 2f       	mov	r18, r20
+     bb6:	30 e0       	ldi	r19, 0x00	; 0
+     bb8:	8f 3f       	cpi	r24, 0xFF	; 255
+     bba:	5f ef       	ldi	r21, 0xFF	; 255
+     bbc:	95 07       	cpc	r25, r21
+     bbe:	09 f0       	breq	.+2      	; 0xbc2 <hcNeopixelSetLedsData+0x66>
+     bc0:	60 c0       	rjmp	.+192    	; 0xc82 <hcNeopixelSetLedsData+0x126>
+     bc2:	f5 01       	movw	r30, r10
+     bc4:	e2 0f       	add	r30, r18
+     bc6:	f3 1f       	adc	r31, r19
+     bc8:	80 81       	ld	r24, Z
+     bca:	90 e0       	ldi	r25, 0x00	; 0
+     bcc:	98 2f       	mov	r25, r24
+     bce:	88 27       	eor	r24, r24
+     bd0:	23 e0       	ldi	r18, 0x03	; 3
+     bd2:	2d 0d       	add	r18, r13
+     bd4:	f5 01       	movw	r30, r10
+     bd6:	e2 0f       	add	r30, r18
+     bd8:	f1 1d       	adc	r31, r1
+     bda:	20 81       	ld	r18, Z
+     bdc:	82 2b       	or	r24, r18
+     bde:	24 e0       	ldi	r18, 0x04	; 4
+     be0:	2d 0d       	add	r18, r13
+     be2:	f5 01       	movw	r30, r10
+     be4:	e2 0f       	add	r30, r18
+     be6:	f1 1d       	adc	r31, r1
+     be8:	20 81       	ld	r18, Z
+     bea:	30 e0       	ldi	r19, 0x00	; 0
+     bec:	32 2f       	mov	r19, r18
+     bee:	22 27       	eor	r18, r18
+     bf0:	45 e0       	ldi	r20, 0x05	; 5
+     bf2:	4d 0d       	add	r20, r13
+     bf4:	f5 01       	movw	r30, r10
+     bf6:	e4 0f       	add	r30, r20
+     bf8:	f1 1d       	adc	r31, r1
+     bfa:	40 81       	ld	r20, Z
+     bfc:	24 2b       	or	r18, r20
+     bfe:	3c 83       	std	Y+4, r19	; 0x04
+     c00:	2b 83       	std	Y+3, r18	; 0x03
+     c02:	26 e0       	ldi	r18, 0x06	; 6
+     c04:	2d 0d       	add	r18, r13
+     c06:	f5 01       	movw	r30, r10
+     c08:	e2 0f       	add	r30, r18
+     c0a:	f1 1d       	adc	r31, r1
+     c0c:	20 81       	ld	r18, Z
+     c0e:	29 87       	std	Y+9, r18	; 0x09
+     c10:	27 e0       	ldi	r18, 0x07	; 7
+     c12:	2d 0d       	add	r18, r13
+     c14:	f5 01       	movw	r30, r10
+     c16:	e2 0f       	add	r30, r18
+     c18:	f1 1d       	adc	r31, r1
+     c1a:	20 81       	ld	r18, Z
+     c1c:	28 87       	std	Y+8, r18	; 0x08
+     c1e:	28 e0       	ldi	r18, 0x08	; 8
+     c20:	2d 0d       	add	r18, r13
+     c22:	f5 01       	movw	r30, r10
+     c24:	e2 0f       	add	r30, r18
+     c26:	f1 1d       	adc	r31, r1
+     c28:	20 81       	ld	r18, Z
+     c2a:	2f 83       	std	Y+7, r18	; 0x07
+     c2c:	29 e0       	ldi	r18, 0x09	; 9
+     c2e:	2d 0d       	add	r18, r13
+     c30:	f5 01       	movw	r30, r10
+     c32:	e2 0f       	add	r30, r18
+     c34:	f1 1d       	adc	r31, r1
+     c36:	2a e0       	ldi	r18, 0x0A	; 10
+     c38:	d2 0e       	add	r13, r18
+     c3a:	20 81       	ld	r18, Z
+     c3c:	2d 83       	std	Y+5, r18	; 0x05
+     c3e:	22 95       	swap	r18
+     c40:	2f 70       	andi	r18, 0x0F	; 15
+     c42:	2e 83       	std	Y+6, r18	; 0x06
+     c44:	9a 83       	std	Y+2, r25	; 0x02
+     c46:	89 83       	std	Y+1, r24	; 0x01
+     c48:	29 81       	ldd	r18, Y+1	; 0x01
+     c4a:	3a 81       	ldd	r19, Y+2	; 0x02
+     c4c:	8b 81       	ldd	r24, Y+3	; 0x03
+     c4e:	9c 81       	ldd	r25, Y+4	; 0x04
+     c50:	82 17       	cp	r24, r18
+     c52:	93 07       	cpc	r25, r19
+     c54:	08 f4       	brcc	.+2      	; 0xc58 <hcNeopixelSetLedsData+0xfc>
+     c56:	99 cf       	rjmp	.-206    	; 0xb8a <hcNeopixelSetLedsData+0x2e>
+     c58:	ce 01       	movw	r24, r28
+     c5a:	05 96       	adiw	r24, 0x05	; 5
+     c5c:	7c 01       	movw	r14, r24
+     c5e:	8e 01       	movw	r16, r28
+     c60:	0a 5f       	subi	r16, 0xFA	; 250
+     c62:	1f 4f       	sbci	r17, 0xFF	; 255
+     c64:	9e 01       	movw	r18, r28
+     c66:	29 5f       	subi	r18, 0xF9	; 249
+     c68:	3f 4f       	sbci	r19, 0xFF	; 255
+     c6a:	ae 01       	movw	r20, r28
+     c6c:	48 5f       	subi	r20, 0xF8	; 248
+     c6e:	5f 4f       	sbci	r21, 0xFF	; 255
+     c70:	be 01       	movw	r22, r28
+     c72:	67 5f       	subi	r22, 0xF7	; 247
+     c74:	7f 4f       	sbci	r23, 0xFF	; 255
+     c76:	04 97       	sbiw	r24, 0x04	; 4
+     c78:	df dd       	rcall	.-1090   	; 0x838 <hcNeopixelSetLedData>
+     c7a:	89 81       	ldd	r24, Y+1	; 0x01
+     c7c:	9a 81       	ldd	r25, Y+2	; 0x02
+     c7e:	01 96       	adiw	r24, 0x01	; 1
+     c80:	e1 cf       	rjmp	.-62     	; 0xc44 <hcNeopixelSetLedsData+0xe8>
+     c82:	81 30       	cpi	r24, 0x01	; 1
+     c84:	50 e4       	ldi	r21, 0x40	; 64
+     c86:	95 07       	cpc	r25, r21
+     c88:	08 f4       	brcc	.+2      	; 0xc8c <hcNeopixelSetLedsData+0x130>
+     c8a:	4f c0       	rjmp	.+158    	; 0xd2a <hcNeopixelSetLedsData+0x1ce>
+     c8c:	90 54       	subi	r25, 0x40	; 64
+     c8e:	88 0f       	add	r24, r24
+     c90:	99 1f       	adc	r25, r25
+     c92:	3a 83       	std	Y+2, r19	; 0x02
+     c94:	29 83       	std	Y+1, r18	; 0x01
+     c96:	48 0f       	add	r20, r24
+     c98:	4c 01       	movw	r8, r24
+     c9a:	82 0e       	add	r8, r18
+     c9c:	93 1e       	adc	r9, r19
+     c9e:	f5 01       	movw	r30, r10
+     ca0:	e4 0f       	add	r30, r20
+     ca2:	f1 1d       	adc	r31, r1
+     ca4:	80 81       	ld	r24, Z
+     ca6:	89 87       	std	Y+9, r24	; 0x09
+     ca8:	81 e0       	ldi	r24, 0x01	; 1
+     caa:	84 0f       	add	r24, r20
+     cac:	f5 01       	movw	r30, r10
+     cae:	e8 0f       	add	r30, r24
+     cb0:	f1 1d       	adc	r31, r1
+     cb2:	80 81       	ld	r24, Z
+     cb4:	88 87       	std	Y+8, r24	; 0x08
+     cb6:	82 e0       	ldi	r24, 0x02	; 2
+     cb8:	84 0f       	add	r24, r20
+     cba:	f5 01       	movw	r30, r10
+     cbc:	e8 0f       	add	r30, r24
+     cbe:	f1 1d       	adc	r31, r1
+     cc0:	80 81       	ld	r24, Z
+     cc2:	8f 83       	std	Y+7, r24	; 0x07
+     cc4:	64 e0       	ldi	r22, 0x04	; 4
+     cc6:	d6 2e       	mov	r13, r22
+     cc8:	d4 0e       	add	r13, r20
+     cca:	4d 5f       	subi	r20, 0xFD	; 253
+     ccc:	f5 01       	movw	r30, r10
+     cce:	e4 0f       	add	r30, r20
+     cd0:	f1 1d       	adc	r31, r1
+     cd2:	80 81       	ld	r24, Z
+     cd4:	8d 83       	std	Y+5, r24	; 0x05
+     cd6:	82 95       	swap	r24
+     cd8:	8f 70       	andi	r24, 0x0F	; 15
+     cda:	8e 83       	std	Y+6, r24	; 0x06
+     cdc:	29 81       	ldd	r18, Y+1	; 0x01
+     cde:	3a 81       	ldd	r19, Y+2	; 0x02
+     ce0:	28 15       	cp	r18, r8
+     ce2:	39 05       	cpc	r19, r9
+     ce4:	08 f0       	brcs	.+2      	; 0xce8 <hcNeopixelSetLedsData+0x18c>
+     ce6:	51 cf       	rjmp	.-350    	; 0xb8a <hcNeopixelSetLedsData+0x2e>
+     ce8:	f5 01       	movw	r30, r10
+     cea:	e2 0f       	add	r30, r18
+     cec:	f3 1f       	adc	r31, r19
+     cee:	80 81       	ld	r24, Z
+     cf0:	90 e0       	ldi	r25, 0x00	; 0
+     cf2:	98 2f       	mov	r25, r24
+     cf4:	88 27       	eor	r24, r24
+     cf6:	2e 5f       	subi	r18, 0xFE	; 254
+     cf8:	3f 4f       	sbci	r19, 0xFF	; 255
+     cfa:	3a 83       	std	Y+2, r19	; 0x02
+     cfc:	29 83       	std	Y+1, r18	; 0x01
+     cfe:	21 81       	ldd	r18, Z+1	; 0x01
+     d00:	82 2b       	or	r24, r18
+     d02:	9c 83       	std	Y+4, r25	; 0x04
+     d04:	8b 83       	std	Y+3, r24	; 0x03
+     d06:	ce 01       	movw	r24, r28
+     d08:	05 96       	adiw	r24, 0x05	; 5
+     d0a:	7c 01       	movw	r14, r24
+     d0c:	8e 01       	movw	r16, r28
+     d0e:	0a 5f       	subi	r16, 0xFA	; 250
+     d10:	1f 4f       	sbci	r17, 0xFF	; 255
+     d12:	9e 01       	movw	r18, r28
+     d14:	29 5f       	subi	r18, 0xF9	; 249
+     d16:	3f 4f       	sbci	r19, 0xFF	; 255
+     d18:	ae 01       	movw	r20, r28
+     d1a:	48 5f       	subi	r20, 0xF8	; 248
+     d1c:	5f 4f       	sbci	r21, 0xFF	; 255
+     d1e:	be 01       	movw	r22, r28
+     d20:	67 5f       	subi	r22, 0xF7	; 247
+     d22:	7f 4f       	sbci	r23, 0xFF	; 255
+     d24:	02 97       	sbiw	r24, 0x02	; 2
+     d26:	88 dd       	rcall	.-1264   	; 0x838 <hcNeopixelSetLedData>
+     d28:	d9 cf       	rjmp	.-78     	; 0xcdc <hcNeopixelSetLedsData+0x180>
+     d2a:	f5 01       	movw	r30, r10
+     d2c:	e2 0f       	add	r30, r18
+     d2e:	f3 1f       	adc	r31, r19
+     d30:	80 81       	ld	r24, Z
+     d32:	89 87       	std	Y+9, r24	; 0x09
+     d34:	83 e0       	ldi	r24, 0x03	; 3
+     d36:	8d 0d       	add	r24, r13
+     d38:	f5 01       	movw	r30, r10
+     d3a:	e8 0f       	add	r30, r24
+     d3c:	f1 1d       	adc	r31, r1
+     d3e:	80 81       	ld	r24, Z
+     d40:	88 87       	std	Y+8, r24	; 0x08
+     d42:	84 e0       	ldi	r24, 0x04	; 4
+     d44:	8d 0d       	add	r24, r13
+     d46:	f5 01       	movw	r30, r10
+     d48:	e8 0f       	add	r30, r24
+     d4a:	f1 1d       	adc	r31, r1
+     d4c:	80 81       	ld	r24, Z
+     d4e:	8f 83       	std	Y+7, r24	; 0x07
+     d50:	85 e0       	ldi	r24, 0x05	; 5
+     d52:	8d 0d       	add	r24, r13
+     d54:	f5 01       	movw	r30, r10
+     d56:	e8 0f       	add	r30, r24
+     d58:	f1 1d       	adc	r31, r1
+     d5a:	96 e0       	ldi	r25, 0x06	; 6
+     d5c:	d9 0e       	add	r13, r25
+     d5e:	80 81       	ld	r24, Z
+     d60:	8d 83       	std	Y+5, r24	; 0x05
+     d62:	82 95       	swap	r24
+     d64:	8f 70       	andi	r24, 0x0F	; 15
+     d66:	8e 83       	std	Y+6, r24	; 0x06
+     d68:	ce 01       	movw	r24, r28
+     d6a:	05 96       	adiw	r24, 0x05	; 5
+     d6c:	7c 01       	movw	r14, r24
+     d6e:	8e 01       	movw	r16, r28
+     d70:	0a 5f       	subi	r16, 0xFA	; 250
+     d72:	1f 4f       	sbci	r17, 0xFF	; 255
+     d74:	9e 01       	movw	r18, r28
+     d76:	29 5f       	subi	r18, 0xF9	; 249
+     d78:	3f 4f       	sbci	r19, 0xFF	; 255
+     d7a:	ae 01       	movw	r20, r28
+     d7c:	48 5f       	subi	r20, 0xF8	; 248
+     d7e:	5f 4f       	sbci	r21, 0xFF	; 255
+     d80:	be 01       	movw	r22, r28
+     d82:	67 5f       	subi	r22, 0xF7	; 247
+     d84:	7f 4f       	sbci	r23, 0xFF	; 255
+     d86:	02 97       	sbiw	r24, 0x02	; 2
+     d88:	57 dd       	rcall	.-1362   	; 0x838 <hcNeopixelSetLedData>
+     d8a:	ff ce       	rjmp	.-514    	; 0xb8a <hcNeopixelSetLedsData+0x2e>
+     d8c:	29 96       	adiw	r28, 0x09	; 9
+     d8e:	0f b6       	in	r0, 0x3f	; 63
+     d90:	f8 94       	cli
+     d92:	de bf       	out	0x3e, r29	; 62
+     d94:	0f be       	out	0x3f, r0	; 63
+     d96:	cd bf       	out	0x3d, r28	; 61
+     d98:	df 91       	pop	r29
+     d9a:	cf 91       	pop	r28
+     d9c:	1f 91       	pop	r17
+     d9e:	0f 91       	pop	r16
+     da0:	ff 90       	pop	r15
+     da2:	ef 90       	pop	r14
+     da4:	df 90       	pop	r13
+     da6:	cf 90       	pop	r12
+     da8:	bf 90       	pop	r11
+     daa:	af 90       	pop	r10
+     dac:	9f 90       	pop	r9
+     dae:	8f 90       	pop	r8
+     db0:	08 95       	ret
+
+00000db2 <hcNeopixelGetConfiguration>:
+     db2:	ef e8       	ldi	r30, 0x8F	; 143
+     db4:	f0 e0       	ldi	r31, 0x00	; 0
+     db6:	84 e0       	ldi	r24, 0x04	; 4
+     db8:	80 83       	st	Z, r24
+     dba:	11 82       	std	Z+1, r1	; 0x01
+     dbc:	84 e6       	ldi	r24, 0x64	; 100
+     dbe:	82 83       	std	Z+2, r24	; 0x02
+     dc0:	83 e0       	ldi	r24, 0x03	; 3
+     dc2:	08 95       	ret
+
+00000dc4 <hcNeopixelGetData>:
+     dc4:	80 91 6e 00 	lds	r24, 0x006E	; 0x80006e <hcI2cReadBuffer>
+     dc8:	84 30       	cpi	r24, 0x04	; 4
+     dca:	b1 f0       	breq	.+44     	; 0xdf8 <hcNeopixelGetData+0x34>
+     dcc:	8d 30       	cpi	r24, 0x0D	; 13
+     dce:	11 f1       	breq	.+68     	; 0xe14 <hcNeopixelGetData+0x50>
+     dd0:	81 30       	cpi	r24, 0x01	; 1
+     dd2:	51 f5       	brne	.+84     	; 0xe28 <hcNeopixelGetData+0x64>
+     dd4:	a3 ef       	ldi	r26, 0xF3	; 243
+     dd6:	b1 e0       	ldi	r27, 0x01	; 1
+     dd8:	ef e8       	ldi	r30, 0x8F	; 143
+     dda:	f0 e0       	ldi	r31, 0x00	; 0
+     ddc:	8c 91       	ld	r24, X
+     dde:	11 96       	adiw	r26, 0x01	; 1
+     de0:	9c 91       	ld	r25, X
+     de2:	11 97       	sbiw	r26, 0x01	; 1
+     de4:	12 96       	adiw	r26, 0x02	; 2
+     de6:	90 83       	st	Z, r25
+     de8:	81 83       	std	Z+1, r24	; 0x01
+     dea:	32 96       	adiw	r30, 0x02	; 2
+     dec:	80 e0       	ldi	r24, 0x00	; 0
+     dee:	e7 39       	cpi	r30, 0x97	; 151
+     df0:	f8 07       	cpc	r31, r24
+     df2:	a1 f7       	brne	.-24     	; 0xddc <hcNeopixelGetData+0x18>
+     df4:	88 e0       	ldi	r24, 0x08	; 8
+     df6:	08 95       	ret
+     df8:	80 91 32 03 	lds	r24, 0x0332	; 0x800332 <hcNeopixelBlinkColor+0x1>
+     dfc:	80 93 8f 00 	sts	0x008F, r24	; 0x80008f <hcI2cWriteBuffer>
+     e00:	80 91 31 03 	lds	r24, 0x0331	; 0x800331 <hcNeopixelBlinkColor>
+     e04:	80 93 90 00 	sts	0x0090, r24	; 0x800090 <hcI2cWriteBuffer+0x1>
+     e08:	80 91 33 03 	lds	r24, 0x0333	; 0x800333 <hcNeopixelBlinkColor+0x2>
+     e0c:	80 93 91 00 	sts	0x0091, r24	; 0x800091 <hcI2cWriteBuffer+0x2>
+     e10:	83 e0       	ldi	r24, 0x03	; 3
+     e12:	08 95       	ret
+     e14:	80 91 e7 01 	lds	r24, 0x01E7	; 0x8001e7 <hcNeopixelSequenceEepromAddress>
+     e18:	90 91 e8 01 	lds	r25, 0x01E8	; 0x8001e8 <hcNeopixelSequenceEepromAddress+0x1>
+     e1c:	90 93 8f 00 	sts	0x008F, r25	; 0x80008f <hcI2cWriteBuffer>
+     e20:	80 93 90 00 	sts	0x0090, r24	; 0x800090 <hcI2cWriteBuffer+0x1>
+     e24:	81 e0       	ldi	r24, 0x01	; 1
+     e26:	08 95       	ret
+     e28:	80 e0       	ldi	r24, 0x00	; 0
+     e2a:	08 95       	ret
+
+00000e2c <hcNeopixelSetChannelLedsPin>:
+     e2c:	0f 93       	push	r16
+     e2e:	1f 93       	push	r17
+     e30:	cf 93       	push	r28
+     e32:	df 93       	push	r29
+     e34:	dc 01       	movw	r26, r24
+     e36:	ec 91       	ld	r30, X
+     e38:	f0 e0       	ldi	r31, 0x00	; 0
+     e3a:	ee 0f       	add	r30, r30
+     e3c:	ff 1f       	adc	r31, r31
+     e3e:	e7 5d       	subi	r30, 0xD7	; 215
+     e40:	fc 4f       	sbci	r31, 0xFC	; 252
+     e42:	80 81       	ld	r24, Z
+     e44:	91 81       	ldd	r25, Z+1	; 0x01
+     e46:	2c 91       	ld	r18, X
+     e48:	30 e0       	ldi	r19, 0x00	; 0
+     e4a:	22 0f       	add	r18, r18
+     e4c:	33 1f       	adc	r19, r19
+     e4e:	e9 01       	movw	r28, r18
+     e50:	c7 5d       	subi	r28, 0xD7	; 215
+     e52:	dc 4f       	sbci	r29, 0xFC	; 252
+     e54:	fb 01       	movw	r30, r22
+     e56:	00 81       	ld	r16, Z
+     e58:	11 81       	ldd	r17, Z+1	; 0x01
+     e5a:	48 81       	ld	r20, Y
+     e5c:	59 81       	ldd	r21, Y+1	; 0x01
+     e5e:	40 0f       	add	r20, r16
+     e60:	51 1f       	adc	r21, r17
+     e62:	84 17       	cp	r24, r20
+     e64:	95 07       	cpc	r25, r21
+     e66:	18 f5       	brcc	.+70     	; 0xeae <hcNeopixelSetChannelLedsPin+0x82>
+     e68:	ac 01       	movw	r20, r24
+     e6a:	44 0f       	add	r20, r20
+     e6c:	55 1f       	adc	r21, r21
+     e6e:	ea 01       	movw	r28, r20
+     e70:	c8 0f       	add	r28, r24
+     e72:	d9 1f       	adc	r29, r25
+     e74:	9e 01       	movw	r18, r28
+     e76:	25 54       	subi	r18, 0x45	; 69
+     e78:	3f 4f       	sbci	r19, 0xFF	; 255
+     e7a:	f9 01       	movw	r30, r18
+     e7c:	20 81       	ld	r18, Z
+     e7e:	2f 70       	andi	r18, 0x0F	; 15
+     e80:	29 f0       	breq	.+10     	; 0xe8c <hcNeopixelSetChannelLedsPin+0x60>
+     e82:	c3 54       	subi	r28, 0x43	; 67
+     e84:	df 4f       	sbci	r29, 0xFF	; 255
+     e86:	28 81       	ld	r18, Y
+     e88:	28 60       	ori	r18, 0x08	; 8
+     e8a:	28 83       	st	Y, r18
+     e8c:	fa 01       	movw	r30, r20
+     e8e:	e8 0f       	add	r30, r24
+     e90:	f9 1f       	adc	r31, r25
+     e92:	ef 01       	movw	r28, r30
+     e94:	c5 54       	subi	r28, 0x45	; 69
+     e96:	df 4f       	sbci	r29, 0xFF	; 255
+     e98:	28 81       	ld	r18, Y
+     e9a:	22 95       	swap	r18
+     e9c:	2f 70       	andi	r18, 0x0F	; 15
+     e9e:	29 f0       	breq	.+10     	; 0xeaa <hcNeopixelSetChannelLedsPin+0x7e>
+     ea0:	e3 54       	subi	r30, 0x43	; 67
+     ea2:	ff 4f       	sbci	r31, 0xFF	; 255
+     ea4:	20 81       	ld	r18, Z
+     ea6:	20 61       	ori	r18, 0x10	; 16
+     ea8:	20 83       	st	Z, r18
+     eaa:	01 96       	adiw	r24, 0x01	; 1
+     eac:	cc cf       	rjmp	.-104    	; 0xe46 <hcNeopixelSetChannelLedsPin+0x1a>
+     eae:	f9 01       	movw	r30, r18
+     eb0:	e7 51       	subi	r30, 0x17	; 23
+     eb2:	fe 4f       	sbci	r31, 0xFE	; 254
+     eb4:	11 82       	std	Z+1, r1	; 0x01
+     eb6:	10 82       	st	Z, r1
+     eb8:	8c 91       	ld	r24, X
+     eba:	e8 2f       	mov	r30, r24
+     ebc:	f0 e0       	ldi	r31, 0x00	; 0
+     ebe:	41 e0       	ldi	r20, 0x01	; 1
+     ec0:	50 e0       	ldi	r21, 0x00	; 0
+     ec2:	01 c0       	rjmp	.+2      	; 0xec6 <hcNeopixelSetChannelLedsPin+0x9a>
+     ec4:	44 0f       	add	r20, r20
+     ec6:	8a 95       	dec	r24
+     ec8:	ea f7       	brpl	.-6      	; 0xec4 <hcNeopixelSetChannelLedsPin+0x98>
+     eca:	db 01       	movw	r26, r22
+     ecc:	6d 91       	ld	r22, X+
+     ece:	7c 91       	ld	r23, X
+     ed0:	ee 0f       	add	r30, r30
+     ed2:	ff 1f       	adc	r31, r31
+     ed4:	e7 5d       	subi	r30, 0xD7	; 215
+     ed6:	fc 4f       	sbci	r31, 0xFC	; 252
+     ed8:	80 81       	ld	r24, Z
+     eda:	91 81       	ldd	r25, Z+1	; 0x01
+     edc:	9c 01       	movw	r18, r24
+     ede:	22 0f       	add	r18, r18
+     ee0:	33 1f       	adc	r19, r19
+     ee2:	82 0f       	add	r24, r18
+     ee4:	93 1f       	adc	r25, r19
+     ee6:	84 50       	subi	r24, 0x04	; 4
+     ee8:	9e 4f       	sbci	r25, 0xFE	; 254
+     eea:	df 91       	pop	r29
+     eec:	cf 91       	pop	r28
+     eee:	1f 91       	pop	r17
+     ef0:	0f 91       	pop	r16
+     ef2:	1d cc       	rjmp	.-1990   	; 0x72e <hcNeopixelSetLedsPin>
+
+00000ef4 <hcNeopixelSetData>:
+     ef4:	df 92       	push	r13
+     ef6:	ef 92       	push	r14
+     ef8:	ff 92       	push	r15
+     efa:	0f 93       	push	r16
+     efc:	1f 93       	push	r17
+     efe:	cf 93       	push	r28
+     f00:	df 93       	push	r29
+     f02:	00 d0       	rcall	.+0      	; 0xf04 <hcNeopixelSetData+0x10>
+     f04:	1f 92       	push	r1
+     f06:	cd b7       	in	r28, 0x3d	; 61
+     f08:	de b7       	in	r29, 0x3e	; 62
+     f0a:	1b 82       	std	Y+3, r1	; 0x03
+     f0c:	e0 91 6e 00 	lds	r30, 0x006E	; 0x80006e <hcI2cReadBuffer>
+     f10:	8e 2f       	mov	r24, r30
+     f12:	90 e0       	ldi	r25, 0x00	; 0
+     f14:	80 31       	cpi	r24, 0x10	; 16
+     f16:	91 05       	cpc	r25, r1
+     f18:	08 f0       	brcs	.+2      	; 0xf1c <hcNeopixelSetData+0x28>
+     f1a:	3b c1       	rjmp	.+630    	; 0x1192 <hcNeopixelSetData+0x29e>
+     f1c:	fc 01       	movw	r30, r24
+     f1e:	e7 5a       	subi	r30, 0xA7	; 167
+     f20:	ff 4f       	sbci	r31, 0xFF	; 255
+     f22:	09 94       	ijmp
+     f24:	12 e0       	ldi	r17, 0x02	; 2
+     f26:	75 c0       	rjmp	.+234    	; 0x1012 <hcNeopixelSetData+0x11e>
+     f28:	62 e0       	ldi	r22, 0x02	; 2
+     f2a:	d6 2e       	mov	r13, r22
+     f2c:	00 e0       	ldi	r16, 0x00	; 0
+     f2e:	10 e0       	ldi	r17, 0x00	; 0
+     f30:	e1 2c       	mov	r14, r1
+     f32:	f1 2c       	mov	r15, r1
+     f34:	06 c0       	rjmp	.+12     	; 0xf42 <hcNeopixelSetData+0x4e>
+     f36:	60 91 6f 00 	lds	r22, 0x006F	; 0x80006f <hcI2cReadBuffer+0x1>
+     f3a:	80 e7       	ldi	r24, 0x70	; 112
+     f3c:	90 e0       	ldi	r25, 0x00	; 0
+     f3e:	0e de       	rcall	.-996    	; 0xb5c <hcNeopixelSetLedsData>
+     f40:	28 c1       	rjmp	.+592    	; 0x1192 <hcNeopixelSetData+0x29e>
+     f42:	eb 81       	ldd	r30, Y+3	; 0x03
+     f44:	e4 30       	cpi	r30, 0x04	; 4
+     f46:	08 f0       	brcs	.+2      	; 0xf4a <hcNeopixelSetData+0x56>
+     f48:	24 c1       	rjmp	.+584    	; 0x1192 <hcNeopixelSetData+0x29e>
+     f4a:	ad 2d       	mov	r26, r13
+     f4c:	b0 e0       	ldi	r27, 0x00	; 0
+     f4e:	a2 59       	subi	r26, 0x92	; 146
+     f50:	bf 4f       	sbci	r27, 0xFF	; 255
+     f52:	6c 91       	ld	r22, X
+     f54:	f0 e0       	ldi	r31, 0x00	; 0
+     f56:	ee 0f       	add	r30, r30
+     f58:	ff 1f       	adc	r31, r31
+     f5a:	ed 50       	subi	r30, 0x0D	; 13
+     f5c:	fe 4f       	sbci	r31, 0xFE	; 254
+     f5e:	10 82       	st	Z, r1
+     f60:	61 83       	std	Z+1, r22	; 0x01
+     f62:	c8 01       	movw	r24, r16
+     f64:	2b db       	rcall	.-2474   	; 0x5bc <hcI2cUpdateByteInEeprom>
+     f66:	eb 81       	ldd	r30, Y+3	; 0x03
+     f68:	f0 e0       	ldi	r31, 0x00	; 0
+     f6a:	a1 e0       	ldi	r26, 0x01	; 1
+     f6c:	ad 0d       	add	r26, r13
+     f6e:	b0 e0       	ldi	r27, 0x00	; 0
+     f70:	a2 59       	subi	r26, 0x92	; 146
+     f72:	bf 4f       	sbci	r27, 0xFF	; 255
+     f74:	6c 91       	ld	r22, X
+     f76:	ee 0f       	add	r30, r30
+     f78:	ff 1f       	adc	r31, r31
+     f7a:	ed 50       	subi	r30, 0x0D	; 13
+     f7c:	fe 4f       	sbci	r31, 0xFE	; 254
+     f7e:	80 81       	ld	r24, Z
+     f80:	91 81       	ldd	r25, Z+1	; 0x01
+     f82:	86 2b       	or	r24, r22
+     f84:	91 83       	std	Z+1, r25	; 0x01
+     f86:	80 83       	st	Z, r24
+     f88:	d3 94       	inc	r13
+     f8a:	d3 94       	inc	r13
+     f8c:	c8 01       	movw	r24, r16
+     f8e:	01 96       	adiw	r24, 0x01	; 1
+     f90:	0e 5f       	subi	r16, 0xFE	; 254
+     f92:	1f 4f       	sbci	r17, 0xFF	; 255
+     f94:	13 db       	rcall	.-2522   	; 0x5bc <hcI2cUpdateByteInEeprom>
+     f96:	2b 81       	ldd	r18, Y+3	; 0x03
+     f98:	82 2f       	mov	r24, r18
+     f9a:	90 e0       	ldi	r25, 0x00	; 0
+     f9c:	88 0f       	add	r24, r24
+     f9e:	99 1f       	adc	r25, r25
+     fa0:	fc 01       	movw	r30, r24
+     fa2:	e7 5d       	subi	r30, 0xD7	; 215
+     fa4:	fc 4f       	sbci	r31, 0xFC	; 252
+     fa6:	f1 82       	std	Z+1, r15	; 0x01
+     fa8:	e0 82       	st	Z, r14
+     faa:	fc 01       	movw	r30, r24
+     fac:	ed 50       	subi	r30, 0x0D	; 13
+     fae:	fe 4f       	sbci	r31, 0xFE	; 254
+     fb0:	80 81       	ld	r24, Z
+     fb2:	91 81       	ldd	r25, Z+1	; 0x01
+     fb4:	e8 0e       	add	r14, r24
+     fb6:	f9 1e       	adc	r15, r25
+     fb8:	2f 5f       	subi	r18, 0xFF	; 255
+     fba:	2b 83       	std	Y+3, r18	; 0x03
+     fbc:	c2 cf       	rjmp	.-124    	; 0xf42 <hcNeopixelSetData+0x4e>
+     fbe:	a1 2f       	mov	r26, r17
+     fc0:	b0 e0       	ldi	r27, 0x00	; 0
+     fc2:	a2 59       	subi	r26, 0x92	; 146
+     fc4:	bf 4f       	sbci	r27, 0xFF	; 255
+     fc6:	8c 91       	ld	r24, X
+     fc8:	90 e0       	ldi	r25, 0x00	; 0
+     fca:	98 2f       	mov	r25, r24
+     fcc:	88 27       	eor	r24, r24
+     fce:	a1 e0       	ldi	r26, 0x01	; 1
+     fd0:	a1 0f       	add	r26, r17
+     fd2:	b0 e0       	ldi	r27, 0x00	; 0
+     fd4:	1e 5f       	subi	r17, 0xFE	; 254
+     fd6:	a2 59       	subi	r26, 0x92	; 146
+     fd8:	bf 4f       	sbci	r27, 0xFF	; 255
+     fda:	2c 91       	ld	r18, X
+     fdc:	82 2b       	or	r24, r18
+     fde:	9a 83       	std	Y+2, r25	; 0x02
+     fe0:	89 83       	std	Y+1, r24	; 0x01
+     fe2:	01 96       	adiw	r24, 0x01	; 1
+     fe4:	49 f4       	brne	.+18     	; 0xff8 <hcNeopixelSetData+0x104>
+     fe6:	f0 e0       	ldi	r31, 0x00	; 0
+     fe8:	ee 0f       	add	r30, r30
+     fea:	ff 1f       	adc	r31, r31
+     fec:	ed 50       	subi	r30, 0x0D	; 13
+     fee:	fe 4f       	sbci	r31, 0xFE	; 254
+     ff0:	80 81       	ld	r24, Z
+     ff2:	91 81       	ldd	r25, Z+1	; 0x01
+     ff4:	9a 83       	std	Y+2, r25	; 0x02
+     ff6:	89 83       	std	Y+1, r24	; 0x01
+     ff8:	89 81       	ldd	r24, Y+1	; 0x01
+     ffa:	9a 81       	ldd	r25, Y+2	; 0x02
+     ffc:	89 2b       	or	r24, r25
+     ffe:	31 f0       	breq	.+12     	; 0x100c <hcNeopixelSetData+0x118>
+    1000:	be 01       	movw	r22, r28
+    1002:	6f 5f       	subi	r22, 0xFF	; 255
+    1004:	7f 4f       	sbci	r23, 0xFF	; 255
+    1006:	ce 01       	movw	r24, r28
+    1008:	03 96       	adiw	r24, 0x03	; 3
+    100a:	10 df       	rcall	.-480    	; 0xe2c <hcNeopixelSetChannelLedsPin>
+    100c:	8b 81       	ldd	r24, Y+3	; 0x03
+    100e:	8f 5f       	subi	r24, 0xFF	; 255
+    1010:	8b 83       	std	Y+3, r24	; 0x03
+    1012:	eb 81       	ldd	r30, Y+3	; 0x03
+    1014:	e4 30       	cpi	r30, 0x04	; 4
+    1016:	98 f2       	brcs	.-90     	; 0xfbe <hcNeopixelSetData+0xca>
+    1018:	bc c0       	rjmp	.+376    	; 0x1192 <hcNeopixelSetData+0x29e>
+    101a:	80 91 70 00 	lds	r24, 0x0070	; 0x800070 <hcI2cReadBuffer+0x2>
+    101e:	80 93 32 03 	sts	0x0332, r24	; 0x800332 <hcNeopixelBlinkColor+0x1>
+    1022:	80 91 71 00 	lds	r24, 0x0071	; 0x800071 <hcI2cReadBuffer+0x3>
+    1026:	80 93 31 03 	sts	0x0331, r24	; 0x800331 <hcNeopixelBlinkColor>
+    102a:	80 91 72 00 	lds	r24, 0x0072	; 0x800072 <hcI2cReadBuffer+0x4>
+    102e:	80 93 33 03 	sts	0x0333, r24	; 0x800333 <hcNeopixelBlinkColor+0x2>
+    1032:	af c0       	rjmp	.+350    	; 0x1192 <hcNeopixelSetData+0x29e>
+    1034:	80 91 e7 01 	lds	r24, 0x01E7	; 0x8001e7 <hcNeopixelSequenceEepromAddress>
+    1038:	90 91 e8 01 	lds	r25, 0x01E8	; 0x8001e8 <hcNeopixelSequenceEepromAddress+0x1>
+    103c:	bc da       	rcall	.-2696   	; 0x5b6 <hcI2cReadByteFromEeprom>
+    103e:	81 11       	cpse	r24, r1
+    1040:	16 c0       	rjmp	.+44     	; 0x106e <hcNeopixelSetData+0x17a>
+    1042:	80 91 e7 01 	lds	r24, 0x01E7	; 0x8001e7 <hcNeopixelSequenceEepromAddress>
+    1046:	90 91 e8 01 	lds	r25, 0x01E8	; 0x8001e8 <hcNeopixelSequenceEepromAddress+0x1>
+    104a:	01 96       	adiw	r24, 0x01	; 1
+    104c:	b4 da       	rcall	.-2712   	; 0x5b6 <hcI2cReadByteFromEeprom>
+    104e:	81 11       	cpse	r24, r1
+    1050:	0e c0       	rjmp	.+28     	; 0x106e <hcNeopixelSetData+0x17a>
+    1052:	80 91 e7 01 	lds	r24, 0x01E7	; 0x8001e7 <hcNeopixelSequenceEepromAddress>
+    1056:	90 91 e8 01 	lds	r25, 0x01E8	; 0x8001e8 <hcNeopixelSequenceEepromAddress+0x1>
+    105a:	02 96       	adiw	r24, 0x02	; 2
+    105c:	ac da       	rcall	.-2728   	; 0x5b6 <hcI2cReadByteFromEeprom>
+    105e:	81 11       	cpse	r24, r1
+    1060:	06 c0       	rjmp	.+12     	; 0x106e <hcNeopixelSetData+0x17a>
+    1062:	88 e0       	ldi	r24, 0x08	; 8
+    1064:	90 e0       	ldi	r25, 0x00	; 0
+    1066:	90 93 e8 01 	sts	0x01E8, r25	; 0x8001e8 <hcNeopixelSequenceEepromAddress+0x1>
+    106a:	80 93 e7 01 	sts	0x01E7, r24	; 0x8001e7 <hcNeopixelSequenceEepromAddress>
+    106e:	81 e0       	ldi	r24, 0x01	; 1
+    1070:	80 93 fb 01 	sts	0x01FB, r24	; 0x8001fb <hcNeopixelSequenceActive>
+    1074:	80 91 70 00 	lds	r24, 0x0070	; 0x800070 <hcI2cReadBuffer+0x2>
+    1078:	80 93 ba 00 	sts	0x00BA, r24	; 0x8000ba <hcNeopixelSequenceRepeat>
+    107c:	8a c0       	rjmp	.+276    	; 0x1192 <hcNeopixelSetData+0x29e>
+    107e:	88 e0       	ldi	r24, 0x08	; 8
+    1080:	90 e0       	ldi	r25, 0x00	; 0
+    1082:	90 93 e8 01 	sts	0x01E8, r25	; 0x8001e8 <hcNeopixelSequenceEepromAddress+0x1>
+    1086:	80 93 e7 01 	sts	0x01E7, r24	; 0x8001e7 <hcNeopixelSequenceEepromAddress>
+    108a:	10 92 28 03 	sts	0x0328, r1	; 0x800328 <hcNeopixelSequenceRepeatCount>
+    108e:	10 92 fb 01 	sts	0x01FB, r1	; 0x8001fb <hcNeopixelSequenceActive>
+    1092:	7f c0       	rjmp	.+254    	; 0x1192 <hcNeopixelSetData+0x29e>
+    1094:	80 91 70 00 	lds	r24, 0x0070	; 0x800070 <hcI2cReadBuffer+0x2>
+    1098:	90 91 71 00 	lds	r25, 0x0071	; 0x800071 <hcI2cReadBuffer+0x3>
+    109c:	98 27       	eor	r25, r24
+    109e:	89 27       	eor	r24, r25
+    10a0:	98 27       	eor	r25, r24
+    10a2:	90 93 e8 01 	sts	0x01E8, r25	; 0x8001e8 <hcNeopixelSequenceEepromAddress+0x1>
+    10a6:	80 93 e7 01 	sts	0x01E7, r24	; 0x8001e7 <hcNeopixelSequenceEepromAddress>
+    10aa:	08 97       	sbiw	r24, 0x08	; 8
+    10ac:	08 f0       	brcs	.+2      	; 0x10b0 <hcNeopixelSetData+0x1bc>
+    10ae:	71 c0       	rjmp	.+226    	; 0x1192 <hcNeopixelSetData+0x29e>
+    10b0:	88 e0       	ldi	r24, 0x08	; 8
+    10b2:	90 e0       	ldi	r25, 0x00	; 0
+    10b4:	90 93 69 00 	sts	0x0069, r25	; 0x800069 <hcI2cEepromPosition+0x1>
+    10b8:	80 93 68 00 	sts	0x0068, r24	; 0x800068 <hcI2cEepromPosition>
+    10bc:	6a c0       	rjmp	.+212    	; 0x1192 <hcNeopixelSetData+0x29e>
+    10be:	80 91 68 00 	lds	r24, 0x0068	; 0x800068 <hcI2cEepromPosition>
+    10c2:	90 91 69 00 	lds	r25, 0x0069	; 0x800069 <hcI2cEepromPosition+0x1>
+    10c6:	20 91 6f 00 	lds	r18, 0x006F	; 0x80006f <hcI2cReadBuffer+0x1>
+    10ca:	ac 01       	movw	r20, r24
+    10cc:	42 0f       	add	r20, r18
+    10ce:	51 1d       	adc	r21, r1
+    10d0:	9a 01       	movw	r18, r20
+    10d2:	21 30       	cpi	r18, 0x01	; 1
+    10d4:	32 40       	sbci	r19, 0x02	; 2
+    10d6:	08 f0       	brcs	.+2      	; 0x10da <hcNeopixelSetData+0x1e6>
+    10d8:	5c c0       	rjmp	.+184    	; 0x1192 <hcNeopixelSetData+0x29e>
+    10da:	60 91 70 00 	lds	r22, 0x0070	; 0x800070 <hcI2cReadBuffer+0x2>
+    10de:	9c 01       	movw	r18, r24
+    10e0:	2f 5f       	subi	r18, 0xFF	; 255
+    10e2:	3f 4f       	sbci	r19, 0xFF	; 255
+    10e4:	30 93 69 00 	sts	0x0069, r19	; 0x800069 <hcI2cEepromPosition+0x1>
+    10e8:	20 93 68 00 	sts	0x0068, r18	; 0x800068 <hcI2cEepromPosition>
+    10ec:	67 da       	rcall	.-2866   	; 0x5bc <hcI2cUpdateByteInEeprom>
+    10ee:	60 91 71 00 	lds	r22, 0x0071	; 0x800071 <hcI2cReadBuffer+0x3>
+    10f2:	80 91 68 00 	lds	r24, 0x0068	; 0x800068 <hcI2cEepromPosition>
+    10f6:	90 91 69 00 	lds	r25, 0x0069	; 0x800069 <hcI2cEepromPosition+0x1>
+    10fa:	9c 01       	movw	r18, r24
+    10fc:	2f 5f       	subi	r18, 0xFF	; 255
+    10fe:	3f 4f       	sbci	r19, 0xFF	; 255
+    1100:	30 93 69 00 	sts	0x0069, r19	; 0x800069 <hcI2cEepromPosition+0x1>
+    1104:	20 93 68 00 	sts	0x0068, r18	; 0x800068 <hcI2cEepromPosition>
+    1108:	59 da       	rcall	.-2894   	; 0x5bc <hcI2cUpdateByteInEeprom>
+    110a:	60 91 6f 00 	lds	r22, 0x006F	; 0x80006f <hcI2cReadBuffer+0x1>
+    110e:	62 50       	subi	r22, 0x02	; 2
+    1110:	80 91 68 00 	lds	r24, 0x0068	; 0x800068 <hcI2cEepromPosition>
+    1114:	90 91 69 00 	lds	r25, 0x0069	; 0x800069 <hcI2cEepromPosition+0x1>
+    1118:	9c 01       	movw	r18, r24
+    111a:	2f 5f       	subi	r18, 0xFF	; 255
+    111c:	3f 4f       	sbci	r19, 0xFF	; 255
+    111e:	30 93 69 00 	sts	0x0069, r19	; 0x800069 <hcI2cEepromPosition+0x1>
+    1122:	20 93 68 00 	sts	0x0068, r18	; 0x800068 <hcI2cEepromPosition>
+    1126:	4a da       	rcall	.-2924   	; 0x5bc <hcI2cUpdateByteInEeprom>
+    1128:	84 e0       	ldi	r24, 0x04	; 4
+    112a:	8b 83       	std	Y+3, r24	; 0x03
+    112c:	2b 81       	ldd	r18, Y+3	; 0x03
+    112e:	30 e0       	ldi	r19, 0x00	; 0
+    1130:	40 91 6f 00 	lds	r20, 0x006F	; 0x80006f <hcI2cReadBuffer+0x1>
+    1134:	50 e0       	ldi	r21, 0x00	; 0
+    1136:	4f 5f       	subi	r20, 0xFF	; 255
+    1138:	5f 4f       	sbci	r21, 0xFF	; 255
+    113a:	80 91 68 00 	lds	r24, 0x0068	; 0x800068 <hcI2cEepromPosition>
+    113e:	90 91 69 00 	lds	r25, 0x0069	; 0x800069 <hcI2cEepromPosition+0x1>
+    1142:	42 17       	cp	r20, r18
+    1144:	53 07       	cpc	r21, r19
+    1146:	7c f0       	brlt	.+30     	; 0x1166 <hcNeopixelSetData+0x272>
+    1148:	f9 01       	movw	r30, r18
+    114a:	e2 59       	subi	r30, 0x92	; 146
+    114c:	ff 4f       	sbci	r31, 0xFF	; 255
+    114e:	60 81       	ld	r22, Z
+    1150:	9c 01       	movw	r18, r24
+    1152:	2f 5f       	subi	r18, 0xFF	; 255
+    1154:	3f 4f       	sbci	r19, 0xFF	; 255
+    1156:	30 93 69 00 	sts	0x0069, r19	; 0x800069 <hcI2cEepromPosition+0x1>
+    115a:	20 93 68 00 	sts	0x0068, r18	; 0x800068 <hcI2cEepromPosition>
+    115e:	2e da       	rcall	.-2980   	; 0x5bc <hcI2cUpdateByteInEeprom>
+    1160:	8b 81       	ldd	r24, Y+3	; 0x03
+    1162:	8f 5f       	subi	r24, 0xFF	; 255
+    1164:	e2 cf       	rjmp	.-60     	; 0x112a <hcNeopixelSetData+0x236>
+    1166:	9c 01       	movw	r18, r24
+    1168:	2e 5f       	subi	r18, 0xFE	; 254
+    116a:	3f 4f       	sbci	r19, 0xFF	; 255
+    116c:	21 15       	cp	r18, r1
+    116e:	32 40       	sbci	r19, 0x02	; 2
+    1170:	80 f4       	brcc	.+32     	; 0x1192 <hcNeopixelSetData+0x29e>
+    1172:	60 e0       	ldi	r22, 0x00	; 0
+    1174:	23 da       	rcall	.-3002   	; 0x5bc <hcI2cUpdateByteInEeprom>
+    1176:	80 91 68 00 	lds	r24, 0x0068	; 0x800068 <hcI2cEepromPosition>
+    117a:	90 91 69 00 	lds	r25, 0x0069	; 0x800069 <hcI2cEepromPosition+0x1>
+    117e:	60 e0       	ldi	r22, 0x00	; 0
+    1180:	01 96       	adiw	r24, 0x01	; 1
+    1182:	1c da       	rcall	.-3016   	; 0x5bc <hcI2cUpdateByteInEeprom>
+    1184:	80 91 68 00 	lds	r24, 0x0068	; 0x800068 <hcI2cEepromPosition>
+    1188:	90 91 69 00 	lds	r25, 0x0069	; 0x800069 <hcI2cEepromPosition+0x1>
+    118c:	60 e0       	ldi	r22, 0x00	; 0
+    118e:	02 96       	adiw	r24, 0x02	; 2
+    1190:	15 da       	rcall	.-3030   	; 0x5bc <hcI2cUpdateByteInEeprom>
+    1192:	0f 90       	pop	r0
+    1194:	0f 90       	pop	r0
+    1196:	0f 90       	pop	r0
+    1198:	df 91       	pop	r29
+    119a:	cf 91       	pop	r28
+    119c:	1f 91       	pop	r17
+    119e:	0f 91       	pop	r16
+    11a0:	ff 90       	pop	r15
+    11a2:	ef 90       	pop	r14
+    11a4:	df 90       	pop	r13
+    11a6:	08 95       	ret
+
+000011a8 <hcNeopixelFadeLedRed>:
+    11a8:	0f 93       	push	r16
+    11aa:	1f 93       	push	r17
+    11ac:	a8 2f       	mov	r26, r24
+    11ae:	b0 e0       	ldi	r27, 0x00	; 0
+    11b0:	fd 01       	movw	r30, r26
+    11b2:	ee 52       	subi	r30, 0x2E	; 46
+    11b4:	fe 4f       	sbci	r31, 0xFE	; 254
+    11b6:	94 91       	lpm	r25, Z
+    11b8:	69 17       	cp	r22, r25
+    11ba:	78 f1       	brcs	.+94     	; 0x121a <hcNeopixelFadeLedRed+0x72>
+    11bc:	fd 01       	movw	r30, r26
+    11be:	75 e0       	ldi	r23, 0x05	; 5
+    11c0:	ee 0f       	add	r30, r30
+    11c2:	ff 1f       	adc	r31, r31
+    11c4:	7a 95       	dec	r23
+    11c6:	e1 f7       	brne	.-8      	; 0x11c0 <hcNeopixelFadeLedRed+0x18>
+    11c8:	d9 01       	movw	r26, r18
+    11ca:	7c 91       	ld	r23, X
+    11cc:	e7 0f       	add	r30, r23
+    11ce:	f1 1d       	adc	r31, r1
+    11d0:	ee 52       	subi	r30, 0x2E	; 46
+    11d2:	ff 4f       	sbci	r31, 0xFF	; 255
+    11d4:	a4 91       	lpm	r26, Z
+    11d6:	b0 e0       	ldi	r27, 0x00	; 0
+    11d8:	f8 01       	movw	r30, r16
+    11da:	00 80       	ld	r0, Z
+    11dc:	02 c0       	rjmp	.+4      	; 0x11e2 <hcNeopixelFadeLedRed+0x3a>
+    11de:	b5 95       	asr	r27
+    11e0:	a7 95       	ror	r26
+    11e2:	0a 94       	dec	r0
+    11e4:	e2 f7       	brpl	.-8      	; 0x11de <hcNeopixelFadeLedRed+0x36>
+    11e6:	a0 ff       	sbrs	r26, 0
+    11e8:	17 c0       	rjmp	.+46     	; 0x1218 <hcNeopixelFadeLedRed+0x70>
+    11ea:	da 01       	movw	r26, r20
+    11ec:	8d 91       	ld	r24, X+
+    11ee:	9c 91       	ld	r25, X
+    11f0:	fc 01       	movw	r30, r24
+    11f2:	ee 0f       	add	r30, r30
+    11f4:	ff 1f       	adc	r31, r31
+    11f6:	e8 0f       	add	r30, r24
+    11f8:	f9 1f       	adc	r31, r25
+    11fa:	df 01       	movw	r26, r30
+    11fc:	a3 54       	subi	r26, 0x43	; 67
+    11fe:	bf 4f       	sbci	r27, 0xFF	; 255
+    1200:	8c 91       	ld	r24, X
+    1202:	e4 50       	subi	r30, 0x04	; 4
+    1204:	fe 4f       	sbci	r31, 0xFE	; 254
+    1206:	80 ff       	sbrs	r24, 0
+    1208:	03 c0       	rjmp	.+6      	; 0x1210 <hcNeopixelFadeLedRed+0x68>
+    120a:	81 81       	ldd	r24, Z+1	; 0x01
+    120c:	8f 5f       	subi	r24, 0xFF	; 255
+    120e:	02 c0       	rjmp	.+4      	; 0x1214 <hcNeopixelFadeLedRed+0x6c>
+    1210:	81 81       	ldd	r24, Z+1	; 0x01
+    1212:	81 50       	subi	r24, 0x01	; 1
+    1214:	81 83       	std	Z+1, r24	; 0x01
+    1216:	05 c0       	rjmp	.+10     	; 0x1222 <hcNeopixelFadeLedRed+0x7a>
+    1218:	69 1b       	sub	r22, r25
+    121a:	66 23       	and	r22, r22
+    121c:	11 f0       	breq	.+4      	; 0x1222 <hcNeopixelFadeLedRed+0x7a>
+    121e:	8f 5f       	subi	r24, 0xFF	; 255
+    1220:	c5 cf       	rjmp	.-118    	; 0x11ac <hcNeopixelFadeLedRed+0x4>
+    1222:	1f 91       	pop	r17
+    1224:	0f 91       	pop	r16
+    1226:	08 95       	ret
+
+00001228 <hcNeopixelFadeLedGreen>:
+    1228:	0f 93       	push	r16
+    122a:	1f 93       	push	r17
+    122c:	a8 2f       	mov	r26, r24
+    122e:	b0 e0       	ldi	r27, 0x00	; 0
+    1230:	fd 01       	movw	r30, r26
+    1232:	ee 52       	subi	r30, 0x2E	; 46
+    1234:	fe 4f       	sbci	r31, 0xFE	; 254
+    1236:	94 91       	lpm	r25, Z
+    1238:	69 17       	cp	r22, r25
+    123a:	78 f1       	brcs	.+94     	; 0x129a <hcNeopixelFadeLedGreen+0x72>
+    123c:	fd 01       	movw	r30, r26
+    123e:	75 e0       	ldi	r23, 0x05	; 5
+    1240:	ee 0f       	add	r30, r30
+    1242:	ff 1f       	adc	r31, r31
+    1244:	7a 95       	dec	r23
+    1246:	e1 f7       	brne	.-8      	; 0x1240 <hcNeopixelFadeLedGreen+0x18>
+    1248:	d9 01       	movw	r26, r18
+    124a:	7c 91       	ld	r23, X
+    124c:	e7 0f       	add	r30, r23
+    124e:	f1 1d       	adc	r31, r1
+    1250:	ee 52       	subi	r30, 0x2E	; 46
+    1252:	ff 4f       	sbci	r31, 0xFF	; 255
+    1254:	a4 91       	lpm	r26, Z
+    1256:	b0 e0       	ldi	r27, 0x00	; 0
+    1258:	f8 01       	movw	r30, r16
+    125a:	00 80       	ld	r0, Z
+    125c:	02 c0       	rjmp	.+4      	; 0x1262 <hcNeopixelFadeLedGreen+0x3a>
+    125e:	b5 95       	asr	r27
+    1260:	a7 95       	ror	r26
+    1262:	0a 94       	dec	r0
+    1264:	e2 f7       	brpl	.-8      	; 0x125e <hcNeopixelFadeLedGreen+0x36>
+    1266:	a0 ff       	sbrs	r26, 0
+    1268:	17 c0       	rjmp	.+46     	; 0x1298 <hcNeopixelFadeLedGreen+0x70>
+    126a:	da 01       	movw	r26, r20
+    126c:	8d 91       	ld	r24, X+
+    126e:	9c 91       	ld	r25, X
+    1270:	fc 01       	movw	r30, r24
+    1272:	ee 0f       	add	r30, r30
+    1274:	ff 1f       	adc	r31, r31
+    1276:	e8 0f       	add	r30, r24
+    1278:	f9 1f       	adc	r31, r25
+    127a:	df 01       	movw	r26, r30
+    127c:	a3 54       	subi	r26, 0x43	; 67
+    127e:	bf 4f       	sbci	r27, 0xFF	; 255
+    1280:	8c 91       	ld	r24, X
+    1282:	e4 50       	subi	r30, 0x04	; 4
+    1284:	fe 4f       	sbci	r31, 0xFE	; 254
+    1286:	81 ff       	sbrs	r24, 1
+    1288:	03 c0       	rjmp	.+6      	; 0x1290 <hcNeopixelFadeLedGreen+0x68>
+    128a:	80 81       	ld	r24, Z
+    128c:	8f 5f       	subi	r24, 0xFF	; 255
+    128e:	02 c0       	rjmp	.+4      	; 0x1294 <hcNeopixelFadeLedGreen+0x6c>
+    1290:	80 81       	ld	r24, Z
+    1292:	81 50       	subi	r24, 0x01	; 1
+    1294:	80 83       	st	Z, r24
+    1296:	05 c0       	rjmp	.+10     	; 0x12a2 <hcNeopixelFadeLedGreen+0x7a>
+    1298:	69 1b       	sub	r22, r25
+    129a:	66 23       	and	r22, r22
+    129c:	11 f0       	breq	.+4      	; 0x12a2 <hcNeopixelFadeLedGreen+0x7a>
+    129e:	8f 5f       	subi	r24, 0xFF	; 255
+    12a0:	c5 cf       	rjmp	.-118    	; 0x122c <hcNeopixelFadeLedGreen+0x4>
+    12a2:	1f 91       	pop	r17
+    12a4:	0f 91       	pop	r16
+    12a6:	08 95       	ret
+
+000012a8 <hcNeopixelFadeLedBlue>:
+    12a8:	0f 93       	push	r16
+    12aa:	1f 93       	push	r17
+    12ac:	a8 2f       	mov	r26, r24
+    12ae:	b0 e0       	ldi	r27, 0x00	; 0
+    12b0:	fd 01       	movw	r30, r26
+    12b2:	ee 52       	subi	r30, 0x2E	; 46
+    12b4:	fe 4f       	sbci	r31, 0xFE	; 254
+    12b6:	94 91       	lpm	r25, Z
+    12b8:	69 17       	cp	r22, r25
+    12ba:	78 f1       	brcs	.+94     	; 0x131a <hcNeopixelFadeLedBlue+0x72>
+    12bc:	fd 01       	movw	r30, r26
+    12be:	75 e0       	ldi	r23, 0x05	; 5
+    12c0:	ee 0f       	add	r30, r30
+    12c2:	ff 1f       	adc	r31, r31
+    12c4:	7a 95       	dec	r23
+    12c6:	e1 f7       	brne	.-8      	; 0x12c0 <hcNeopixelFadeLedBlue+0x18>
+    12c8:	d9 01       	movw	r26, r18
+    12ca:	7c 91       	ld	r23, X
+    12cc:	e7 0f       	add	r30, r23
+    12ce:	f1 1d       	adc	r31, r1
+    12d0:	ee 52       	subi	r30, 0x2E	; 46
+    12d2:	ff 4f       	sbci	r31, 0xFF	; 255
+    12d4:	a4 91       	lpm	r26, Z
+    12d6:	b0 e0       	ldi	r27, 0x00	; 0
+    12d8:	f8 01       	movw	r30, r16
+    12da:	00 80       	ld	r0, Z
+    12dc:	02 c0       	rjmp	.+4      	; 0x12e2 <hcNeopixelFadeLedBlue+0x3a>
+    12de:	b5 95       	asr	r27
+    12e0:	a7 95       	ror	r26
+    12e2:	0a 94       	dec	r0
+    12e4:	e2 f7       	brpl	.-8      	; 0x12de <hcNeopixelFadeLedBlue+0x36>
+    12e6:	a0 ff       	sbrs	r26, 0
+    12e8:	17 c0       	rjmp	.+46     	; 0x1318 <hcNeopixelFadeLedBlue+0x70>
+    12ea:	da 01       	movw	r26, r20
+    12ec:	8d 91       	ld	r24, X+
+    12ee:	9c 91       	ld	r25, X
+    12f0:	fc 01       	movw	r30, r24
+    12f2:	ee 0f       	add	r30, r30
+    12f4:	ff 1f       	adc	r31, r31
+    12f6:	e8 0f       	add	r30, r24
+    12f8:	f9 1f       	adc	r31, r25
+    12fa:	df 01       	movw	r26, r30
+    12fc:	a3 54       	subi	r26, 0x43	; 67
+    12fe:	bf 4f       	sbci	r27, 0xFF	; 255
+    1300:	8c 91       	ld	r24, X
+    1302:	e4 50       	subi	r30, 0x04	; 4
+    1304:	fe 4f       	sbci	r31, 0xFE	; 254
+    1306:	82 ff       	sbrs	r24, 2
+    1308:	03 c0       	rjmp	.+6      	; 0x1310 <hcNeopixelFadeLedBlue+0x68>
+    130a:	82 81       	ldd	r24, Z+2	; 0x02
+    130c:	8f 5f       	subi	r24, 0xFF	; 255
+    130e:	02 c0       	rjmp	.+4      	; 0x1314 <hcNeopixelFadeLedBlue+0x6c>
+    1310:	82 81       	ldd	r24, Z+2	; 0x02
+    1312:	81 50       	subi	r24, 0x01	; 1
+    1314:	82 83       	std	Z+2, r24	; 0x02
+    1316:	05 c0       	rjmp	.+10     	; 0x1322 <hcNeopixelFadeLedBlue+0x7a>
+    1318:	69 1b       	sub	r22, r25
+    131a:	66 23       	and	r22, r22
+    131c:	11 f0       	breq	.+4      	; 0x1322 <hcNeopixelFadeLedBlue+0x7a>
+    131e:	8f 5f       	subi	r24, 0xFF	; 255
+    1320:	c5 cf       	rjmp	.-118    	; 0x12ac <hcNeopixelFadeLedBlue+0x4>
+    1322:	1f 91       	pop	r17
+    1324:	0f 91       	pop	r16
+    1326:	08 95       	ret
+
+00001328 <hcNeopixelIsrEveryCall>:
+    1328:	cf 92       	push	r12
+    132a:	df 92       	push	r13
+    132c:	ef 92       	push	r14
+    132e:	ff 92       	push	r15
+    1330:	0f 93       	push	r16
+    1332:	1f 93       	push	r17
+    1334:	cf 93       	push	r28
+    1336:	df 93       	push	r29
+    1338:	cd b7       	in	r28, 0x3d	; 61
+    133a:	de b7       	in	r29, 0x3e	; 62
+    133c:	a3 97       	sbiw	r28, 0x23	; 35
+    133e:	0f b6       	in	r0, 0x3f	; 63
+    1340:	f8 94       	cli
+    1342:	de bf       	out	0x3e, r29	; 62
+    1344:	0f be       	out	0x3f, r0	; 63
+    1346:	cd bf       	out	0x3d, r28	; 61
+    1348:	d0 90 67 00 	lds	r13, 0x0067	; 0x800067 <hcI2cInterruptCount>
+    134c:	8d 2d       	mov	r24, r13
+    134e:	90 e0       	ldi	r25, 0x00	; 0
+    1350:	20 91 60 00 	lds	r18, 0x0060	; 0x800060 <__DATA_REGION_ORIGIN__>
+    1354:	30 91 61 00 	lds	r19, 0x0061	; 0x800061 <__DATA_REGION_ORIGIN__+0x1>
+    1358:	28 0f       	add	r18, r24
+    135a:	39 1f       	adc	r19, r25
+    135c:	30 93 61 00 	sts	0x0061, r19	; 0x800061 <__DATA_REGION_ORIGIN__+0x1>
+    1360:	20 93 60 00 	sts	0x0060, r18	; 0x800060 <__DATA_REGION_ORIGIN__>
+    1364:	20 91 62 00 	lds	r18, 0x0062	; 0x800062 <hcNeopixelSequenceCount>
+    1368:	30 91 63 00 	lds	r19, 0x0063	; 0x800063 <hcNeopixelSequenceCount+0x1>
+    136c:	82 0f       	add	r24, r18
+    136e:	93 1f       	adc	r25, r19
+    1370:	90 93 63 00 	sts	0x0063, r25	; 0x800063 <hcNeopixelSequenceCount+0x1>
+    1374:	80 93 62 00 	sts	0x0062, r24	; 0x800062 <hcNeopixelSequenceCount>
+    1378:	80 91 fb 01 	lds	r24, 0x01FB	; 0x8001fb <hcNeopixelSequenceActive>
+    137c:	88 23       	and	r24, r24
+    137e:	09 f4       	brne	.+2      	; 0x1382 <hcNeopixelIsrEveryCall+0x5a>
+    1380:	a0 c0       	rjmp	.+320    	; 0x14c2 <hcNeopixelIsrEveryCall+0x19a>
+    1382:	80 91 e7 01 	lds	r24, 0x01E7	; 0x8001e7 <hcNeopixelSequenceEepromAddress>
+    1386:	90 91 e8 01 	lds	r25, 0x01E8	; 0x8001e8 <hcNeopixelSequenceEepromAddress+0x1>
+    138a:	15 d9       	rcall	.-3542   	; 0x5b6 <hcI2cReadByteFromEeprom>
+    138c:	f8 2e       	mov	r15, r24
+    138e:	80 91 e7 01 	lds	r24, 0x01E7	; 0x8001e7 <hcNeopixelSequenceEepromAddress>
+    1392:	90 91 e8 01 	lds	r25, 0x01E8	; 0x8001e8 <hcNeopixelSequenceEepromAddress+0x1>
+    1396:	01 96       	adiw	r24, 0x01	; 1
+    1398:	0e d9       	rcall	.-3556   	; 0x5b6 <hcI2cReadByteFromEeprom>
+    139a:	2f 2d       	mov	r18, r15
+    139c:	30 e0       	ldi	r19, 0x00	; 0
+    139e:	32 2f       	mov	r19, r18
+    13a0:	22 27       	eor	r18, r18
+    13a2:	28 2b       	or	r18, r24
+    13a4:	80 91 62 00 	lds	r24, 0x0062	; 0x800062 <hcNeopixelSequenceCount>
+    13a8:	90 91 63 00 	lds	r25, 0x0063	; 0x800063 <hcNeopixelSequenceCount+0x1>
+    13ac:	82 17       	cp	r24, r18
+    13ae:	93 07       	cpc	r25, r19
+    13b0:	08 f4       	brcc	.+2      	; 0x13b4 <hcNeopixelIsrEveryCall+0x8c>
+    13b2:	87 c0       	rjmp	.+270    	; 0x14c2 <hcNeopixelIsrEveryCall+0x19a>
+    13b4:	10 92 63 00 	sts	0x0063, r1	; 0x800063 <hcNeopixelSequenceCount+0x1>
+    13b8:	10 92 62 00 	sts	0x0062, r1	; 0x800062 <hcNeopixelSequenceCount>
+    13bc:	80 91 e7 01 	lds	r24, 0x01E7	; 0x8001e7 <hcNeopixelSequenceEepromAddress>
+    13c0:	90 91 e8 01 	lds	r25, 0x01E8	; 0x8001e8 <hcNeopixelSequenceEepromAddress+0x1>
+    13c4:	9c 01       	movw	r18, r24
+    13c6:	2d 5f       	subi	r18, 0xFD	; 253
+    13c8:	3f 4f       	sbci	r19, 0xFF	; 255
+    13ca:	30 93 e8 01 	sts	0x01E8, r19	; 0x8001e8 <hcNeopixelSequenceEepromAddress+0x1>
+    13ce:	20 93 e7 01 	sts	0x01E7, r18	; 0x8001e7 <hcNeopixelSequenceEepromAddress>
+    13d2:	02 96       	adiw	r24, 0x02	; 2
+    13d4:	f0 d8       	rcall	.-3616   	; 0x5b6 <hcI2cReadByteFromEeprom>
+    13d6:	18 2f       	mov	r17, r24
+    13d8:	19 a2       	std	Y+33, r1	; 0x21
+    13da:	09 a1       	ldd	r16, Y+33	; 0x21
+    13dc:	01 17       	cp	r16, r17
+    13de:	b8 f4       	brcc	.+46     	; 0x140e <hcNeopixelIsrEveryCall+0xe6>
+    13e0:	80 91 e7 01 	lds	r24, 0x01E7	; 0x8001e7 <hcNeopixelSequenceEepromAddress>
+    13e4:	90 91 e8 01 	lds	r25, 0x01E8	; 0x8001e8 <hcNeopixelSequenceEepromAddress+0x1>
+    13e8:	9c 01       	movw	r18, r24
+    13ea:	2f 5f       	subi	r18, 0xFF	; 255
+    13ec:	3f 4f       	sbci	r19, 0xFF	; 255
+    13ee:	30 93 e8 01 	sts	0x01E8, r19	; 0x8001e8 <hcNeopixelSequenceEepromAddress+0x1>
+    13f2:	20 93 e7 01 	sts	0x01E7, r18	; 0x8001e7 <hcNeopixelSequenceEepromAddress>
+    13f6:	df d8       	rcall	.-3650   	; 0x5b6 <hcI2cReadByteFromEeprom>
+    13f8:	e1 e0       	ldi	r30, 0x01	; 1
+    13fa:	f0 e0       	ldi	r31, 0x00	; 0
+    13fc:	ec 0f       	add	r30, r28
+    13fe:	fd 1f       	adc	r31, r29
+    1400:	e0 0f       	add	r30, r16
+    1402:	f1 1d       	adc	r31, r1
+    1404:	80 83       	st	Z, r24
+    1406:	89 a1       	ldd	r24, Y+33	; 0x21
+    1408:	8f 5f       	subi	r24, 0xFF	; 255
+    140a:	89 a3       	std	Y+33, r24	; 0x21
+    140c:	e6 cf       	rjmp	.-52     	; 0x13da <hcNeopixelIsrEveryCall+0xb2>
+    140e:	61 2f       	mov	r22, r17
+    1410:	ce 01       	movw	r24, r28
+    1412:	01 96       	adiw	r24, 0x01	; 1
+    1414:	a3 db       	rcall	.-2234   	; 0xb5c <hcNeopixelSetLedsData>
+    1416:	19 a2       	std	Y+33, r1	; 0x21
+    1418:	89 a1       	ldd	r24, Y+33	; 0x21
+    141a:	84 30       	cpi	r24, 0x04	; 4
+    141c:	f0 f4       	brcc	.+60     	; 0x145a <hcNeopixelIsrEveryCall+0x132>
+    141e:	90 e0       	ldi	r25, 0x00	; 0
+    1420:	88 0f       	add	r24, r24
+    1422:	99 1f       	adc	r25, r25
+    1424:	fc 01       	movw	r30, r24
+    1426:	e7 51       	subi	r30, 0x17	; 23
+    1428:	fe 4f       	sbci	r31, 0xFE	; 254
+    142a:	20 81       	ld	r18, Z
+    142c:	31 81       	ldd	r19, Z+1	; 0x01
+    142e:	21 15       	cp	r18, r1
+    1430:	31 05       	cpc	r19, r1
+    1432:	79 f0       	breq	.+30     	; 0x1452 <hcNeopixelIsrEveryCall+0x12a>
+    1434:	fc 01       	movw	r30, r24
+    1436:	e7 5d       	subi	r30, 0xD7	; 215
+    1438:	fc 4f       	sbci	r31, 0xFC	; 252
+    143a:	80 81       	ld	r24, Z
+    143c:	91 81       	ldd	r25, Z+1	; 0x01
+    143e:	28 1b       	sub	r18, r24
+    1440:	39 0b       	sbc	r19, r25
+    1442:	38 a3       	std	Y+32, r19	; 0x20
+    1444:	2f 8f       	std	Y+31, r18	; 0x1f
+    1446:	be 01       	movw	r22, r28
+    1448:	61 5e       	subi	r22, 0xE1	; 225
+    144a:	7f 4f       	sbci	r23, 0xFF	; 255
+    144c:	ce 01       	movw	r24, r28
+    144e:	81 96       	adiw	r24, 0x21	; 33
+    1450:	ed dc       	rcall	.-1574   	; 0xe2c <hcNeopixelSetChannelLedsPin>
+    1452:	89 a1       	ldd	r24, Y+33	; 0x21
+    1454:	8f 5f       	subi	r24, 0xFF	; 255
+    1456:	89 a3       	std	Y+33, r24	; 0x21
+    1458:	df cf       	rjmp	.-66     	; 0x1418 <hcNeopixelIsrEveryCall+0xf0>
+    145a:	80 91 e7 01 	lds	r24, 0x01E7	; 0x8001e7 <hcNeopixelSequenceEepromAddress>
+    145e:	90 91 e8 01 	lds	r25, 0x01E8	; 0x8001e8 <hcNeopixelSequenceEepromAddress+0x1>
+    1462:	9c 01       	movw	r18, r24
+    1464:	2e 5f       	subi	r18, 0xFE	; 254
+    1466:	3f 4f       	sbci	r19, 0xFF	; 255
+    1468:	21 15       	cp	r18, r1
+    146a:	32 40       	sbci	r19, 0x02	; 2
+    146c:	80 f0       	brcs	.+32     	; 0x148e <hcNeopixelIsrEveryCall+0x166>
+    146e:	88 e0       	ldi	r24, 0x08	; 8
+    1470:	90 e0       	ldi	r25, 0x00	; 0
+    1472:	90 93 e8 01 	sts	0x01E8, r25	; 0x8001e8 <hcNeopixelSequenceEepromAddress+0x1>
+    1476:	80 93 e7 01 	sts	0x01E7, r24	; 0x8001e7 <hcNeopixelSequenceEepromAddress>
+    147a:	80 91 28 03 	lds	r24, 0x0328	; 0x800328 <hcNeopixelSequenceRepeatCount>
+    147e:	8f 5f       	subi	r24, 0xFF	; 255
+    1480:	80 93 28 03 	sts	0x0328, r24	; 0x800328 <hcNeopixelSequenceRepeatCount>
+    1484:	90 91 ba 00 	lds	r25, 0x00BA	; 0x8000ba <hcNeopixelSequenceRepeat>
+    1488:	91 11       	cpse	r25, r1
+    148a:	15 c0       	rjmp	.+42     	; 0x14b6 <hcNeopixelIsrEveryCall+0x18e>
+    148c:	1a c0       	rjmp	.+52     	; 0x14c2 <hcNeopixelIsrEveryCall+0x19a>
+    148e:	93 d8       	rcall	.-3802   	; 0x5b6 <hcI2cReadByteFromEeprom>
+    1490:	81 11       	cpse	r24, r1
+    1492:	17 c0       	rjmp	.+46     	; 0x14c2 <hcNeopixelIsrEveryCall+0x19a>
+    1494:	80 91 e7 01 	lds	r24, 0x01E7	; 0x8001e7 <hcNeopixelSequenceEepromAddress>
+    1498:	90 91 e8 01 	lds	r25, 0x01E8	; 0x8001e8 <hcNeopixelSequenceEepromAddress+0x1>
+    149c:	01 96       	adiw	r24, 0x01	; 1
+    149e:	8b d8       	rcall	.-3818   	; 0x5b6 <hcI2cReadByteFromEeprom>
+    14a0:	81 11       	cpse	r24, r1
+    14a2:	0f c0       	rjmp	.+30     	; 0x14c2 <hcNeopixelIsrEveryCall+0x19a>
+    14a4:	80 91 e7 01 	lds	r24, 0x01E7	; 0x8001e7 <hcNeopixelSequenceEepromAddress>
+    14a8:	90 91 e8 01 	lds	r25, 0x01E8	; 0x8001e8 <hcNeopixelSequenceEepromAddress+0x1>
+    14ac:	02 96       	adiw	r24, 0x02	; 2
+    14ae:	83 d8       	rcall	.-3834   	; 0x5b6 <hcI2cReadByteFromEeprom>
+    14b0:	88 23       	and	r24, r24
+    14b2:	e9 f2       	breq	.-70     	; 0x146e <hcNeopixelIsrEveryCall+0x146>
+    14b4:	06 c0       	rjmp	.+12     	; 0x14c2 <hcNeopixelIsrEveryCall+0x19a>
+    14b6:	89 17       	cp	r24, r25
+    14b8:	20 f0       	brcs	.+8      	; 0x14c2 <hcNeopixelIsrEveryCall+0x19a>
+    14ba:	10 92 28 03 	sts	0x0328, r1	; 0x800328 <hcNeopixelSequenceRepeatCount>
+    14be:	10 92 fb 01 	sts	0x01FB, r1	; 0x8001fb <hcNeopixelSequenceActive>
+    14c2:	19 a2       	std	Y+33, r1	; 0x21
+    14c4:	ee 24       	eor	r14, r14
+    14c6:	e3 94       	inc	r14
+    14c8:	f1 2c       	mov	r15, r1
+    14ca:	e9 a1       	ldd	r30, Y+33	; 0x21
+    14cc:	e4 30       	cpi	r30, 0x04	; 4
+    14ce:	08 f0       	brcs	.+2      	; 0x14d2 <hcNeopixelIsrEveryCall+0x1aa>
+    14d0:	ec c0       	rjmp	.+472    	; 0x16aa <hcNeopixelIsrEveryCall+0x382>
+    14d2:	f0 e0       	ldi	r31, 0x00	; 0
+    14d4:	ee 0f       	add	r30, r30
+    14d6:	ff 1f       	adc	r31, r31
+    14d8:	e7 5d       	subi	r30, 0xD7	; 215
+    14da:	fc 4f       	sbci	r31, 0xFC	; 252
+    14dc:	80 81       	ld	r24, Z
+    14de:	91 81       	ldd	r25, Z+1	; 0x01
+    14e0:	98 a3       	std	Y+32, r25	; 0x20
+    14e2:	8f 8f       	std	Y+31, r24	; 0x1f
+    14e4:	60 e0       	ldi	r22, 0x00	; 0
+    14e6:	70 e0       	ldi	r23, 0x00	; 0
+    14e8:	e9 a1       	ldd	r30, Y+33	; 0x21
+    14ea:	f0 e0       	ldi	r31, 0x00	; 0
+    14ec:	9f 01       	movw	r18, r30
+    14ee:	22 0f       	add	r18, r18
+    14f0:	33 1f       	adc	r19, r19
+    14f2:	d9 01       	movw	r26, r18
+    14f4:	a7 5d       	subi	r26, 0xD7	; 215
+    14f6:	bc 4f       	sbci	r27, 0xFC	; 252
+    14f8:	8d 91       	ld	r24, X+
+    14fa:	9c 91       	ld	r25, X
+    14fc:	4f 8d       	ldd	r20, Y+31	; 0x1f
+    14fe:	58 a1       	ldd	r21, Y+32	; 0x20
+    1500:	d9 01       	movw	r26, r18
+    1502:	ad 50       	subi	r26, 0x0D	; 13
+    1504:	be 4f       	sbci	r27, 0xFE	; 254
+    1506:	2d 91       	ld	r18, X+
+    1508:	3c 91       	ld	r19, X
+    150a:	28 0f       	add	r18, r24
+    150c:	39 1f       	adc	r19, r25
+    150e:	42 17       	cp	r20, r18
+    1510:	53 07       	cpc	r21, r19
+    1512:	08 f0       	brcs	.+2      	; 0x1516 <hcNeopixelIsrEveryCall+0x1ee>
+    1514:	b4 c0       	rjmp	.+360    	; 0x167e <hcNeopixelIsrEveryCall+0x356>
+    1516:	9a 01       	movw	r18, r20
+    1518:	22 0f       	add	r18, r18
+    151a:	33 1f       	adc	r19, r19
+    151c:	f9 01       	movw	r30, r18
+    151e:	e4 0f       	add	r30, r20
+    1520:	f5 1f       	adc	r31, r21
+    1522:	df 01       	movw	r26, r30
+    1524:	a3 54       	subi	r26, 0x43	; 67
+    1526:	bf 4f       	sbci	r27, 0xFF	; 255
+    1528:	8c 91       	ld	r24, X
+    152a:	84 ff       	sbrs	r24, 4
+    152c:	20 c0       	rjmp	.+64     	; 0x156e <hcNeopixelIsrEveryCall+0x246>
+    152e:	00 91 60 00 	lds	r16, 0x0060	; 0x800060 <__DATA_REGION_ORIGIN__>
+    1532:	10 91 61 00 	lds	r17, 0x0061	; 0x800061 <__DATA_REGION_ORIGIN__+0x1>
+    1536:	e5 54       	subi	r30, 0x45	; 69
+    1538:	ff 4f       	sbci	r31, 0xFF	; 255
+    153a:	90 81       	ld	r25, Z
+    153c:	92 95       	swap	r25
+    153e:	9f 70       	andi	r25, 0x0F	; 15
+    1540:	f7 01       	movw	r30, r14
+    1542:	02 c0       	rjmp	.+4      	; 0x1548 <hcNeopixelIsrEveryCall+0x220>
+    1544:	ee 0f       	add	r30, r30
+    1546:	ff 1f       	adc	r31, r31
+    1548:	9a 95       	dec	r25
+    154a:	e2 f7       	brpl	.-8      	; 0x1544 <hcNeopixelIsrEveryCall+0x21c>
+    154c:	0e 23       	and	r16, r30
+    154e:	1f 23       	and	r17, r31
+    1550:	85 ff       	sbrs	r24, 5
+    1552:	05 c0       	rjmp	.+10     	; 0x155e <hcNeopixelIsrEveryCall+0x236>
+    1554:	01 2b       	or	r16, r17
+    1556:	59 f4       	brne	.+22     	; 0x156e <hcNeopixelIsrEveryCall+0x246>
+    1558:	8f 7d       	andi	r24, 0xDF	; 223
+    155a:	8c 93       	st	X, r24
+    155c:	05 c0       	rjmp	.+10     	; 0x1568 <hcNeopixelIsrEveryCall+0x240>
+    155e:	01 2b       	or	r16, r17
+    1560:	31 f0       	breq	.+12     	; 0x156e <hcNeopixelIsrEveryCall+0x246>
+    1562:	98 2f       	mov	r25, r24
+    1564:	90 62       	ori	r25, 0x20	; 32
+    1566:	9c 93       	st	X, r25
+    1568:	ba 01       	movw	r22, r20
+    156a:	6f 5f       	subi	r22, 0xFF	; 255
+    156c:	7f 4f       	sbci	r23, 0xFF	; 255
+    156e:	c9 01       	movw	r24, r18
+    1570:	84 0f       	add	r24, r20
+    1572:	95 1f       	adc	r25, r21
+    1574:	fc 01       	movw	r30, r24
+    1576:	e3 54       	subi	r30, 0x43	; 67
+    1578:	ff 4f       	sbci	r31, 0xFF	; 255
+    157a:	20 81       	ld	r18, Z
+    157c:	23 ff       	sbrs	r18, 3
+    157e:	79 c0       	rjmp	.+242    	; 0x1672 <hcNeopixelIsrEveryCall+0x34a>
+    1580:	fc 01       	movw	r30, r24
+    1582:	e5 54       	subi	r30, 0x45	; 69
+    1584:	ff 4f       	sbci	r31, 0xFF	; 255
+    1586:	20 81       	ld	r18, Z
+    1588:	2f 70       	andi	r18, 0x0F	; 15
+    158a:	80 91 60 00 	lds	r24, 0x0060	; 0x800060 <__DATA_REGION_ORIGIN__>
+    158e:	90 91 61 00 	lds	r25, 0x0061	; 0x800061 <__DATA_REGION_ORIGIN__+0x1>
+    1592:	02 c0       	rjmp	.+4      	; 0x1598 <hcNeopixelIsrEveryCall+0x270>
+    1594:	88 0f       	add	r24, r24
+    1596:	99 1f       	adc	r25, r25
+    1598:	2a 95       	dec	r18
+    159a:	e2 f7       	brpl	.-8      	; 0x1594 <hcNeopixelIsrEveryCall+0x26c>
+    159c:	81 15       	cp	r24, r1
+    159e:	90 48       	sbci	r25, 0x80	; 128
+    15a0:	09 f0       	breq	.+2      	; 0x15a4 <hcNeopixelIsrEveryCall+0x27c>
+    15a2:	67 c0       	rjmp	.+206    	; 0x1672 <hcNeopixelIsrEveryCall+0x34a>
+    15a4:	c1 2c       	mov	r12, r1
+    15a6:	6f 8d       	ldd	r22, Y+31	; 0x1f
+    15a8:	78 a1       	ldd	r23, Y+32	; 0x20
+    15aa:	cd 14       	cp	r12, r13
+    15ac:	09 f4       	brne	.+2      	; 0x15b0 <hcNeopixelIsrEveryCall+0x288>
+    15ae:	5f c0       	rjmp	.+190    	; 0x166e <hcNeopixelIsrEveryCall+0x346>
+    15b0:	cb 01       	movw	r24, r22
+    15b2:	88 0f       	add	r24, r24
+    15b4:	99 1f       	adc	r25, r25
+    15b6:	86 0f       	add	r24, r22
+    15b8:	97 1f       	adc	r25, r23
+    15ba:	fc 01       	movw	r30, r24
+    15bc:	e5 54       	subi	r30, 0x45	; 69
+    15be:	ff 4f       	sbci	r31, 0xFF	; 255
+    15c0:	21 81       	ldd	r18, Z+1	; 0x01
+    15c2:	21 11       	cpse	r18, r1
+    15c4:	0a c0       	rjmp	.+20     	; 0x15da <hcNeopixelIsrEveryCall+0x2b2>
+    15c6:	20 81       	ld	r18, Z
+    15c8:	20 7f       	andi	r18, 0xF0	; 240
+    15ca:	20 83       	st	Z, r18
+    15cc:	fc 01       	movw	r30, r24
+    15ce:	e3 54       	subi	r30, 0x43	; 67
+    15d0:	ff 4f       	sbci	r31, 0xFF	; 255
+    15d2:	80 81       	ld	r24, Z
+    15d4:	87 7f       	andi	r24, 0xF7	; 247
+    15d6:	80 83       	st	Z, r24
+    15d8:	4a c0       	rjmp	.+148    	; 0x166e <hcNeopixelIsrEveryCall+0x346>
+    15da:	32 2f       	mov	r19, r18
+    15dc:	36 95       	lsr	r19
+    15de:	36 95       	lsr	r19
+    15e0:	36 95       	lsr	r19
+    15e2:	3b a3       	std	Y+35, r19	; 0x23
+    15e4:	27 70       	andi	r18, 0x07	; 7
+    15e6:	2a a3       	std	Y+34, r18	; 0x22
+    15e8:	fc 01       	movw	r30, r24
+    15ea:	ec 5c       	subi	r30, 0xCC	; 204
+    15ec:	fc 4f       	sbci	r31, 0xFC	; 252
+    15ee:	8e 01       	movw	r16, r28
+    15f0:	0e 5d       	subi	r16, 0xDE	; 222
+    15f2:	1f 4f       	sbci	r17, 0xFF	; 255
+    15f4:	9e 01       	movw	r18, r28
+    15f6:	2d 5d       	subi	r18, 0xDD	; 221
+    15f8:	3f 4f       	sbci	r19, 0xFF	; 255
+    15fa:	ae 01       	movw	r20, r28
+    15fc:	41 5e       	subi	r20, 0xE1	; 225
+    15fe:	5f 4f       	sbci	r21, 0xFF	; 255
+    1600:	61 81       	ldd	r22, Z+1	; 0x01
+    1602:	80 e0       	ldi	r24, 0x00	; 0
+    1604:	d1 dd       	rcall	.-1118   	; 0x11a8 <hcNeopixelFadeLedRed>
+    1606:	8f 8d       	ldd	r24, Y+31	; 0x1f
+    1608:	98 a1       	ldd	r25, Y+32	; 0x20
+    160a:	fc 01       	movw	r30, r24
+    160c:	ee 0f       	add	r30, r30
+    160e:	ff 1f       	adc	r31, r31
+    1610:	8e 0f       	add	r24, r30
+    1612:	9f 1f       	adc	r25, r31
+    1614:	fc 01       	movw	r30, r24
+    1616:	ec 5c       	subi	r30, 0xCC	; 204
+    1618:	fc 4f       	sbci	r31, 0xFC	; 252
+    161a:	9e 01       	movw	r18, r28
+    161c:	2d 5d       	subi	r18, 0xDD	; 221
+    161e:	3f 4f       	sbci	r19, 0xFF	; 255
+    1620:	ae 01       	movw	r20, r28
+    1622:	41 5e       	subi	r20, 0xE1	; 225
+    1624:	5f 4f       	sbci	r21, 0xFF	; 255
+    1626:	60 81       	ld	r22, Z
+    1628:	80 e0       	ldi	r24, 0x00	; 0
+    162a:	fe dd       	rcall	.-1028   	; 0x1228 <hcNeopixelFadeLedGreen>
+    162c:	8f 8d       	ldd	r24, Y+31	; 0x1f
+    162e:	98 a1       	ldd	r25, Y+32	; 0x20
+    1630:	fc 01       	movw	r30, r24
+    1632:	ee 0f       	add	r30, r30
+    1634:	ff 1f       	adc	r31, r31
+    1636:	8e 0f       	add	r24, r30
+    1638:	9f 1f       	adc	r25, r31
+    163a:	fc 01       	movw	r30, r24
+    163c:	ec 5c       	subi	r30, 0xCC	; 204
+    163e:	fc 4f       	sbci	r31, 0xFC	; 252
+    1640:	9e 01       	movw	r18, r28
+    1642:	2d 5d       	subi	r18, 0xDD	; 221
+    1644:	3f 4f       	sbci	r19, 0xFF	; 255
+    1646:	ae 01       	movw	r20, r28
+    1648:	41 5e       	subi	r20, 0xE1	; 225
+    164a:	5f 4f       	sbci	r21, 0xFF	; 255
+    164c:	62 81       	ldd	r22, Z+2	; 0x02
+    164e:	80 e0       	ldi	r24, 0x00	; 0
+    1650:	2b de       	rcall	.-938    	; 0x12a8 <hcNeopixelFadeLedBlue>
+    1652:	ef 8d       	ldd	r30, Y+31	; 0x1f
+    1654:	f8 a1       	ldd	r31, Y+32	; 0x20
+    1656:	cf 01       	movw	r24, r30
+    1658:	88 0f       	add	r24, r24
+    165a:	99 1f       	adc	r25, r25
+    165c:	e8 0f       	add	r30, r24
+    165e:	f9 1f       	adc	r31, r25
+    1660:	e5 54       	subi	r30, 0x45	; 69
+    1662:	ff 4f       	sbci	r31, 0xFF	; 255
+    1664:	81 81       	ldd	r24, Z+1	; 0x01
+    1666:	8f 5f       	subi	r24, 0xFF	; 255
+    1668:	81 83       	std	Z+1, r24	; 0x01
+    166a:	c3 94       	inc	r12
+    166c:	9c cf       	rjmp	.-200    	; 0x15a6 <hcNeopixelIsrEveryCall+0x27e>
+    166e:	6f 5f       	subi	r22, 0xFF	; 255
+    1670:	7f 4f       	sbci	r23, 0xFF	; 255
+    1672:	8f 8d       	ldd	r24, Y+31	; 0x1f
+    1674:	98 a1       	ldd	r25, Y+32	; 0x20
+    1676:	01 96       	adiw	r24, 0x01	; 1
+    1678:	98 a3       	std	Y+32, r25	; 0x20
+    167a:	8f 8f       	std	Y+31, r24	; 0x1f
+    167c:	35 cf       	rjmp	.-406    	; 0x14e8 <hcNeopixelIsrEveryCall+0x1c0>
+    167e:	61 15       	cp	r22, r1
+    1680:	71 05       	cpc	r23, r1
+    1682:	79 f0       	breq	.+30     	; 0x16a2 <hcNeopixelIsrEveryCall+0x37a>
+    1684:	a7 01       	movw	r20, r14
+    1686:	01 c0       	rjmp	.+2      	; 0x168a <hcNeopixelIsrEveryCall+0x362>
+    1688:	44 0f       	add	r20, r20
+    168a:	ea 95       	dec	r30
+    168c:	ea f7       	brpl	.-6      	; 0x1688 <hcNeopixelIsrEveryCall+0x360>
+    168e:	68 1b       	sub	r22, r24
+    1690:	79 0b       	sbc	r23, r25
+    1692:	9c 01       	movw	r18, r24
+    1694:	22 0f       	add	r18, r18
+    1696:	33 1f       	adc	r19, r19
+    1698:	82 0f       	add	r24, r18
+    169a:	93 1f       	adc	r25, r19
+    169c:	84 50       	subi	r24, 0x04	; 4
+    169e:	9e 4f       	sbci	r25, 0xFE	; 254
+    16a0:	46 d8       	rcall	.-3956   	; 0x72e <hcNeopixelSetLedsPin>
+    16a2:	89 a1       	ldd	r24, Y+33	; 0x21
+    16a4:	8f 5f       	subi	r24, 0xFF	; 255
+    16a6:	89 a3       	std	Y+33, r24	; 0x21
+    16a8:	10 cf       	rjmp	.-480    	; 0x14ca <hcNeopixelIsrEveryCall+0x1a2>
+    16aa:	a3 96       	adiw	r28, 0x23	; 35
+    16ac:	0f b6       	in	r0, 0x3f	; 63
+    16ae:	f8 94       	cli
+    16b0:	de bf       	out	0x3e, r29	; 62
+    16b2:	0f be       	out	0x3f, r0	; 63
+    16b4:	cd bf       	out	0x3d, r28	; 61
+    16b6:	df 91       	pop	r29
+    16b8:	cf 91       	pop	r28
+    16ba:	1f 91       	pop	r17
+    16bc:	0f 91       	pop	r16
+    16be:	ff 90       	pop	r15
+    16c0:	ef 90       	pop	r14
+    16c2:	df 90       	pop	r13
+    16c4:	cf 90       	pop	r12
+    16c6:	08 95       	ret
+
+000016c8 <main>:
+    16c8:	99 d5       	rcall	.+2866   	; 0x21fc <__TEXT_REGION_LENGTH__+0x1fc>
+    16ca:	36 d8       	rcall	.-3988   	; 0x738 <hcNeopixelInit>
+    16cc:	7a d7       	rcall	.+3828   	; 0x25c2 <__TEXT_REGION_LENGTH__+0x5c2>
+    16ce:	fe cf       	rjmp	.-4      	; 0x16cc <main+0x4>
+
+000016d0 <getConfiguration>:
+    16d0:	70 cb       	rjmp	.-2336   	; 0xdb2 <hcNeopixelGetConfiguration>
+
+000016d2 <getData>:
+    16d2:	78 cb       	rjmp	.-2320   	; 0xdc4 <hcNeopixelGetData>
+
+000016d4 <setData>:
+    16d4:	0f cc       	rjmp	.-2018   	; 0xef4 <hcNeopixelSetData>
+
+000016d6 <isrEveryCall>:
+    16d6:	28 ce       	rjmp	.-944    	; 0x1328 <hcNeopixelIsrEveryCall>
+
+000016d8 <__fixunssfsi>:
+    16d8:	70 d0       	rcall	.+224    	; 0x17ba <__fp_splitA>
+    16da:	88 f0       	brcs	.+34     	; 0x16fe <__fixunssfsi+0x26>
+    16dc:	9f 57       	subi	r25, 0x7F	; 127
+    16de:	90 f0       	brcs	.+36     	; 0x1704 <__fixunssfsi+0x2c>
+    16e0:	b9 2f       	mov	r27, r25
+    16e2:	99 27       	eor	r25, r25
+    16e4:	b7 51       	subi	r27, 0x17	; 23
+    16e6:	a0 f0       	brcs	.+40     	; 0x1710 <__fixunssfsi+0x38>
+    16e8:	d1 f0       	breq	.+52     	; 0x171e <__fixunssfsi+0x46>
+    16ea:	66 0f       	add	r22, r22
+    16ec:	77 1f       	adc	r23, r23
+    16ee:	88 1f       	adc	r24, r24
+    16f0:	99 1f       	adc	r25, r25
+    16f2:	1a f0       	brmi	.+6      	; 0x16fa <__fixunssfsi+0x22>
+    16f4:	ba 95       	dec	r27
+    16f6:	c9 f7       	brne	.-14     	; 0x16ea <__fixunssfsi+0x12>
+    16f8:	12 c0       	rjmp	.+36     	; 0x171e <__fixunssfsi+0x46>
+    16fa:	b1 30       	cpi	r27, 0x01	; 1
+    16fc:	81 f0       	breq	.+32     	; 0x171e <__fixunssfsi+0x46>
+    16fe:	77 d0       	rcall	.+238    	; 0x17ee <__fp_zero>
+    1700:	b1 e0       	ldi	r27, 0x01	; 1
+    1702:	08 95       	ret
+    1704:	74 c0       	rjmp	.+232    	; 0x17ee <__fp_zero>
+    1706:	67 2f       	mov	r22, r23
+    1708:	78 2f       	mov	r23, r24
+    170a:	88 27       	eor	r24, r24
+    170c:	b8 5f       	subi	r27, 0xF8	; 248
+    170e:	39 f0       	breq	.+14     	; 0x171e <__fixunssfsi+0x46>
+    1710:	b9 3f       	cpi	r27, 0xF9	; 249
+    1712:	cc f3       	brlt	.-14     	; 0x1706 <__fixunssfsi+0x2e>
+    1714:	86 95       	lsr	r24
+    1716:	77 95       	ror	r23
+    1718:	67 95       	ror	r22
+    171a:	b3 95       	inc	r27
+    171c:	d9 f7       	brne	.-10     	; 0x1714 <__fixunssfsi+0x3c>
+    171e:	3e f4       	brtc	.+14     	; 0x172e <__fixunssfsi+0x56>
+    1720:	90 95       	com	r25
+    1722:	80 95       	com	r24
+    1724:	70 95       	com	r23
+    1726:	61 95       	neg	r22
+    1728:	7f 4f       	sbci	r23, 0xFF	; 255
+    172a:	8f 4f       	sbci	r24, 0xFF	; 255
+    172c:	9f 4f       	sbci	r25, 0xFF	; 255
+    172e:	08 95       	ret
+
+00001730 <__floatunsisf>:
+    1730:	e8 94       	clt
+    1732:	09 c0       	rjmp	.+18     	; 0x1746 <__floatsisf+0x12>
+
+00001734 <__floatsisf>:
+    1734:	97 fb       	bst	r25, 7
+    1736:	3e f4       	brtc	.+14     	; 0x1746 <__floatsisf+0x12>
+    1738:	90 95       	com	r25
+    173a:	80 95       	com	r24
+    173c:	70 95       	com	r23
+    173e:	61 95       	neg	r22
+    1740:	7f 4f       	sbci	r23, 0xFF	; 255
+    1742:	8f 4f       	sbci	r24, 0xFF	; 255
+    1744:	9f 4f       	sbci	r25, 0xFF	; 255
+    1746:	99 23       	and	r25, r25
+    1748:	a9 f0       	breq	.+42     	; 0x1774 <__floatsisf+0x40>
+    174a:	f9 2f       	mov	r31, r25
+    174c:	96 e9       	ldi	r25, 0x96	; 150
+    174e:	bb 27       	eor	r27, r27
+    1750:	93 95       	inc	r25
+    1752:	f6 95       	lsr	r31
+    1754:	87 95       	ror	r24
+    1756:	77 95       	ror	r23
+    1758:	67 95       	ror	r22
+    175a:	b7 95       	ror	r27
+    175c:	f1 11       	cpse	r31, r1
+    175e:	f8 cf       	rjmp	.-16     	; 0x1750 <__floatsisf+0x1c>
+    1760:	fa f4       	brpl	.+62     	; 0x17a0 <__floatsisf+0x6c>
+    1762:	bb 0f       	add	r27, r27
+    1764:	11 f4       	brne	.+4      	; 0x176a <__floatsisf+0x36>
+    1766:	60 ff       	sbrs	r22, 0
+    1768:	1b c0       	rjmp	.+54     	; 0x17a0 <__floatsisf+0x6c>
+    176a:	6f 5f       	subi	r22, 0xFF	; 255
+    176c:	7f 4f       	sbci	r23, 0xFF	; 255
+    176e:	8f 4f       	sbci	r24, 0xFF	; 255
+    1770:	9f 4f       	sbci	r25, 0xFF	; 255
+    1772:	16 c0       	rjmp	.+44     	; 0x17a0 <__floatsisf+0x6c>
+    1774:	88 23       	and	r24, r24
+    1776:	11 f0       	breq	.+4      	; 0x177c <__floatsisf+0x48>
+    1778:	96 e9       	ldi	r25, 0x96	; 150
+    177a:	11 c0       	rjmp	.+34     	; 0x179e <__floatsisf+0x6a>
+    177c:	77 23       	and	r23, r23
+    177e:	21 f0       	breq	.+8      	; 0x1788 <__floatsisf+0x54>
+    1780:	9e e8       	ldi	r25, 0x8E	; 142
+    1782:	87 2f       	mov	r24, r23
+    1784:	76 2f       	mov	r23, r22
+    1786:	05 c0       	rjmp	.+10     	; 0x1792 <__floatsisf+0x5e>
+    1788:	66 23       	and	r22, r22
+    178a:	71 f0       	breq	.+28     	; 0x17a8 <__floatsisf+0x74>
+    178c:	96 e8       	ldi	r25, 0x86	; 134
+    178e:	86 2f       	mov	r24, r22
+    1790:	70 e0       	ldi	r23, 0x00	; 0
+    1792:	60 e0       	ldi	r22, 0x00	; 0
+    1794:	2a f0       	brmi	.+10     	; 0x17a0 <__floatsisf+0x6c>
+    1796:	9a 95       	dec	r25
+    1798:	66 0f       	add	r22, r22
+    179a:	77 1f       	adc	r23, r23
+    179c:	88 1f       	adc	r24, r24
+    179e:	da f7       	brpl	.-10     	; 0x1796 <__floatsisf+0x62>
+    17a0:	88 0f       	add	r24, r24
+    17a2:	96 95       	lsr	r25
+    17a4:	87 95       	ror	r24
+    17a6:	97 f9       	bld	r25, 7
+    17a8:	08 95       	ret
+
+000017aa <__fp_split3>:
+    17aa:	57 fd       	sbrc	r21, 7
+    17ac:	90 58       	subi	r25, 0x80	; 128
+    17ae:	44 0f       	add	r20, r20
+    17b0:	55 1f       	adc	r21, r21
+    17b2:	59 f0       	breq	.+22     	; 0x17ca <__fp_splitA+0x10>
+    17b4:	5f 3f       	cpi	r21, 0xFF	; 255
+    17b6:	71 f0       	breq	.+28     	; 0x17d4 <__fp_splitA+0x1a>
+    17b8:	47 95       	ror	r20
+
+000017ba <__fp_splitA>:
+    17ba:	88 0f       	add	r24, r24
+    17bc:	97 fb       	bst	r25, 7
+    17be:	99 1f       	adc	r25, r25
+    17c0:	61 f0       	breq	.+24     	; 0x17da <__fp_splitA+0x20>
+    17c2:	9f 3f       	cpi	r25, 0xFF	; 255
+    17c4:	79 f0       	breq	.+30     	; 0x17e4 <__fp_splitA+0x2a>
+    17c6:	87 95       	ror	r24
+    17c8:	08 95       	ret
+    17ca:	12 16       	cp	r1, r18
+    17cc:	13 06       	cpc	r1, r19
+    17ce:	14 06       	cpc	r1, r20
+    17d0:	55 1f       	adc	r21, r21
+    17d2:	f2 cf       	rjmp	.-28     	; 0x17b8 <__fp_split3+0xe>
+    17d4:	46 95       	lsr	r20
+    17d6:	f1 df       	rcall	.-30     	; 0x17ba <__fp_splitA>
+    17d8:	08 c0       	rjmp	.+16     	; 0x17ea <__fp_splitA+0x30>
+    17da:	16 16       	cp	r1, r22
+    17dc:	17 06       	cpc	r1, r23
+    17de:	18 06       	cpc	r1, r24
+    17e0:	99 1f       	adc	r25, r25
+    17e2:	f1 cf       	rjmp	.-30     	; 0x17c6 <__fp_splitA+0xc>
+    17e4:	86 95       	lsr	r24
+    17e6:	71 05       	cpc	r23, r1
+    17e8:	61 05       	cpc	r22, r1
+    17ea:	08 94       	sec
+    17ec:	08 95       	ret
+
+000017ee <__fp_zero>:
+    17ee:	e8 94       	clt
+
+000017f0 <__fp_szero>:
+    17f0:	bb 27       	eor	r27, r27
+    17f2:	66 27       	eor	r22, r22
+    17f4:	77 27       	eor	r23, r23
+    17f6:	cb 01       	movw	r24, r22
+    17f8:	97 f9       	bld	r25, 7
+    17fa:	08 95       	ret
+
+000017fc <__mulsf3>:
+    17fc:	0b d0       	rcall	.+22     	; 0x1814 <__mulsf3x>
+    17fe:	78 c0       	rjmp	.+240    	; 0x18f0 <__fp_round>
+    1800:	69 d0       	rcall	.+210    	; 0x18d4 <__fp_pscA>
+    1802:	28 f0       	brcs	.+10     	; 0x180e <__mulsf3+0x12>
+    1804:	6e d0       	rcall	.+220    	; 0x18e2 <__fp_pscB>
+    1806:	18 f0       	brcs	.+6      	; 0x180e <__mulsf3+0x12>
+    1808:	95 23       	and	r25, r21
+    180a:	09 f0       	breq	.+2      	; 0x180e <__mulsf3+0x12>
+    180c:	5a c0       	rjmp	.+180    	; 0x18c2 <__fp_inf>
+    180e:	5f c0       	rjmp	.+190    	; 0x18ce <__fp_nan>
+    1810:	11 24       	eor	r1, r1
+    1812:	ee cf       	rjmp	.-36     	; 0x17f0 <__fp_szero>
+
+00001814 <__mulsf3x>:
+    1814:	ca df       	rcall	.-108    	; 0x17aa <__fp_split3>
+    1816:	a0 f3       	brcs	.-24     	; 0x1800 <__mulsf3+0x4>
+
+00001818 <__mulsf3_pse>:
+    1818:	95 9f       	mul	r25, r21
+    181a:	d1 f3       	breq	.-12     	; 0x1810 <__mulsf3+0x14>
+    181c:	95 0f       	add	r25, r21
+    181e:	50 e0       	ldi	r21, 0x00	; 0
+    1820:	55 1f       	adc	r21, r21
+    1822:	62 9f       	mul	r22, r18
+    1824:	f0 01       	movw	r30, r0
+    1826:	72 9f       	mul	r23, r18
+    1828:	bb 27       	eor	r27, r27
+    182a:	f0 0d       	add	r31, r0
+    182c:	b1 1d       	adc	r27, r1
+    182e:	63 9f       	mul	r22, r19
+    1830:	aa 27       	eor	r26, r26
+    1832:	f0 0d       	add	r31, r0
+    1834:	b1 1d       	adc	r27, r1
+    1836:	aa 1f       	adc	r26, r26
+    1838:	64 9f       	mul	r22, r20
+    183a:	66 27       	eor	r22, r22
+    183c:	b0 0d       	add	r27, r0
+    183e:	a1 1d       	adc	r26, r1
+    1840:	66 1f       	adc	r22, r22
+    1842:	82 9f       	mul	r24, r18
+    1844:	22 27       	eor	r18, r18
+    1846:	b0 0d       	add	r27, r0
+    1848:	a1 1d       	adc	r26, r1
+    184a:	62 1f       	adc	r22, r18
+    184c:	73 9f       	mul	r23, r19
+    184e:	b0 0d       	add	r27, r0
+    1850:	a1 1d       	adc	r26, r1
+    1852:	62 1f       	adc	r22, r18
+    1854:	83 9f       	mul	r24, r19
+    1856:	a0 0d       	add	r26, r0
+    1858:	61 1d       	adc	r22, r1
+    185a:	22 1f       	adc	r18, r18
+    185c:	74 9f       	mul	r23, r20
+    185e:	33 27       	eor	r19, r19
+    1860:	a0 0d       	add	r26, r0
+    1862:	61 1d       	adc	r22, r1
+    1864:	23 1f       	adc	r18, r19
+    1866:	84 9f       	mul	r24, r20
+    1868:	60 0d       	add	r22, r0
+    186a:	21 1d       	adc	r18, r1
+    186c:	82 2f       	mov	r24, r18
+    186e:	76 2f       	mov	r23, r22
+    1870:	6a 2f       	mov	r22, r26
+    1872:	11 24       	eor	r1, r1
+    1874:	9f 57       	subi	r25, 0x7F	; 127
+    1876:	50 40       	sbci	r21, 0x00	; 0
+    1878:	8a f0       	brmi	.+34     	; 0x189c <__mulsf3_pse+0x84>
+    187a:	e1 f0       	breq	.+56     	; 0x18b4 <__mulsf3_pse+0x9c>
+    187c:	88 23       	and	r24, r24
+    187e:	4a f0       	brmi	.+18     	; 0x1892 <__mulsf3_pse+0x7a>
+    1880:	ee 0f       	add	r30, r30
+    1882:	ff 1f       	adc	r31, r31
+    1884:	bb 1f       	adc	r27, r27
+    1886:	66 1f       	adc	r22, r22
+    1888:	77 1f       	adc	r23, r23
+    188a:	88 1f       	adc	r24, r24
+    188c:	91 50       	subi	r25, 0x01	; 1
+    188e:	50 40       	sbci	r21, 0x00	; 0
+    1890:	a9 f7       	brne	.-22     	; 0x187c <__mulsf3_pse+0x64>
+    1892:	9e 3f       	cpi	r25, 0xFE	; 254
+    1894:	51 05       	cpc	r21, r1
+    1896:	70 f0       	brcs	.+28     	; 0x18b4 <__mulsf3_pse+0x9c>
+    1898:	14 c0       	rjmp	.+40     	; 0x18c2 <__fp_inf>
+    189a:	aa cf       	rjmp	.-172    	; 0x17f0 <__fp_szero>
+    189c:	5f 3f       	cpi	r21, 0xFF	; 255
+    189e:	ec f3       	brlt	.-6      	; 0x189a <__mulsf3_pse+0x82>
+    18a0:	98 3e       	cpi	r25, 0xE8	; 232
+    18a2:	dc f3       	brlt	.-10     	; 0x189a <__mulsf3_pse+0x82>
+    18a4:	86 95       	lsr	r24
+    18a6:	77 95       	ror	r23
+    18a8:	67 95       	ror	r22
+    18aa:	b7 95       	ror	r27
+    18ac:	f7 95       	ror	r31
+    18ae:	e7 95       	ror	r30
+    18b0:	9f 5f       	subi	r25, 0xFF	; 255
+    18b2:	c1 f7       	brne	.-16     	; 0x18a4 <__mulsf3_pse+0x8c>
+    18b4:	fe 2b       	or	r31, r30
+    18b6:	88 0f       	add	r24, r24
+    18b8:	91 1d       	adc	r25, r1
+    18ba:	96 95       	lsr	r25
+    18bc:	87 95       	ror	r24
+    18be:	97 f9       	bld	r25, 7
+    18c0:	08 95       	ret
+
+000018c2 <__fp_inf>:
+    18c2:	97 f9       	bld	r25, 7
+    18c4:	9f 67       	ori	r25, 0x7F	; 127
+    18c6:	80 e8       	ldi	r24, 0x80	; 128
+    18c8:	70 e0       	ldi	r23, 0x00	; 0
+    18ca:	60 e0       	ldi	r22, 0x00	; 0
+    18cc:	08 95       	ret
+
+000018ce <__fp_nan>:
+    18ce:	9f ef       	ldi	r25, 0xFF	; 255
+    18d0:	80 ec       	ldi	r24, 0xC0	; 192
+    18d2:	08 95       	ret
+
+000018d4 <__fp_pscA>:
+    18d4:	00 24       	eor	r0, r0
+    18d6:	0a 94       	dec	r0
+    18d8:	16 16       	cp	r1, r22
+    18da:	17 06       	cpc	r1, r23
+    18dc:	18 06       	cpc	r1, r24
+    18de:	09 06       	cpc	r0, r25
+    18e0:	08 95       	ret
+
+000018e2 <__fp_pscB>:
+    18e2:	00 24       	eor	r0, r0
+    18e4:	0a 94       	dec	r0
+    18e6:	12 16       	cp	r1, r18
+    18e8:	13 06       	cpc	r1, r19
+    18ea:	14 06       	cpc	r1, r20
+    18ec:	05 06       	cpc	r0, r21
+    18ee:	08 95       	ret
+
+000018f0 <__fp_round>:
+    18f0:	09 2e       	mov	r0, r25
+    18f2:	03 94       	inc	r0
+    18f4:	00 0c       	add	r0, r0
+    18f6:	11 f4       	brne	.+4      	; 0x18fc <__fp_round+0xc>
+    18f8:	88 23       	and	r24, r24
+    18fa:	52 f0       	brmi	.+20     	; 0x1910 <__fp_round+0x20>
+    18fc:	bb 0f       	add	r27, r27
+    18fe:	40 f4       	brcc	.+16     	; 0x1910 <__fp_round+0x20>
+    1900:	bf 2b       	or	r27, r31
+    1902:	11 f4       	brne	.+4      	; 0x1908 <__fp_round+0x18>
+    1904:	60 ff       	sbrs	r22, 0
+    1906:	04 c0       	rjmp	.+8      	; 0x1910 <__fp_round+0x20>
+    1908:	6f 5f       	subi	r22, 0xFF	; 255
+    190a:	7f 4f       	sbci	r23, 0xFF	; 255
+    190c:	8f 4f       	sbci	r24, 0xFF	; 255
+    190e:	9f 4f       	sbci	r25, 0xFF	; 255
+    1910:	08 95       	ret
+
+00001912 <__udivmodsi4>:
+    1912:	a1 e2       	ldi	r26, 0x21	; 33
+    1914:	1a 2e       	mov	r1, r26
+    1916:	aa 1b       	sub	r26, r26
+    1918:	bb 1b       	sub	r27, r27
+    191a:	fd 01       	movw	r30, r26
+    191c:	0d c0       	rjmp	.+26     	; 0x1938 <__udivmodsi4_ep>
+
+0000191e <__udivmodsi4_loop>:
+    191e:	aa 1f       	adc	r26, r26
+    1920:	bb 1f       	adc	r27, r27
+    1922:	ee 1f       	adc	r30, r30
+    1924:	ff 1f       	adc	r31, r31
+    1926:	a2 17       	cp	r26, r18
+    1928:	b3 07       	cpc	r27, r19
+    192a:	e4 07       	cpc	r30, r20
+    192c:	f5 07       	cpc	r31, r21
+    192e:	20 f0       	brcs	.+8      	; 0x1938 <__udivmodsi4_ep>
+    1930:	a2 1b       	sub	r26, r18
+    1932:	b3 0b       	sbc	r27, r19
+    1934:	e4 0b       	sbc	r30, r20
+    1936:	f5 0b       	sbc	r31, r21
+
+00001938 <__udivmodsi4_ep>:
+    1938:	66 1f       	adc	r22, r22
+    193a:	77 1f       	adc	r23, r23
+    193c:	88 1f       	adc	r24, r24
+    193e:	99 1f       	adc	r25, r25
+    1940:	1a 94       	dec	r1
+    1942:	69 f7       	brne	.-38     	; 0x191e <__udivmodsi4_loop>
+    1944:	60 95       	com	r22
+    1946:	70 95       	com	r23
+    1948:	80 95       	com	r24
+    194a:	90 95       	com	r25
+    194c:	9b 01       	movw	r18, r22
+    194e:	ac 01       	movw	r20, r24
+    1950:	bd 01       	movw	r22, r26
+    1952:	cf 01       	movw	r24, r30
+    1954:	08 95       	ret
+
+00001956 <__divmodsi4>:
+    1956:	05 2e       	mov	r0, r21
+    1958:	97 fb       	bst	r25, 7
+    195a:	16 f4       	brtc	.+4      	; 0x1960 <__divmodsi4+0xa>
+    195c:	00 94       	com	r0
+    195e:	0f d0       	rcall	.+30     	; 0x197e <__negsi2>
+    1960:	57 fd       	sbrc	r21, 7
+    1962:	05 d0       	rcall	.+10     	; 0x196e <__divmodsi4_neg2>
+    1964:	d6 df       	rcall	.-84     	; 0x1912 <__udivmodsi4>
+    1966:	07 fc       	sbrc	r0, 7
+    1968:	02 d0       	rcall	.+4      	; 0x196e <__divmodsi4_neg2>
+    196a:	46 f4       	brtc	.+16     	; 0x197c <__divmodsi4_exit>
+    196c:	08 c0       	rjmp	.+16     	; 0x197e <__negsi2>
+
+0000196e <__divmodsi4_neg2>:
+    196e:	50 95       	com	r21
+    1970:	40 95       	com	r20
+    1972:	30 95       	com	r19
+    1974:	21 95       	neg	r18
+    1976:	3f 4f       	sbci	r19, 0xFF	; 255
+    1978:	4f 4f       	sbci	r20, 0xFF	; 255
+    197a:	5f 4f       	sbci	r21, 0xFF	; 255
+
+0000197c <__divmodsi4_exit>:
+    197c:	08 95       	ret
+
+0000197e <__negsi2>:
+    197e:	90 95       	com	r25
+    1980:	80 95       	com	r24
+    1982:	70 95       	com	r23
+    1984:	61 95       	neg	r22
+    1986:	7f 4f       	sbci	r23, 0xFF	; 255
+    1988:	8f 4f       	sbci	r24, 0xFF	; 255
+    198a:	9f 4f       	sbci	r25, 0xFF	; 255
+    198c:	08 95       	ret
+
+0000198e <eeprom_read_byte>:
+    198e:	e1 99       	sbic	0x1c, 1	; 28
+    1990:	fe cf       	rjmp	.-4      	; 0x198e <eeprom_read_byte>
+    1992:	9f bb       	out	0x1f, r25	; 31
+    1994:	8e bb       	out	0x1e, r24	; 30
+    1996:	e0 9a       	sbi	0x1c, 0	; 28
+    1998:	99 27       	eor	r25, r25
+    199a:	8d b3       	in	r24, 0x1d	; 29
+    199c:	08 95       	ret
+
+0000199e <eeprom_update_byte>:
+    199e:	26 2f       	mov	r18, r22
+
+000019a0 <eeprom_update_r18>:
+    19a0:	e1 99       	sbic	0x1c, 1	; 28
+    19a2:	fe cf       	rjmp	.-4      	; 0x19a0 <eeprom_update_r18>
+    19a4:	9f bb       	out	0x1f, r25	; 31
+    19a6:	8e bb       	out	0x1e, r24	; 30
+    19a8:	e0 9a       	sbi	0x1c, 0	; 28
+    19aa:	01 97       	sbiw	r24, 0x01	; 1
+    19ac:	0d b2       	in	r0, 0x1d	; 29
+    19ae:	02 16       	cp	r0, r18
+    19b0:	31 f0       	breq	.+12     	; 0x19be <eeprom_update_r18+0x1e>
+    19b2:	2d bb       	out	0x1d, r18	; 29
+    19b4:	0f b6       	in	r0, 0x3f	; 63
+    19b6:	f8 94       	cli
+    19b8:	e2 9a       	sbi	0x1c, 2	; 28
+    19ba:	e1 9a       	sbi	0x1c, 1	; 28
+    19bc:	0f be       	out	0x3f, r0	; 63
+    19be:	08 95       	ret
+
+000019c0 <eeprom_write_byte>:
+    19c0:	26 2f       	mov	r18, r22
+
+000019c2 <eeprom_write_r18>:
+    19c2:	e1 99       	sbic	0x1c, 1	; 28
+    19c4:	fe cf       	rjmp	.-4      	; 0x19c2 <eeprom_write_r18>
+    19c6:	9f bb       	out	0x1f, r25	; 31
+    19c8:	8e bb       	out	0x1e, r24	; 30
+    19ca:	2d bb       	out	0x1d, r18	; 29
+    19cc:	0f b6       	in	r0, 0x3f	; 63
+    19ce:	f8 94       	cli
+    19d0:	e2 9a       	sbi	0x1c, 2	; 28
+    19d2:	e1 9a       	sbi	0x1c, 1	; 28
+    19d4:	0f be       	out	0x3f, r0	; 63
+    19d6:	01 96       	adiw	r24, 0x01	; 1
+    19d8:	08 95       	ret
+
+000019da <_exit>:
+    19da:	f8 94       	cli
+
+000019dc <__stop_program>:
+    19dc:	ff cf       	rjmp	.-2      	; 0x19dc <__stop_program>

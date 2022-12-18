@@ -1,0 +1,55 @@
+/*
+ * hcConfig.h
+ *
+ * Created: 08.04.2017 14:36:02
+ *  Author: ich
+ */ 
+
+
+#ifndef HCCONFIG_H_
+#define HCCONFIG_H_
+
+#define HC_I2C_DEFAULT_PWM_SPEED 1024
+//#define HC_USE_WATCHDOG 1
+
+//#define HC_POWER_LED_DDR DDRB
+//#define HC_POWER_LED_PORT PORTB
+//#define HC_POWER_LED_PIN PINB3
+//#define HC_ERROR_LED_DDR DDRB
+//#define HC_ERROR_LED_PORT PORTB
+//#define HC_ERROR_LED_PIN PINB2
+//#define HC_CONNECT_LED_DDR DDRB
+//#define HC_CONNECT_LED_PORT PORTB
+//#define HC_CONNECT_LED_PIN PINB4
+//#define HC_TRANSRECEIVE_LED_DDR DDRB
+//#define HC_TRANSRECEIVE_LED_PORT PORTB
+//#define HC_TRANSRECEIVE_LED_PIN PINB4
+//#define HC_TRANSCEIVE_LED_DDR DDRB
+//#define HC_TRANSCEIVE_LED_PORT PORTB
+//#define HC_TRANSCEIVE_LED_PIN PINB3
+//#define HC_RECEIVE_LED_DDR DDRB
+//#define HC_RECEIVE_LED_PORT PORTB
+//#define HC_RECEIVE_LED_PIN PINB2
+//#define HC_CUSTOM_LED_DDR
+//#define HC_CUSTOM_LED_PORT
+//#define HC_CUSTOM_LED_PIN
+//#define HC_RGB_LED_DDR DDRB
+//#define HC_RGB_LED_PORT PORTB
+//#define HC_RGB_LED_RED_PIN PINB2
+//#define HC_RGB_LED_GREEN_PIN PINB3
+//#define HC_RGB_LED_BLUE_PIN PINB4
+
+// ----- Müssen in der Main definiert werden -----
+
+#define HC_I2C_GET_CONFIGURATION_FUNCTION getConfiguration
+//#define HC_I2C_STATUS_FUNCTION getStatus
+//#define HC_I2C_DATA_CHANGED_FUNCTION getChangedData
+#define HC_I2C_GET_CUSTOM_DATA_FUNCTION getData
+#define HC_I2C_SET_CUSTOM_DATA_FUNCTION setData
+
+#define HC_ISR_EVERY_CALL_FUNCTION isrEveryCall
+//#define HC_ISR_EVERY_SECOND_FUNCTION
+
+#define HC_MODULE_VERSION 1
+
+#endif /* HCCONFIG_H_ */

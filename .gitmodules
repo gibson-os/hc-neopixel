@@ -1,0 +1,3 @@
+[submodule "src/hc-module"]
+	path = src/hc-module
+	url = https://github.com/gibson-os/hc-module.git
